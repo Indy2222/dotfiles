@@ -11,3 +11,10 @@ Emacs
 ```bash
 ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
 ```
+
+Tmux
+----
+
+```bash
+ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+```
