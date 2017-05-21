@@ -140,6 +140,12 @@
 (setq smtpmail-stream-type 'starttls)
 (setq smtpmail-smtp-service 587)
 
+;; GPG interface, work with .gpg files like they are plain text
+(require 'epa-file)
+(epa-file-enable)
+;; https://colinxy.github.io/software-installation/2016/09/24/emacs25-easypg-issue.html
+(setf epa-pinentry-mode 'loopback)
+
 ;; so emacsclient can be used
 (require 'server)
 (unless (server-running-p)
