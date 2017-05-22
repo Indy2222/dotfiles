@@ -1,0 +1,17 @@
+[core]
+	excludesfile = ~/.gitignore_global
+        editor = emacsclient
+[diff]
+	algorithm = histogram
+	compactionHeuristic = true
+	indentHeuristic = true
+[user]
+        userConfigOnly = true
+	name = Martin Indra
+        # this is my SpaceKnow GPG key
+	signingkey = 6E8E8213AD9EEE1993A641916CBA408EE209D7CF
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

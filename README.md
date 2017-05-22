@@ -18,3 +18,11 @@ Tmux
 ```bash
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ```
+
+Git
+---
+
+```bash
+ln -s ~/dotfiles/git/config ~/.gitconfig
+ln -s ~/dotfiles/git/gitignore ~/.gitignore_global
+```
