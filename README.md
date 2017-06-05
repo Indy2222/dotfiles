@@ -62,6 +62,9 @@ configuration:
 ```bash
 mkdir ~/.emacs.d
 ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
+# this is necessary to share clipboard via X11Forwarding
+cd ~/.emacs.d/lisp/
+wget https://raw.githubusercontent.com/emacsmirror/xclip/master/xclip.el
 ```
 
 Tmux
