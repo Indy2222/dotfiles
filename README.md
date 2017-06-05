@@ -67,6 +67,15 @@ cd ~/.emacs.d/lisp/
 wget https://raw.githubusercontent.com/emacsmirror/xclip/master/xclip.el
 ```
 
+Python
+------
+
+```bash
+sudo apt-get install python-pip
+# these makes Emacs Elpy more powerful
+sudo pip install rope importmagic yapf flake8
+```
+
 Tmux
 ----
 
