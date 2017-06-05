@@ -14,6 +14,14 @@ then clone this repository:
 git clone git@github.com:Indy2222/dotfiles ~/dotfiles
 ```
 
+Bash
+----
+
+```bash
+ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+ln -s ~/dotfiles/bash/spaceknow ~/.bash_spaceknow
+```
+
 Emacs
 -----
 

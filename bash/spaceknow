@@ -1,0 +1,6 @@
+# git@github.com:SpaceKnow/backend.git must be cloned to ~/backend
+export PATH="$HOME/backend/scripts:$PATH"
+export PATH="$HOME/backend/devtools:$PATH"
+export PYTHONPATH="$PYTHONPATH:$HOME/backend/python"
+
+export SPACEKNOW_EMAIL="indra@spaceknow.com"
