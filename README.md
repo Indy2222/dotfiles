@@ -20,6 +20,13 @@ directory structure I use:
 mkdir ~/downloads
 ```
 
+other "necessary" software from Ubuntu repository:
+
+```bash
+sudo apt-get install aptitude gcc make
+```
+
+
 Bash
 ----
 
