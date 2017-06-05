@@ -30,6 +30,17 @@ ln -s ~/dotfiles/bash/spaceknow ~/.bash_spaceknow
 source ~/.bashrc
 ```
 
+GnuPG
+-----
+
+Import GNU GPG keyring:
+
+```bash
+cd ~/downloads
+wget https://ftp.gnu.org/gnu/gnu-keyring.gpg
+gpg --import gnu-keyring.gpg
+```
+
 Emacs
 -----
 
