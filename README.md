@@ -21,6 +21,7 @@ Bash
 rm ~/.bashrc # if there is such file
 ln -s ~/dotfiles/bash/bashrc ~/.bashrc
 ln -s ~/dotfiles/bash/spaceknow ~/.bash_spaceknow
+source ~/.bashrc
 ```
 
 Emacs
