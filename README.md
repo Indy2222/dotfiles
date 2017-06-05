@@ -51,6 +51,14 @@ gpg --import gnu-keyring.gpg
 Emacs
 -----
 
+Installation prerequisites(works for v25.2):
+
+```bash
+sudo apt-get install libxml2-dev libtinfo-dev
+```
+
+configuration:
+
 ```bash
 ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
 ```
