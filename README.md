@@ -60,6 +60,7 @@ sudo apt-get install libxml2-dev libtinfo-dev
 configuration:
 
 ```bash
+mkdir ~/.emacs.d
 ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
 ```
 
