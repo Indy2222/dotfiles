@@ -14,6 +14,12 @@ then clone this repository:
 git clone git@github.com:Indy2222/dotfiles ~/dotfiles
 ```
 
+directory structure I use:
+
+```bash
+mkdir ~/downloads
+```
+
 Bash
 ----
 
