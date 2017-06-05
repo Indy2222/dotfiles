@@ -1,6 +1,15 @@
 Setup
 =====
 
+First install and setup Git:
+
+```bash
+sudo apt-get update
+sudo apt-get install git
+```
+
+then clone this repository:
+
 ```bash
 git clone git@github.com:Indy2222/dotfiles ~/dotfiles
 ```
