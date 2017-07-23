@@ -146,6 +146,8 @@
 ;; https://colinxy.github.io/software-installation/2016/09/24/emacs25-easypg-issue.html
 (setf epa-pinentry-mode 'loopback)
 
+(add-to-list 'auto-mode-alist '("\\.geojson\\'" . json-mode))
+
 ;; so emacsclient can be used
 (require 'server)
 (unless (server-running-p)
