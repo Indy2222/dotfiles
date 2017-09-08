@@ -90,3 +90,8 @@ Git
 ln -s ~/dotfiles/git/config ~/.gitconfig
 ln -s ~/dotfiles/git/gitignore ~/.gitignore_global
 ```
+
+Google Cloud SDK
+----------------
+
+Follow instructions from https://cloud.google.com/sdk/docs/quickstart-linux.
