@@ -66,6 +66,8 @@
 ;; enable feature of moving vertically on fixed column
 (put 'set-goal-column 'disabled nil)
 
+(add-hook 'before-save-hook 'copyright-update)
+
 ;; git from Emacs
 (global-set-key (kbd "C-x g") 'magit-status)
 (setq git-commit-summary-max-length 50)

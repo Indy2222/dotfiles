@@ -5,3 +5,5 @@ export PYTHONPATH="$PYTHONPATH:$HOME/backend/python"
 
 export SPACEKNOW_EMAIL="indra@spaceknow.com"
 export SPACEKNOW_PLATFORM="devel"
+
+export ORGANIZATION="SpaceKnow, Inc."
