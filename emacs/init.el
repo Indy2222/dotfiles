@@ -77,6 +77,10 @@
 (add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 79)))
 (elpy-enable)
 
+;; C specific
+(setq-default c-basic-offset 8
+              tab-width 8
+              indent-tabs-mode t)
 
 ;; org mode
 (require 'org)
