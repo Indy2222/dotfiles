@@ -95,3 +95,10 @@ Google Cloud SDK
 ----------------
 
 Follow instructions from https://cloud.google.com/sdk/docs/quickstart-linux.
+
+The Silver Searcher
+-------------------
+
+```bash
+ln -s ~/dotfiles/agignore ~/.agignore
+```
