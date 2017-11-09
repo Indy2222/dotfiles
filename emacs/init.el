@@ -154,6 +154,10 @@
 
 (add-to-list 'auto-mode-alist '("\\.geojson\\'" . json-mode))
 
+;; the silver search (ag.el)
+
+(add-to-list 'ag-arguments "--hidden")
+
 ;; so emacsclient can be used
 (require 'server)
 (unless (server-running-p)
