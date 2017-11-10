@@ -1,0 +1,36 @@
+- shell:
+  - mkdir ~/downloads
+  - sudo apt-get update
+  # essentials
+  - sudo apt-get install -y aptitude gcc make mu4e xclip htop python wget
+
+- shell: # Python
+  - sudo apt-get install -y python-pip
+  # these makes Emacs Elpy more powerful
+  - sudo pip install rope importmagic yapf flake8
+
+- shell: # install emacs 25.2
+  - sudo apt-get install -y libxml2-dev libtinfo-dev
+  - mkdir ~/.emacs.d
+  - mkdir ~/.emacs.d/lisp
+  - wget -P ~/.emacs.d/lisp/ https://raw.githubusercontent.com/emacsmirror/xclip/master/xclip.el
+
+  - wget -P ~/downloads http://mirror.inode.at/gnu/emacs/emacs-25.2.tar.gz
+  - wget -P ~/downloads http://mirror.inode.at/gnu/emacs/emacs-25.2.tar.gz.sig
+  - tar -xvzf ~/downloads/emacs-25.2.tar.gz -C ~/downloads
+  # TODO: find more elegant way to verify emacs signature (it is downloaded
+  # with non-encrypted HTTP). Dotbot proceeds even after non-zero exit codes
+  # with just a warning :-(.
+  - ~/downloads/emacs-25.2/configure --without-x && make -C ~/downloads/emacs-25.2/ && sudo make install -C ~/downloads/emacs-25.2/
+
+- link:
+  ~/.bashrc:
+    force: true
+    path: bash/bashrc
+  ~/.bash_spaceknow: bash/spaceknow
+  ~/.emacs.d/init.el:
+    path: emacs/init.el
+  ~/.gitconfig: git/config
+  ~/.gitignore_global: git/gitignore
+
+- clean: ['~']
