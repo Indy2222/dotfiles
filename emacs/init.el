@@ -153,6 +153,7 @@
 (setf epa-pinentry-mode 'loopback)
 
 (add-to-list 'auto-mode-alist '("\\.geojson\\'" . json-mode))
+(add-to-list 'auto-mode-alist '("\\.pub\\'" . rst-mode))
 
 ;; the silver search (ag.el)
 
