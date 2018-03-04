@@ -108,3 +108,7 @@ fi
 source '/home/indy/google-cloud-sdk/path.bash.inc'
 # The next line enables shell command completion for gcloud.
 source '/home/indy/google-cloud-sdk/completion.bash.inc'
+
+if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+    tmux a -t work || tmux new -s work "emacsclient -c"
+fi
