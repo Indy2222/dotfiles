@@ -68,6 +68,14 @@ cd ~/.emacs.d/lisp/
 wget https://raw.githubusercontent.com/emacsmirror/xclip/master/xclip.el
 ```
 
+start Emacs server on startup:
+
+```bash
+sudo ln -s /home/indy/dotfiles/emacs@.service /etc/systemd/system/emacs@.service
+sudo systemctl enable emacs@indy.service
+sudo systemctl start emacs@indy.service
+```
+
 Python
 ------
 
