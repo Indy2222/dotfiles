@@ -102,6 +102,15 @@ git config --global user.email "indra@spaceknow.com"
 git config --global user.name "Martin Indra"
 ```
 
+Docker
+------
+
+```bash
+sudo apt-get install docker.io
+sudo sudo usermod -G docker $USER
+sudo exec sudo su -l $USER
+```
+
 Google Cloud SDK
 ----------------
 
