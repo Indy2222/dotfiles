@@ -160,6 +160,8 @@
 (require 'ag)
 (add-to-list 'ag-arguments "--hidden")
 
+(setq ispell-dictionary "american")
+
 ;; so emacsclient can be used
 (require 'server)
 (unless (server-running-p)
