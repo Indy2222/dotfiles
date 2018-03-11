@@ -162,6 +162,8 @@
 
 (setq ispell-dictionary "american")
 
+(setq dired-listing-switches "-lh")
+
 ;; so emacsclient can be used
 (require 'server)
 (unless (server-running-p)
