@@ -104,11 +104,6 @@
 
 (setq dired-listing-switches "-lh")
 
-;; so emacsclient can be used
-(require 'server)
-(unless (server-running-p)
-  (server-start))
-
 ;; generated
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
