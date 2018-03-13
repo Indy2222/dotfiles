@@ -25,10 +25,7 @@
 ;; answer y or n instead of full yes or no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; Who use the bar to scroll?
-;; (scroll-bar-mode -1) ;; not needed in text terminals
-;; Don't split window vertically unless its large
-;; I have ~83 lines on 26" at work
+;; don't split window horizontally
 (setq split-height-threshold 100)
 ;; once you learn Emacs this becomes only annoying
 (setq inhibit-startup-message t)
@@ -40,7 +37,6 @@
 (add-hook 'prog-mode-hook 'highlight-trailing-whitespace)
 (add-hook 'text-mode-hook 'highlight-trailing-whitespace)
 
-;; (add-hook 'prog-mode-hook 'linum-mode)
 ;; display column number
 (setq column-number-mode t)
 
@@ -60,8 +56,6 @@
 (require 'autopair)
 (autopair-global-mode 1)
 
-;; save emacs session
-;; (desktop-save-mode 1)
 ;; enable feature of moving vertically on fixed column
 (put 'set-goal-column 'disabled nil)
 
