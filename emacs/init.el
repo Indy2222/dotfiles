@@ -86,40 +86,6 @@
 ;; xclip over x11Forwarding
 (xclip-mode 1)
 
-;; mu4e
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e")
-(require 'mu4e)
-
-;; use mu4e as default emacs email client
-(setq mail-user-agent 'mu4e-user-agent)
-
-(setq mu4e-maildir "~/mail/sk-gmail")
-(setq mu4e-drafts-folder "/[Gmail].Drafts")
-(setq mu4e-sent-folder   "/[Gmail].Sent Mail")
-(setq mu4e-trash-folder  "/[Gmail].Trash")
-
-;; (See the documentation for `mu4e-sent-messages-behavior' if you have
-;; additional non-Gmail addresses and want assign them different
-;; behavior.)
-
-;; something about ourselves
-(setq mu4e-compose-signature
-      (concat "Martin Indra\n" "Chief Software Architect"))
-
-;; don't keep message buffers around
-(setq message-kill-buffer-on-exit t)
-
-;; don't save message to Sent Messages, Gmail/IMAP takes care of this
-(setq mu4e-sent-messages-behavior 'delete)
-;; tell message-mode how to send mail
-(setq message-send-mail-function 'smtpmail-send-it)
-;; if our mail server lives at smtp.example.org; if you have a local
-;; mail-server, simply use 'localhost' here.
-(setq smtpmail-smtp-server "smtp.gmail.com")
-(setq smtpmail-default-smtp-server "smtp.gmail.com")
-(setq smtpmail-stream-type 'starttls)
-(setq smtpmail-smtp-service 587)
-
 ;; GPG interface, work with .gpg files like they are plain text
 (require 'epa-file)
 (epa-file-enable)
