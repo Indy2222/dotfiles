@@ -78,9 +78,7 @@
 (elpy-enable)
 
 ;; C specific
-(setq-default c-basic-offset 8
-              tab-width 8
-              indent-tabs-mode t)
+(setq-default c-basic-offset 8)
 
 ;; org mode
 (require 'org)
