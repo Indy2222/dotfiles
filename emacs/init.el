@@ -90,23 +90,6 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-;; calendar
-;; install czech-holidays package
-(require 'czech-holidays)
-(czech-holidays-add)
-(setq calendar-latitude 50.098723)
-(setq calendar-longitude 14.407082)
-(setq calendar-location-name "Prague, Czech Republic")
-
-(setq calendar-time-zone +60)
-(setq calendar-standard-time-zone-name "CET")
-(setq calendar-daylight-time-zone-name "CEST")
-(setq calendar-daylight-time-offset +60)
-(setq calendar-daylight-savings-starts (calendar-nth-named-day -1 0 3 2017))
-(setq calendar-daylight-savings-ends (calendar-nth-named-day -1 0 10 2017))
-(setq calendar-daylight-savings-starts-time +120) ;; this is local time
-(setq alendar-daylight-savings-ends-time +180)
-
 ;; xclip over x11Forwarding
 (xclip-mode 1)
 
