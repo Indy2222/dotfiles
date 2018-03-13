@@ -108,5 +108,12 @@
 
 (sml/setup)
 
+(require 'google-translate)
+(require 'google-translate-default-ui)
+(setq google-translate-default-source-language "cs")
+(setq google-translate-default-target-language "en")
+(global-set-key "\C-ct" 'google-translate-at-point-reverse)
+(global-set-key "\C-cT" 'google-translate-query-translate)
+
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
