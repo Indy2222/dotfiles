@@ -16,7 +16,7 @@
 (set-keyboard-coding-system 'utf-8)
 
 ;; default looks ugly and is difficult to read sometimes, this is way better
-(load-theme 'material t)
+(load-theme 'zenburn t)
 
 ;; IDO -- for better auto-completition
 (setq ido-enable-flex-matching t)
