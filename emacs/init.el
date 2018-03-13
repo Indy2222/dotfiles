@@ -106,5 +106,7 @@
 
 (setq mm-text-html-renderer (quote gnus-w3m))
 
+(sml/setup)
+
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
