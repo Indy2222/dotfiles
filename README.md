@@ -46,6 +46,14 @@ ln -s ~/dotfiles/zsh/spaceknow ~/.zsh_spaceknow
 sudo chsh -s /usr/bin/zsh indy
 ```
 
+Plugins:
+
+```bash
+cd ~/.oh-my-zsh/custom/plugins
+# syntax highlighting
+git clone https://github.com/zdharma/fast-syntax-highlighting.git
+```
+
 GnuPG
 -----
 
