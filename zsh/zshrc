@@ -61,6 +61,7 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
     git
     fast-syntax-highlighting
+    pass
 )
 
 source $ZSH/oh-my-zsh.sh
