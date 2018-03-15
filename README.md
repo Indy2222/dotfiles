@@ -26,15 +26,24 @@ other "necessary" software from Ubuntu repository:
 sudo apt-get install aptitude gcc make mu4e xclip htop silversearcher-ag
 ```
 
+ZSH
+---
 
-Bash
-----
+On client:
 
 ```bash
-rm ~/.bashrc # if there is such file
-ln -s ~/dotfiles/bash/bashrc ~/.bashrc
-ln -s ~/dotfiles/bash/spaceknow ~/.bash_spaceknow
-source ~/.bashrc
+sudo apt-get install fonts-powerline
+```
+
+On server:
+
+```bash
+sudo apt-get install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+rm ~/.zshrc
+ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
+ln -s ~/dotfiles/zsh/spaceknow ~/.zsh_spaceknow
+sudo chsh -s /usr/bin/zsh indy
 ```
 
 GnuPG
