@@ -58,6 +58,9 @@
 
 ;; enable feature of moving vertically on fixed column
 (put 'set-goal-column 'disabled nil)
+;; enable narrowing
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
 
 (add-hook 'before-save-hook 'copyright-update)
 
