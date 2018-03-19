@@ -32,6 +32,8 @@
 ;; menu is for noobs
 (menu-bar-mode -1)
 
+(setq sentence-end-double-space nil)
+
 ;; to avoid leftover trailing whitespace in sourcodes and text files
 (defun highlight-trailing-whitespace () (setq show-trailing-whitespace t))
 (add-hook 'prog-mode-hook 'highlight-trailing-whitespace)
