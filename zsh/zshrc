@@ -62,6 +62,7 @@ plugins=(
     git
     fast-syntax-highlighting
     pass
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
