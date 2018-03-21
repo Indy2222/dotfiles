@@ -54,6 +54,8 @@
 (setq-default indent-tabs-mode nil)
 (setq tab-width 4)
 
+(setq view-read-only t)
+
 ;; close brackets as soon as you open them
 (require 'autopair)
 (autopair-global-mode 1)
