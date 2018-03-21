@@ -130,7 +130,9 @@
 (global-set-key "\C-ct" 'google-translate-at-point-reverse)
 (global-set-key "\C-cT" 'google-translate-query-translate)
 
-(global-set-key "\M-n" 'avy-goto-char)
+(global-set-key (kbd "M-g w") 'avy-goto-word-1)
+(global-set-key (kbd "M-g e") 'avy-goto-word-0)
+(global-set-key (kbd "M-g f") 'avy-goto-line)
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
