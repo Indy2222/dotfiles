@@ -55,6 +55,7 @@
 (setq tab-width 4)
 
 (setq view-read-only t)
+(setq-default fill-column 79)
 
 ;; close brackets as soon as you open them
 (require 'autopair)
