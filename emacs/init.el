@@ -56,6 +56,7 @@
 
 (setq view-read-only t)
 (setq-default fill-column 79)
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 ;; close brackets as soon as you open them
 (require 'autopair)
