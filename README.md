@@ -46,6 +46,13 @@ ln -s ~/dotfiles/zsh/spaceknow ~/.zsh_spaceknow
 sudo chsh -s /usr/bin/zsh indy
 ```
 
+Theme:
+
+```bash
+mkdir ~/.oh-my-zsh/custom/themes
+ln -s ~/dotfiles/zsh/minimal.zsh-theme ~/.oh-my-zsh/custom/themes/
+```
+
 Plugins:
 
 ```bash
