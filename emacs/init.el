@@ -84,12 +84,12 @@
 
 ;; org mode
 (require 'org)
-(setq org-default-notes-file "~/notes/notes/notes.org")
+(setq org-default-notes-file "~/notes/notes.org")
 
 (setq org-capture-templates
- '(("t" "Todo" entry (file "~/notes/notes/todo.org")
+ '(("t" "Todo" entry (file "~/notes/todo.org")
         "* TODO %?\n\n%a\n%i\n")
-   ("n" "Notes" entry (file "~/notes/notes/notes.org")
+   ("n" "Notes" entry (file "~/notes/notes.org")
         "* %? %U\n\n%a\n%i\n")))
 
 ;; from http://orgmode.org/guide/Activation.html#Activation
