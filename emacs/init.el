@@ -87,10 +87,11 @@
 (setq org-default-notes-file "~/notes/notes.org")
 
 (setq org-capture-templates
- '(("t" "Todo" entry (file "~/notes/todo.org")
-        "* TODO %?\n\n%a\n%i\n")
-   ("n" "Notes" entry (file "~/notes/notes.org")
-        "* %? %U\n\n%a\n%i\n")))
+  '(("t" "Todo" entry (file "~/notes/todo.org") "* TODO %?\n\n%a\n%i\n")
+    ("n" "Notes" entry (file "~/notes/notes.org") "* %? %U\n\n%a\n%i\n")
+    ("j" "Journal" entry
+     (file+datetree (concat "~/diary/" (format-time-string "%Y") ".org.gpg"))
+     "* %?" :empty-lines 1)))
 
 ;; from http://orgmode.org/guide/Activation.html#Activation
 (global-set-key "\C-cl" 'org-store-link)
