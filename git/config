@@ -8,6 +8,7 @@
 [user]
         userConfigOnly = true
 	name = Martin Indra
+	useConfigOnly = true
 	signingkey = DBF2F049FC3BE39D
 [filter "lfs"]
 	process = git-lfs filter-process
