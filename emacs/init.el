@@ -17,11 +17,6 @@
 ;; default looks ugly and is difficult to read sometimes, this is way better
 (load-theme 'zenburn t)
 
-;; IDO -- for better auto-completition
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
-
 ;; answer y or n instead of full yes or no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -134,6 +129,21 @@
 (global-set-key (kbd "M-g w") 'avy-goto-word-1)
 (global-set-key (kbd "M-g e") 'avy-goto-word-0)
 (global-set-key (kbd "M-g f") 'avy-goto-line)
+
+;; Helm configuartion
+(require 'helm)
+(require 'helm-config)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-s") 'helm-occur)
+(global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
+(define-key global-map (kbd "M-g a") 'helm-do-grep-ag)
+(define-key global-map (kbd "M-g g") 'helm-grep-do-git-grep)
+(global-set-key (kbd "C-h SPC") 'helm-all-mark-rings)
+(helm-mode 1)
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
