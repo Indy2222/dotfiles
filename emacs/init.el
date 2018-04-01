@@ -108,9 +108,6 @@
 
 ;; the silver search (ag.el)
 
-(require 'ag)
-(add-to-list 'ag-arguments "--hidden")
-
 (setq ispell-dictionary "american")
 
 (setq dired-listing-switches "-lh")
