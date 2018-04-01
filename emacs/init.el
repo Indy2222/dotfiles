@@ -145,5 +145,8 @@
 (global-set-key (kbd "C-h SPC") 'helm-all-mark-rings)
 (helm-mode 1)
 
+(require 'helm-ls-git)
+(global-set-key (kbd "C-x C-d") 'helm-browse-project)
+
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
