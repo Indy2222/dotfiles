@@ -1,145 +1,212 @@
-(require 'package)
-(setq package-archives
-      '(("gnu" . "http://elpa.gnu.org/packages/")
-	("melpa" . "http://melpa.milkbox.net/packages/")
-	("elpy" . "http://jorgenschaefer.github.io/packages/")))
-(add-to-list 'load-path "~/.emacs.d/lisp/")
-(package-initialize)
-
-(setq user-full-name "Martin Indra")
-(setq user-mail-address "indra@spaceknow.com")
-
+;; Try UTF-8 first when detecting encoding.
 (prefer-coding-system 'utf-8)
+;; Use UTF-8 for storing, input and output.
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
-;; default looks ugly and is difficult to read sometimes, this is way better
-(load-theme 'zenburn t)
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-;; answer y or n instead of full yes or no
-(defalias 'yes-or-no-p 'y-or-n-p)
+(setq
+ package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")
+                    ("elpy" . "http://jorgenschaefer.github.io/packages/"))
+ ;; not useful once you learn Emacs
+ inhibit-startup-message t
+ ;; don't split window vertically
+ split-height-threshold nil
+ ;; display column number in modeline
+ ;; TODO: is this implied with xx?
+ column-number-mode t
+ ;; there may be only one space after a sentence
+ ;; TODO:
+ ;;  * Learn to use double spaces.
+ ;;  * Change this based on buffer.
+ sentence-end-double-space nil
+ ;; display read only buffers in view-mode for better scrolling
+ view-read-only t
+ ;; two is too little, eight is too much
+ tab-width 4
+ user-full-name "Martin Indra"
+ ;; TODO: set-up multiple e-mail addresses in Gnus
+ user-mail-address "indra@spaceknow.com"
+ ispell-dictionary "american"
+ ;; set which ls switches Dired uses
+ ;; -l is mandatory, -h for human readable sizes, -a to see everything
+ dired-listing-switches "-lha"
+ ;; TODO: research this and use the best alternative
+ mm-text-html-renderer 'gnus-w3m
+ ;; I don't want Custom to mess up with this file
+ custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-;; don't split window horizontally
-(setq split-height-threshold 100)
-;; once you learn Emacs this becomes only annoying
-(setq inhibit-startup-message t)
-;; menu is for noobs
-(menu-bar-mode -1)
+(setq-default
+ ;; tabs are cool but non of the project I participate on use them
+ indent-tabs-mode nil
+ ;; Python's PEP8's recommendation but good for all text files
+ ;; 79 columns still leave some space on my laptop even with a large font
+ fill-column 79)
 
-(setq sentence-end-double-space nil)
-
-;; to avoid leftover trailing whitespace in sourcodes and text files
-(defun highlight-trailing-whitespace () (setq show-trailing-whitespace t))
-(add-hook 'prog-mode-hook 'highlight-trailing-whitespace)
-(add-hook 'text-mode-hook 'highlight-trailing-whitespace)
-
-;; display column number
-(setq column-number-mode t)
-
-;; turn on the fly syntax checking
-(global-flycheck-mode)
-(add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
-
-;; highlight matching brackets
-(show-paren-mode 1)
-
-;; indent with four spaces and never use \t
-(setq-default indent-tabs-mode nil)
-(setq tab-width 4)
-
-(setq view-read-only t)
-(setq-default fill-column 79)
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
-
-;; close brackets as soon as you open them
-(require 'autopair)
-(autopair-global-mode 1)
-
-;; enable feature of moving vertically on fixed column
+;; enable fixing vertical movement column
 (put 'set-goal-column 'disabled nil)
 ;; enable narrowing
 (put 'narrow-to-region 'disabled nil)
-(put 'narrow-to-page 'disabled nil)
+(put 'narrow-to-defun 'disabled nil)
+;; enable case-change functions
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
 
+;; answer y or n instead of long yes and no
+(defalias 'yes-or-no-p 'y-or-n-p)
+(menu-bar-mode -1)
+;; highlight matching brackets
+(show-paren-mode 1)
+
+(defun indy-highlight-trailing-whitespace ()
+  "Turn on trailing whitespace highlighting."
+  (setq-local show-trailing-whitespace t))
+
+(add-hook 'prog-mode-hook 'indy-highlight-trailing-whitespace)
+(add-hook 'text-mode-hook 'indy-highlight-trailing-whitespace)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'before-save-hook 'copyright-update)
 
-;; git from Emacs
-(global-set-key (kbd "C-x g") 'magit-status)
-(setq git-commit-summary-max-length 50)
+;; a SpaceKnow hack requires some rst files to end with .pub
+(add-to-list 'auto-mode-alist '("\\.pub\\'" . rst-mode))
+(add-to-list 'auto-mode-alist '("\\(\\/\\.?zshrc\\|\\.zsh\\)\\'" . sh-mode))
 
-;; python specific
-(require 'column-marker)
-(add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 79)))
-(elpy-enable)
+;; Install use-package if not already installed.
+(require 'package)
+(package-initialize)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
-;; C specific
-(setq-default c-basic-offset 8)
+;; Use use-package in the rest of the file for installation and configuration
+;; of all packages.
+(require 'use-package)
 
-;; org mode
-(require 'org)
-(setq org-default-notes-file "~/notes/notes.org")
+;; this one is among the most popular Emacs themes for a reason
+(use-package zenburn-theme
+  :ensure t
+  :demand t
+  :load-path "themes"
+  :config
+  (load-theme 'zenburn t))
 
-(setq org-capture-templates
-  '(("t" "Todo" entry (file "~/notes/todo.org") "* TODO %?\n\n%a\n%i\n")
-    ("n" "Notes" entry (file "~/notes/notes.org") "* %? %U\n\n%a\n%i\n")
-    ("j" "Journal" entry
-     (file+datetree (concat "~/diary/" (format-time-string "%Y") ".org.gpg"))
-     "* %?" :empty-lines 1)))
+(use-package smart-mode-line
+  :ensure t
+  :demand t
+  :config
+  (sml/setup))
 
-;; from http://orgmode.org/guide/Activation.html#Activation
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-cb" 'org-iswitchb)
+;; to share X server clipboard, with X11Forwarding it is possible to do so
+;; even over ssh
+(use-package xclip
+  :demand t
+  :config
+  (xclip-mode 1))
 
-;; xclip over x11Forwarding
-(xclip-mode 1)
+;; spellcheck on the fly
+(use-package avy-flycheck
+  :ensure t
+  :hook
+  ((text-mode . flyspell-mode)
+   (prog-mode . flyspell-prog-mode)))
+
+;; jumping over visible parts of displayed buffers
+(use-package avy
+  :ensure t
+  :bind
+  (("M-g e" . avy-goto-word-0)
+   ("M-g f" . avy-goto-line)))
+
+;; better selection narrowing
+(use-package ivy
+  :ensure t
+  ;; make :after in magit load properly
+  :demand t
+  :bind
+  (("C-s" . swiper)
+   ("M-x" . counsel-M-x)
+   ("C-x C-f" . counsel-find-file)
+   ("M-y" . counsel-yank-pop)
+   ("M-g g" . counsel-git-grep)
+   ("M-g a" . counsel-ag)
+   ("C-c C-r" . ivy-resume))
+  :config
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
+  (ivy-mode 1))
 
 ;; GPG interface, work with .gpg files like they are plain text
-(require 'epa-file)
-(epa-file-enable)
-;; https://colinxy.github.io/software-installation/2016/09/24/emacs25-easypg-issue.html
-(setf epa-pinentry-mode 'loopback)
+(use-package epa-file
+  :config
+  ;; https://colinxy.github.io/software-installation/2016/09/24/emacs25-easypg-issue.html
+  (setf epa-pinentry-mode 'loopback)
+  (epa-file-enable))
 
-(add-to-list 'auto-mode-alist '("\\.geojson\\'" . json-mode))
-(add-to-list 'auto-mode-alist '("\\.pub\\'" . rst-mode))
+(use-package org
+  :ensure t
+  :bind
+  ("C-c l" . org-capture)
+  :config
+  (setq org-default-notes-file "~/notes/notes.org"
+        org-capture-templates
+        '(("t" "Todo" entry
+           (file "~/notes/todo.org")
+           "* TODO %?\n\n%a\n%i\n")
+          ("n" "Notes" entry
+           (file "~/notes/notes.org")
+           "* %? %U\n\n%a\n%i\n")
+          ("j" "Journal" entry
+           (file+datetree (concat "~/diary/" (format-time-string "%Y") ".org.gpg"))
+           "* %?" :empty-lines 1))))
 
-;; the silver search (ag.el)
+(use-package json-mode
+  :ensure t
+  ;; so even .geojson works out
+  :mode "\\.[a-z]*json\\'")
 
-(setq ispell-dictionary "american")
+(use-package yaml-mode
+  :ensure t
+  :mode "\\.ya?ml\\'")
 
-(setq dired-listing-switches "-lh")
+;; python package provides python-mode
+(use-package python
+  :ensure t
+  :mode
+  ("\\.py\\'" . python-mode)
+  :interpreter
+  ("python" . python-mode))
 
-(setq mm-text-html-renderer (quote gnus-w3m))
+;; Python environment
+(use-package elpy
+  :ensure t
+  :after python
+  :config
+  (elpy-enable))
 
-(sml/setup)
+;; awesome Emacs interface to Git porcelain
+(use-package magit
+  :ensure t
+  :after ivy
+  :bind
+  ("C-x g" . magit-status)
+  :config
+  (setq git-commit-summary-max-length 50
+        magit-completing-read-function 'ivy-completing-read))
 
-(require 'google-translate)
-(require 'google-translate-default-ui)
-(setq google-translate-default-source-language "cs")
-(setq google-translate-default-target-language "en")
-(global-set-key "\C-ct" 'google-translate-at-point-reverse)
-(global-set-key "\C-cT" 'google-translate-query-translate)
+(use-package google-translate
+  :ensure t
+  :init
+  (setq google-translate-default-source-language "cs"
+        google-translate-default-target-language "en")
+  :bind
+  ;; C-c t -- from text
+  ;; C-c T -- from mind
+  (("C-c t" . google-translate-at-point-reverse)
+   ("C-c T". google-translate-query-translate))
+  :config
+  (require 'google-translate-default-ui))
 
-(global-set-key (kbd "M-g w") 'avy-goto-word-1)
-(global-set-key (kbd "M-g e") 'avy-goto-word-0)
-(global-set-key (kbd "M-g f") 'avy-goto-line)
-
-;; ivy
-(require 'ivy)
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq ivy-count-format "(%d/%d) ")
-(setq magit-completing-read-function 'ivy-completing-read)
-(global-set-key (kbd "C-s") 'swiper)
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "M-y") 'counsel-yank-pop)
-(global-set-key (kbd "M-g g") 'counsel-git-grep)
-(global-set-key (kbd "M-g a") 'counsel-ag)
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
-
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
+(when (file-exists-p custom-file)
+  (load custom-file))

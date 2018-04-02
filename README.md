@@ -86,7 +86,6 @@ configuration:
 
 ```bash
 mkdir ~/.emacs.d
-touch ~/.emacs.d/custom.el
 ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
 # this is necessary to share clipboard via X11Forwarding
 mkdir ~/.emacs.d/lisp/
