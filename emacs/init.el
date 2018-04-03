@@ -12,8 +12,9 @@
                     ("elpy" . "http://jorgenschaefer.github.io/packages/"))
  ;; not useful once you learn Emacs
  inhibit-startup-message t
- ;; don't split window vertically
- split-height-threshold nil
+ ;; full screen terminal on my laptop has 50 lines (including tmux,
+ ;; mode lines, etc.)
+ split-height-threshold 40
  ;; display column number in modeline
  ;; TODO: is this implied with xx?
  column-number-mode t
@@ -136,6 +137,21 @@
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
   (ivy-mode 1))
+
+(use-package switch-window
+  :ensure t
+  :bind
+  (("C-x o" . switch-window)
+   ("C-x 4 s" . switch-window-then-swap-buffer)
+   ("C-x 4 d" . switch-window-then-dired)
+   ("C-x 4 f" . switch-window-then-find-file)
+   ("C-x 4 m" . switch-window-then-compose-mail)
+   ("C-x 4 r" . switch-window-then-find-file-read-only)
+   ("C-x 4 C-f" . switch-window-then-find-file)
+   ("C-x 4 C-o" . switch-window-then-display-buffer))
+  :config
+  (setq switch-window-shortcut-style 'qwerty)
+  (setq switch-window-shortcut-appearance 'asciiart))
 
 ;; GPG interface, work with .gpg files like they are plain text
 (use-package epa-file
