@@ -147,3 +147,11 @@ The Silver Searcher
 ```bash
 ln -s ~/dotfiles/agignore ~/.agignore
 ```
+
+Rust
+----
+
+```bash
+curl https://sh.rustup.rs -sSf | sh
+rustup component add rustfmt-preview
+```

@@ -201,6 +201,10 @@
   :config
   (elpy-enable))
 
+(use-package rust-mode
+  :ensure t
+  :mode "\\.rs\\'")
+
 ;; awesome Emacs interface to Git porcelain
 (use-package magit
   :ensure t

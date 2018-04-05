@@ -100,6 +100,9 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 export PATH=$HOME/google-cloud-sdk/bin:$PATH
 
+# add Rust to path
+export PATH="$HOME/.cargo/bin:$PATH"
+
 export GPG_TTY=$(tty)
 
 source ~/.zsh_spaceknow
