@@ -6,7 +6,6 @@
 	compactionHeuristic = true
 	indentHeuristic = true
 [user]
-        userConfigOnly = true
 	name = Martin Indra
 	useConfigOnly = true
 	signingkey = DBF2F049FC3BE39D
