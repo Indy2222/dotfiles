@@ -54,6 +54,9 @@
 ;; enable case-change functions
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+;; enable horizontal scrolling
+(put 'scroll-left 'disabled nil)
+(put 'scroll-right 'disabled nil)
 
 ;; answer y or n instead of long yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
