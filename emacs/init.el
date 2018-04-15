@@ -206,7 +206,14 @@
 
 (use-package rust-mode
   :ensure t
-  :mode "\\.rs\\'")
+  :mode "\\.rs\\'"
+  :config
+  (use-package racer
+    :ensure t
+    :demand t
+    :config
+    (add-hook 'rust-mode-hook #'racer-mode)
+    (add-hook 'racer-mode-hook #'eldoc-mode)))
 
 ;; awesome Emacs interface to Git porcelain
 (use-package magit
