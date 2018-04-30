@@ -130,17 +130,16 @@
   ;; make :after in magit load properly
   :demand t
   :bind
-  (("C-s" . swiper)
-   ("M-x" . counsel-M-x)
-   ("C-x C-f" . counsel-find-file)
-   ("M-y" . counsel-yank-pop)
-   ("M-g g" . counsel-git-grep)
-   ("M-g a" . counsel-ag)
-   ("C-c C-r" . ivy-resume))
+  (("C-c C-r" . ivy-resume))
   :config
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
-  (ivy-mode 1))
+  (ivy-mode 1)
+  (use-package counsel
+    :ensure t
+    :bind
+    (("M-g g" . counsel-git-grep)
+     ("M-g a" . counsel-ag))))
 
 (use-package switch-window
   :ensure t
