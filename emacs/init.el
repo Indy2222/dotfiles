@@ -189,6 +189,10 @@
   :ensure t
   :mode "\\.ya?ml\\'")
 
+(use-package markdown-mode
+  :ensure t
+  :mode "\\.md\\'")
+
 ;; python package provides python-mode
 (use-package python
   :ensure t
