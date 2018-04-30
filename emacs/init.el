@@ -8,7 +8,8 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (setq
- package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")
+ package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+		    ("melpa" . "http://melpa.org/packages/")
                     ("elpy" . "http://jorgenschaefer.github.io/packages/"))
  ;; not useful once you learn Emacs
  inhibit-startup-message t
