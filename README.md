@@ -62,17 +62,6 @@ git clone https://github.com/zdharma/fast-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions
 ```
 
-GnuPG
------
-
-Import GNU GPG keyring:
-
-```bash
-cd ~/downloads
-wget https://ftp.gnu.org/gnu/gnu-keyring.gpg
-gpg --import gnu-keyring.gpg
-```
-
 Emacs
 -----
 
