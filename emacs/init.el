@@ -63,6 +63,8 @@
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
+(set-face-attribute 'default nil :font "Ubuntu Mono" :height 160)
+
 ;; answer y or n instead of long yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
 (menu-bar-mode -1)
