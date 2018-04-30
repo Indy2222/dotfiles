@@ -112,8 +112,6 @@ Git
 ```bash
 ln -s ~/dotfiles/git/config ~/.gitconfig
 ln -s ~/dotfiles/git/gitignore ~/.gitignore_global
-git config --global user.email "indra@spaceknow.com"
-git config --global user.name "Martin Indra"
 ```
 
 Docker
