@@ -60,7 +60,7 @@
 (put 'scroll-right 'disabled nil)
 
 (menu-bar-mode -1)
-(toggle-scroll-bar -1)
+(scroll-bar-mode -1)
 (tool-bar-mode -1)
 
 (set-face-attribute 'default nil :font "Ubuntu Mono" :height 160)
