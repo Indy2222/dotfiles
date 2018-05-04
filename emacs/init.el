@@ -213,7 +213,8 @@
     :demand t
     :after python
     :config
-    (elpy-enable)))
+    (elpy-enable)
+    (define-key python-mode-map (kbd "M-.") #'elpy-goto-definition)))
 
 (use-package rust-mode
   :ensure t
