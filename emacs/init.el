@@ -205,14 +205,15 @@
   :mode
   ("\\.py\\'" . python-mode)
   :interpreter
-  ("python" . python-mode))
-
-;; Python environment
-(use-package elpy
-  :ensure t
-  :after python
+  ("python" . python-mode)
   :config
-  (elpy-enable))
+  ;; Python environment
+  (use-package elpy
+    :ensure t
+    :demand t
+    :after python
+    :config
+    (elpy-enable)))
 
 (use-package rust-mode
   :ensure t
