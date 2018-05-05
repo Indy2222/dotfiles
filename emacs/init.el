@@ -28,15 +28,10 @@
  view-read-only t
  ;; two is too little, eight is too much
  tab-width 4
- user-full-name "Martin Indra"
- ;; TODO: set-up multiple e-mail addresses in Gnus
- user-mail-address "indra@spaceknow.com"
  ispell-dictionary "american"
  ;; set which ls switches Dired uses
  ;; -l is mandatory, -h for human readable sizes, -a to see everything
  dired-listing-switches "-lha"
- ;; TODO: research this and use the best alternative
- mm-text-html-renderer 'gnus-w3m
  ;; I don't want Custom to mess up with this file
  custom-file (expand-file-name "custom.el" user-emacs-directory))
 
