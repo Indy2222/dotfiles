@@ -109,13 +109,6 @@
   :config
   (sml/setup))
 
-;; to share X server clipboard, with X11Forwarding it is possible to do so
-;; even over ssh
-(use-package xclip
-  :demand t
-  :config
-  (xclip-mode 1))
-
 ;; spellcheck on the fly
 (use-package avy-flycheck
   :ensure t
