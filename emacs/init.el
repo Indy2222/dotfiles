@@ -224,7 +224,9 @@
   ("C-x g" . magit-status)
   :config
   (setq git-commit-summary-max-length 50
-        magit-completing-read-function 'ivy-completing-read))
+        magit-completing-read-function 'ivy-completing-read)
+  (add-hook 'git-commit-mode-hook
+            (lambda () (setq-local fill-column 72))))
 
 (use-package google-translate
   :ensure t
