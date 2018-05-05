@@ -140,5 +140,6 @@ Rust
 
 ```bash
 curl https://sh.rustup.rs -sSf | sh
-rustup component add rustfmt-preview
+cargo install racer
+rustup component add rust-src rustfmt-preview
 ```

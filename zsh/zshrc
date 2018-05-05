@@ -103,6 +103,9 @@ source <(kubectl completion zsh)
 
 # add Rust to path
 export PATH="$HOME/.cargo/bin:$PATH"
+# Needed for Rust Racer, see
+# https://github.com/racer-rust/racer/blob/master/README.md#configuration
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 export GPG_TTY=$(tty)
 
