@@ -68,7 +68,8 @@ Emacs
 Installation prerequisites(works for v25.2):
 
 ```bash
-sudo apt-get install libxml2-dev libtinfo-dev
+sudo apt-get install libxml2-dev libtinfo-dev libjpeg-dev libtiff-dev \
+    libgif-dev libpng-dev gnutls-bin
 ```
 
 configuration:
