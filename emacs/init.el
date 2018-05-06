@@ -66,7 +66,7 @@
 
 ;; answer y or n instead of long yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
-(menu-bar-mode -1)
+
 ;; highlight matching brackets
 (show-paren-mode 1)
 
