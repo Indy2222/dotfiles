@@ -262,5 +262,12 @@
   (setq wttrin-default-cities '("Prague")
         wttrin-default-accept-language '("Accept-Language" . "en-US")))
 
+(use-package keyfreq
+  :ensure t
+  :demand t
+  :config
+  (keyfreq-mode 1)
+  (keyfreq-autosave-mode 1))
+
 (when (file-exists-p custom-file)
   (load custom-file))
