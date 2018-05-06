@@ -44,6 +44,8 @@
  ;; 79 columns still leave some space on my laptop even with a large font
  fill-column 79)
 
+(global-set-key "\M- " 'hippie-expand)
+
 ;; enable fixing vertical movement column
 (put 'set-goal-column 'disabled nil)
 ;; enable narrowing
