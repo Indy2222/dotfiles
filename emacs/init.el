@@ -245,5 +245,10 @@
   :config
   (require 'google-translate-default-ui))
 
+(use-package google-this
+  :ensure t
+  :config
+  (google-this-mode 1))
+
 (when (file-exists-p custom-file)
   (load custom-file))
