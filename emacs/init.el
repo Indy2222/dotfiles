@@ -207,7 +207,12 @@
     :after python
     :config
     (elpy-enable)
-    (define-key python-mode-map (kbd "M-.") #'elpy-goto-definition)))
+    (define-key python-mode-map (kbd "M-.") #'elpy-goto-definition))
+  (use-package sphinx-doc
+    :ensure t
+    :demand t
+    :config
+    (add-hook 'python-mode-hook (lambda () (sphinx-doc-mode t)))))
 
 (use-package rust-mode
   :ensure t
