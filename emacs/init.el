@@ -63,6 +63,9 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
+(display-battery-mode 1)
+(setq sml/battery-format "%t")
+
 (set-face-attribute 'default nil :font "Ubuntu Mono" :height 160)
 
 ;; answer y or n instead of long yes and no
