@@ -140,3 +140,10 @@ curl https://sh.rustup.rs -sSf | sh
 cargo install racer
 rustup component add rust-src rustfmt-preview
 ```
+
+GPG
+---
+
+```bash
+ln -s ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+```
