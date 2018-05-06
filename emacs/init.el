@@ -250,5 +250,11 @@
   :config
   (google-this-mode 1))
 
+(use-package wttrin
+  :ensure t
+  :config
+  (setq wttrin-default-cities '("Prague")
+        wttrin-default-accept-language '("Accept-Language" . "en-US")))
+
 (when (file-exists-p custom-file)
   (load custom-file))
