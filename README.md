@@ -93,7 +93,7 @@ Python
 ```bash
 sudo apt-get install python-pip
 # these makes Emacs Elpy more powerful
-sudo pip install rope importmagic yapf flake8
+sudo pip install rope importmagic yapf flake8 isort
 ```
 
 Tmux

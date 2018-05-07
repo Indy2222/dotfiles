@@ -215,7 +215,12 @@
     :ensure t
     :demand t
     :config
-    (add-hook 'python-mode-hook (lambda () (sphinx-doc-mode t)))))
+    (add-hook 'python-mode-hook (lambda () (sphinx-doc-mode t))))
+  (use-package py-isort
+    :ensure t
+    :demand t
+    :config
+    (add-hook 'before-save-hook 'py-isort-before-save)))
 
 (use-package rust-mode
   :ensure t
