@@ -42,7 +42,9 @@
  indent-tabs-mode nil
  ;; Python's PEP8's recommendation but good for all text files
  ;; 79 columns still leave some space on my laptop even with a large font
- fill-column 79)
+ fill-column 79
+ ;; Truncate lines instead of wrapping them.
+ truncate-lines t)
 
 (global-set-key "\M- " 'hippie-expand)
 
