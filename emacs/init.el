@@ -144,6 +144,12 @@
     (("M-g g" . counsel-git-grep)
      ("M-g a" . counsel-ag))))
 
+(use-package counsel-projectile
+  :ensure t
+  :demand t
+  :config
+  (counsel-projectile-mode))
+
 (use-package switch-window
   :ensure t
   :bind
