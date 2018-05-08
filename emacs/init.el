@@ -110,7 +110,8 @@
   :ensure t
   :demand t
   :config
-  (sml/setup))
+  (sml/setup)
+  (setq sml/hidden-modes ".*"))
 
 ;; spellcheck on the fly
 (use-package avy-flycheck
