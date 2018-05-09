@@ -279,5 +279,16 @@
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1))
 
+(use-package dashboard
+  :ensure t
+  :demand t
+  :config
+  (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
+        dashboard-banner-logo-title "Let the hacking begin!"
+        dashboard-items '((recents . 10)
+                          (agenda . 10)
+                          (projects . 3)))
+  (dashboard-setup-startup-hook))
+
 (when (file-exists-p custom-file)
   (load custom-file))
