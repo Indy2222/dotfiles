@@ -167,13 +167,6 @@
   (setq switch-window-shortcut-style 'qwerty)
   (setq switch-window-shortcut-appearance 'asciiart))
 
-;; GPG interface, work with .gpg files like they are plain text
-(use-package epa-file
-  :config
-  ;; https://colinxy.github.io/software-installation/2016/09/24/emacs25-easypg-issue.html
-  (setf epa-pinentry-mode 'loopback)
-  (epa-file-enable))
-
 (use-package org
   :ensure t
   :bind
