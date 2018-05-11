@@ -23,7 +23,8 @@ mkdir ~/downloads
 other "necessary" software from Ubuntu repository:
 
 ```bash
-sudo apt-get install aptitude gcc make mu4e xclip htop silversearcher-ag curl
+sudo apt-get install aptitude gcc make mu4e xclip htop silversearcher-ag \
+    curl qalculate
 ```
 
 ZSH
