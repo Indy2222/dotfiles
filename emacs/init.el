@@ -8,9 +8,9 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (setq
- package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-		    ("melpa" . "http://melpa.org/packages/")
-                    ("elpy" . "http://jorgenschaefer.github.io/packages/"))
+ package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+		    ("melpa" . "https://melpa.org/packages/")
+                    ("elpy" . "https://jorgenschaefer.github.io/packages/"))
  ;; not useful once you learn Emacs
  inhibit-startup-message t
  ;; full screen terminal on my laptop has 50 lines (including tmux,
