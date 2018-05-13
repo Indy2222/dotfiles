@@ -171,9 +171,11 @@
 (use-package org
   :ensure t
   :bind
-  ("C-c l" . org-capture)
+  (("C-c l" . org-capture)
+   ("C-c a" . org-agenda))
   :config
   (setq org-default-notes-file "~/notes/notes.org"
+        org-agenda-files '("~/notes/todo.org")
         org-capture-templates
         '(("t" "Todo" entry
            (file "~/notes/todo.org")
