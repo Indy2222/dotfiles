@@ -24,7 +24,7 @@ other "necessary" software from Ubuntu repository:
 
 ```bash
 sudo apt-get install aptitude gcc make mu4e xclip htop silversearcher-ag \
-    curl qalculate
+    curl qalculate jq
 ```
 
 ZSH
