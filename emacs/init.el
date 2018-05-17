@@ -201,6 +201,14 @@
   :ensure t
   :mode "\\.md\\'")
 
+(defun indy/py-isort ()
+  "Sort Python imports only on desired files."
+  (interactive)
+  (when (and buffer-file-name
+             (not (string-match "backend/\\(scripts\\|devtools\\)"
+                                buffer-file-name)))
+      (py-isort-before-save)))
+
 ;; python package provides python-mode
 (use-package python
   :ensure t
@@ -226,7 +234,7 @@
     :ensure t
     :demand t
     :config
-    (add-hook 'before-save-hook 'py-isort-before-save)))
+    (add-hook 'before-save-hook 'indy/py-isort)))
 
 (use-package rust-mode
   :ensure t
