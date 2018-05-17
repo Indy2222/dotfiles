@@ -9,7 +9,7 @@
 
 (setq
  package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-		    ("melpa" . "https://melpa.org/packages/")
+                    ("melpa" . "https://melpa.org/packages/")
                     ("elpy" . "https://jorgenschaefer.github.io/packages/"))
  ;; not useful once you learn Emacs
  inhibit-startup-message t
