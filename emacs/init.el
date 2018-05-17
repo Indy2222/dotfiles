@@ -36,7 +36,8 @@
  custom-file (expand-file-name "custom.el" user-emacs-directory)
  ;; Ask when new line is missing at the end of file
  require-final-newline t
- dired-dwim-target t)
+ dired-dwim-target t
+ tls-checktrust t)
 
 (setq-default
  ;; tabs are cool but non of the project I participate on use them
