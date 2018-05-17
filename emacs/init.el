@@ -294,5 +294,11 @@
                           (projects . 3)))
   (dashboard-setup-startup-hook))
 
+(use-package which-key
+  :ensure t
+  :demand t
+  :config
+  (which-key-mode))
+
 (when (file-exists-p custom-file)
   (load custom-file))
