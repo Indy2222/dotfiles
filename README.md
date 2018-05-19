@@ -83,9 +83,11 @@ ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
 start Emacs server on startup:
 
 ```bash
-sudo ln -s /home/indy/dotfiles/emacs@.service /etc/systemd/system/emacs@.service
-sudo systemctl enable emacs@indy.service
-sudo systemctl start emacs@indy.service
+mkdir -p ~/.config/systemd/user/
+ln -s /home/indy/dotfiles/emacs.service ~/.config/systemd/user/emacs.service
+systemctl --user daemon-reload
+systemctl --user enable emacs.service
+systemctl --user start emacs.service
 ```
 
 Python
