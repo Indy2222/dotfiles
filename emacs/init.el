@@ -103,12 +103,12 @@
 (require 'use-package)
 
 ;; this one is among the most popular Emacs themes for a reason
-(use-package zenburn-theme
+(use-package monokai-theme
   :ensure t
   :demand t
   :load-path "themes"
   :config
-  (load-theme 'zenburn t))
+  (load-theme 'monokai t))
 
 (use-package smart-mode-line
   :ensure t
