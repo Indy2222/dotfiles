@@ -62,6 +62,7 @@
 (put 'scroll-left 'disabled nil)
 (put 'scroll-right 'disabled nil)
 
+(delete-selection-mode t)
 (savehist-mode)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
