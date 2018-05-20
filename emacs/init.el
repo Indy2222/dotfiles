@@ -70,7 +70,7 @@
 (display-battery-mode 1)
 (setq sml/battery-format "%t")
 
-(set-face-attribute 'default nil :font "Ubuntu Mono" :height 160)
+(set-face-attribute 'default nil :font "Ubuntu Mono" :height 165)
 
 ;; answer y or n instead of long yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
