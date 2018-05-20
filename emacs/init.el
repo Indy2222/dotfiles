@@ -308,15 +308,5 @@
   :config
   (which-key-mode))
 
-(use-package git-gutter
-  :ensure t
-  :demand t
-  :config
-  (global-git-gutter-mode +1)
-  (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
-  (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
-  (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
-  (global-set-key (kbd "C-x v SPC") #'git-gutter:mark-hunk))
-
 (when (file-exists-p custom-file)
   (load custom-file))
