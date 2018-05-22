@@ -109,6 +109,7 @@
   :demand t
   :load-path "themes"
   :config
+  (setq sml/no-confirm-load-theme t)
   (load-theme 'monokai t))
 
 (use-package smart-mode-line
