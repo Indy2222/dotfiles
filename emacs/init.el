@@ -37,7 +37,8 @@
  ;; Ask when new line is missing at the end of file
  require-final-newline t
  dired-dwim-target t
- tls-checktrust t)
+ tls-checktrust t
+ auto-hscroll-mode 'current-line)
 
 (setq-default
  ;; tabs are cool but non of the project I participate on use them
