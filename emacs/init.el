@@ -38,7 +38,8 @@
  require-final-newline t
  dired-dwim-target t
  tls-checktrust t
- auto-hscroll-mode 'current-line)
+ auto-hscroll-mode 'current-line
+ elpy-rpc-python-command "python3")
 
 (setq-default
  ;; tabs are cool but non of the project I participate on use them
