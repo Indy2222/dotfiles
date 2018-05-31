@@ -157,6 +157,10 @@
 (use-package counsel-projectile
   :ensure t
   :demand t
+  :bind
+  (("s-j" . counsel-projectile-find-file)
+   ("s-k" . projectile-toggle-between-implementation-and-test)
+   ("s-u" . projectile-find-implementation-or-test-other-window))
   :config
   (counsel-projectile-mode))
 
