@@ -15,7 +15,7 @@
  inhibit-startup-message t
  ;; full screen terminal on my laptop has 50 lines (including tmux,
  ;; mode lines, etc.)
- split-height-threshold 60
+ split-height-threshold 100
  ;; display column number in modeline
  ;; TODO: is this implied with xx?
  column-number-mode t
