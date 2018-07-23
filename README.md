@@ -150,3 +150,15 @@ GPG
 ```bash
 ln -s ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ```
+
+Firefox
+--------
+
+Install [Tree Style Taps](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/).
+
+
+```bash
+mkdir ~/.mozilla/firefox/<profile-name>.default/chrome
+ln -s ~/dotfiles/firefox/userChrome.css \
+    ~/.mozilla/firefox/<profile-name>.default/chrome/userChrome.css
+```
