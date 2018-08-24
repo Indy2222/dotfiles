@@ -265,6 +265,11 @@
   :bind
   ("C-x g" . magit-status)
   :config
+  (defun indy/magit-push-to-gerrit ()
+    (interactive)
+    (magit-git-command-topdir "push gerrit HEAD:refs/for/master"))
+  (magit-define-popup-action
+    'magit-push-popup ?m "Push to Gerrit" 'indy/magit-push-to-gerrit)
   (setq git-commit-summary-max-length 50
         magit-completing-read-function 'ivy-completing-read)
   (add-hook 'git-commit-mode-hook
