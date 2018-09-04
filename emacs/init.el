@@ -73,8 +73,12 @@
 (display-battery-mode 1)
 (setq sml/battery-format "%t")
 
-(defun indy/4k () (interactive) (set-face-attribute 'default nil :font "Ubuntu Mono" :height 225))
-(defun indy/2k () (interactive) (set-face-attribute 'default nil :font "Ubuntu Mono" :height 165))
+(defun indy/2k-scaled ()
+  (interactive)
+  (set-face-attribute 'default nil :font "Ubuntu Mono" :height 140))
+(defun indy/2k ()
+  (interactive)
+  (set-face-attribute 'default nil :font "Ubuntu Mono" :height 165))
 (indy/2k)
 
 ;; answer y or n instead of long yes and no
