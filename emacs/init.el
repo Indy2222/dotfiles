@@ -335,5 +335,9 @@
   :ensure t
   :demand t)
 
+(use-package csv-mode
+  :ensure t
+  :demand t)
+
 (when (file-exists-p custom-file)
   (load custom-file))
