@@ -340,5 +340,9 @@
   :ensure t
   :demand t)
 
+(use-package ess
+  :ensure t
+  :demand t)
+
 (when (file-exists-p custom-file)
   (load custom-file))
