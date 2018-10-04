@@ -35,7 +35,8 @@
  ;; I don't want Custom to mess up with this file
  custom-file (expand-file-name "custom.el" user-emacs-directory)
  ;; Ask when new line is missing at the end of file
- require-final-newline t
+ require-final-newline "ask"
+ mode-require-final-newline "ask"
  dired-dwim-target t
  tls-checktrust t
  auto-hscroll-mode 'current-line
