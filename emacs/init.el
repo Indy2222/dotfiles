@@ -342,7 +342,9 @@
 
 (use-package ess
   :ensure t
-  :demand t)
+  :demand t
+  :config
+  (setq ess-tab-complete-in-script t))
 
 (use-package jdee
   :ensure t
