@@ -350,5 +350,12 @@
   :ensure t
   :demand t)
 
+(use-package guess-language
+  :ensure t
+  :demand t
+  :config
+  (setq guess-language-languages '(en cs))
+  (add-hook 'text-mode-hook (lambda () (guess-language-mode 1))))
+
 (when (file-exists-p custom-file)
   (load custom-file))
