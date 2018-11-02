@@ -357,5 +357,9 @@
   (setq guess-language-languages '(en cs))
   (add-hook 'text-mode-hook (lambda () (guess-language-mode 1))))
 
+(use-package dockerfile-mode
+  :ensure t
+  :demand t)
+
 (when (file-exists-p custom-file)
   (load custom-file))
