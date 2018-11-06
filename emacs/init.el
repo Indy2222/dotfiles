@@ -220,7 +220,7 @@
   "Sort Python imports only on desired files."
   (interactive)
   (when (and buffer-file-name
-             (not (string-match "backend/\\(scripts\\|devtools\\)"
+             (not (string-match "backend/\\(scripts\\|devtools\\|deliveries\\)"
                                 buffer-file-name)))
       (py-isort-before-save)))
 
