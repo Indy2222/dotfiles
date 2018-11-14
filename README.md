@@ -162,3 +162,16 @@ mkdir ~/.mozilla/firefox/<profile-name>.default/chrome
 ln -s ~/dotfiles/firefox/userChrome.css \
     ~/.mozilla/firefox/<profile-name>.default/chrome/userChrome.css
 ```
+
+Mutt
+----
+
+Create GPG encrypted file ``~/.muttsecrets.gpg`` with ``$imap_pass`` and
+``$smtp_pass`` variables.
+
+```bash
+mkdir ~/.mutt
+mkdir ~/.mutt/headercache
+touch ~/.mutt/aliases
+ln -s ~/dotfiles/muttrc ~/.muttrc
+```
