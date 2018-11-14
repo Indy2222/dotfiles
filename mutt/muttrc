@@ -1,22 +1,11 @@
 set config_charset="utf-8"
 set charset="utf-8"
 
-# Load encrypted configuration (i.e. passwords and similar).
-source "gpg -d ~/.muttsecrets.gpg |"
-
 set alias_file=~/.mutt/aliases
 source $alias_file
 
 set realname="Martin Indra"
-set from="indra@spaceknow.com"
 
-# Set-up SpaceKnow GMail.
-set folder="imaps://imap.gmail.com/"
-set spoolfile="+INBOX"
-set record="+[Gmail]/Sent Mail"
-set postponed="+[Gmail]/Drafts"
-set imap_user="indra@spaceknow.com"
-set smtp_url="smtps://indra@spaceknow.com@smtp.gmail.com"
 set imap_keepalive=60
 set imap_passive=no
 set imap_check_subscribed=yes
@@ -34,7 +23,6 @@ set ssl_use_tlsv1_2=yes
 set ssl_verify_dates=yes
 set ssl_verify_host=yes
 
-set header_cache="~/.mutt/headercache"
 set reverse_name=yes
 set sort=threads
 set date_format="%d %b %H:%M"
@@ -45,3 +33,15 @@ set pager_index_lines=4
 set editor="emacsclient -t"
 
 message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
+
+bind index G imap-fetch-mail
+
+folder-hook "account.mgn" "source ~/.mutt/mgn"
+folder-hook "account.sk" "source ~/.mutt/sk"
+
+# default account
+source ~/.mutt/mgn
+
+# macros for switching accounts
+macro index <f2> "<sync-mailbox><enter-command>source ~/.mutt/mgn<enter><change-folder>!<enter>"
+macro index <f3> "<sync-mailbox><enter-command>source ~/.mutt/sk<enter><change-folder>!<enter>"

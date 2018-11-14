@@ -1,0 +1,14 @@
+# Load encrypted configuration (i.e. passwords and similar).
+source "gpg -d ~/.mutt/sk.gpg |"
+
+set from="indra@spaceknow.com"
+
+# Set-up SpaceKnow GMail.
+set folder="imaps://imap.gmail.com/"
+set spoolfile="+INBOX"
+set record="+[Gmail]/Sent Mail"
+set postponed="+[Gmail]/Drafts"
+set imap_user="indra@spaceknow.com"
+set smtp_url="smtps://indra@spaceknow.com@smtp.gmail.com"
+set header_cache="~/.mutt/sk_header_cache"
+set signature="~/.mutt/sk_signature.txt"

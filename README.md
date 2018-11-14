@@ -166,12 +166,19 @@ ln -s ~/dotfiles/firefox/userChrome.css \
 Mutt
 ----
 
-Create GPG encrypted file ``~/.muttsecrets.gpg`` with ``$imap_pass`` and
-``$smtp_pass`` variables.
+Create GPG encrypted file `~/.mutt/sk.gpg` and `~/.mutt/mgn.gpg` with
+`$imap_pass` and `$smtp_pass` variables.
 
 ```bash
+ln -s ~/dotfiles/mutt/muttrc ~/.muttrc
 mkdir ~/.mutt
-mkdir ~/.mutt/headercache
+ln -s ~/dotfiles/mutt/sk ~/.mutt/sk
+ln -s ~/dotfiles/mutt/mgn ~/.mutt/mgn
+ln -s ~/dotfiles/mutt/sk_signature.txt ~/.mutt/sk_signature.txt
+ln -s ~/dotfiles/mutt/mgn_signature.txt ~/.mutt/mgn_signature.txt
+mkdir ~/.mutt/sk_header_cache
+mkdir ~/.mutt/mgn_header_cache
 touch ~/.mutt/aliases
-ln -s ~/dotfiles/muttrc ~/.muttrc
+mkdir ~/.mutt/account.sk
+mkdir ~/.mutt/account.mgn
 ```
