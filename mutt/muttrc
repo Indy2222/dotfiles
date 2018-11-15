@@ -1,5 +1,8 @@
 set config_charset="utf-8"
 set charset="utf-8"
+set send_charset="utf-8"
+
+source ~/.mutt/theme
 
 set alias_file=~/.mutt/aliases
 source $alias_file
@@ -15,7 +18,6 @@ set mail_check=60
 # SSL hardening
 set ssl_force_tls=yes
 set ssl_starttls=yes
-#set ssl_use_sslv2=no
 set ssl_use_sslv3=no
 set ssl_use_tlsv1=no
 set ssl_use_tlsv1_1=no
@@ -23,14 +25,25 @@ set ssl_use_tlsv1_2=yes
 set ssl_verify_dates=yes
 set ssl_verify_host=yes
 
+set crypt_use_gpgme=yes
+
 set reverse_name=yes
 set sort=threads
+set sort_aux="last-date-received"
 set date_format="%d %b %H:%M"
 set index_format="%Z %D %-15.15L (%?l?%4l&%4c?) %s"
 set meta_key=yes
 set pager_context=3
 set pager_index_lines=4
 set editor="emacsclient -t"
+set help=no
+
+set sidebar_width=30
+set sidebar_visible=yes
+set sidebar_format="%B%*  %N"
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Cl sidebar-open
 
 message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
 

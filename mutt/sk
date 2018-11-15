@@ -12,3 +12,6 @@ set imap_user="indra@spaceknow.com"
 set smtp_url="smtps://indra@spaceknow.com@smtp.gmail.com"
 set header_cache="~/.mutt/sk_header_cache"
 set signature="~/.mutt/sk_signature.txt"
+
+unmailboxes *
+mailboxes =INBOX =Alerts =Gerrit

@@ -12,3 +12,6 @@ set imap_user="martin.indra@mgn.cz"
 set smtp_url="smtps://martin.indra@mgn.cz@smtp.gmail.com"
 set header_cache="~/.mutt/mgn_header_cache"
 set signature="~/.mutt/mgn_signature.txt"
+
+unmailboxes *
+mailboxes =INBOX

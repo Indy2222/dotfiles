@@ -171,7 +171,9 @@ Create GPG encrypted file `~/.mutt/sk.gpg` and `~/.mutt/mgn.gpg` with
 
 ```bash
 sudo pip3 install urlscan
-sudo apt-get install mutt
+git clone https://github.com/neomutt/neomutt
+cd neomutt
+./configure --disable-doc --ssl --gnutls --gpgme --lmdb --gpgme
 
 ln -s ~/dotfiles/mutt/muttrc ~/.muttrc
 mkdir ~/.mutt
@@ -179,6 +181,7 @@ ln -s ~/dotfiles/mutt/sk ~/.mutt/sk
 ln -s ~/dotfiles/mutt/mgn ~/.mutt/mgn
 ln -s ~/dotfiles/mutt/sk_signature.txt ~/.mutt/sk_signature.txt
 ln -s ~/dotfiles/mutt/mgn_signature.txt ~/.mutt/mgn_signature.txt
+ln -s ~/dotfiles/mutt/theme ~/.mutt/theme
 mkdir ~/.mutt/sk_header_cache
 mkdir ~/.mutt/mgn_header_cache
 touch ~/.mutt/aliases
