@@ -170,6 +170,9 @@ Create GPG encrypted file `~/.mutt/sk.gpg` and `~/.mutt/mgn.gpg` with
 `$imap_pass` and `$smtp_pass` variables.
 
 ```bash
+sudo pip3 install urlscan
+sudo apt-get install mutt
+
 ln -s ~/dotfiles/mutt/muttrc ~/.muttrc
 mkdir ~/.mutt
 ln -s ~/dotfiles/mutt/sk ~/.mutt/sk
