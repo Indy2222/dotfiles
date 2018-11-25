@@ -1,5 +1,5 @@
-# Load encrypted configuration (i.e. passwords and similar).
-source "gpg -d ~/.mutt/sk.gpg |"
+set imap_pass=`pass show sk/mail-pwd | head -n 1 | tr -d '\n'`
+set smtp_pass=$imap_pass
 
 set from="indra@spaceknow.com"
 

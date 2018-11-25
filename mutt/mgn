@@ -1,5 +1,5 @@
-# Load encrypted configuration (i.e. passwords and similar).
-source "gpg -d ~/.mutt/mgn.gpg |"
+set imap_pass=`pass show my/mgn-mail-pwd | head -n 1 | tr -d '\n'`
+set smtp_pass=$imap_pass
 
 set from="martin.indra@mgn.cz"
 
