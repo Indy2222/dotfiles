@@ -179,6 +179,7 @@ ln -s ~/dotfiles/mutt/muttrc ~/.muttrc
 mkdir ~/.mutt
 ln -s ~/dotfiles/mutt/sk ~/.mutt/sk
 ln -s ~/dotfiles/mutt/mgn ~/.mutt/mgn
+ln -s ~/dotfiles/mutt/fel ~/.mutt/fel
 ln -s ~/dotfiles/mutt/sk_signature.txt ~/.mutt/sk_signature.txt
 ln -s ~/dotfiles/mutt/mgn_signature.txt ~/.mutt/mgn_signature.txt
 ln -s ~/dotfiles/mutt/theme ~/.mutt/theme
