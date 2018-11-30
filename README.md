@@ -24,7 +24,7 @@ other "necessary" software from Ubuntu repository:
 
 ```bash
 sudo apt-get install aptitude gcc make mu4e xclip htop silversearcher-ag \
-    curl qalculate jq
+    curl qalculate jq w3m
 ```
 
 ZSH
@@ -177,6 +177,7 @@ cd neomutt
 
 ln -s ~/dotfiles/mutt/muttrc ~/.muttrc
 mkdir ~/.mutt
+ln -s ~/dotfiles/mutt/mailcap ~/.mutt/mailcap
 ln -s ~/dotfiles/mutt/sk ~/.mutt/sk
 ln -s ~/dotfiles/mutt/mgn ~/.mutt/mgn
 ln -s ~/dotfiles/mutt/fel ~/.mutt/fel
