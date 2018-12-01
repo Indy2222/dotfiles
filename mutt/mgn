@@ -1,18 +1,14 @@
-set imap_pass=`pass show my/mgn-mail-pwd | head -n 1 | tr -d '\n'`
-set smtp_pass=$imap_pass
-
-set from="martin.indra@mgn.cz"
-
-# Set-up MoonGames GMail.
-set folder="imaps://imap.gmail.com/"
-set spoolfile="+INBOX"
-set record="+[Gmail]/Sent Mail"
-set postponed="+[Gmail]/Drafts"
-set imap_user="martin.indra@mgn.cz"
+set smtp_pass=`pass show my/mgn-mail-pwd | head -n 1 | tr -d '\n'`
 set smtp_url="smtps://martin.indra@mgn.cz@smtp.gmail.com:465"
 set smtp_authenticators="plain"
+
+set from="martin.indra@mgn.cz"
+set folder="~/mail/mgn"
+set spoolfile="+INBOX"
+set record="+Sent
+set postponed="+Drafts"
 set header_cache="~/.mutt/mgn_header_cache"
 set signature="~/.mutt/mgn_signature.txt"
 
 unmailboxes *
-mailboxes =INBOX
+mailboxes =INBOX =Sent =Drafts

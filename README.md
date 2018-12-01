@@ -24,7 +24,7 @@ other "necessary" software from Ubuntu repository:
 
 ```bash
 sudo apt-get install aptitude gcc make mu4e xclip htop silversearcher-ag \
-    curl qalculate jq w3m
+    curl qalculate jq w3m offlineimap
 ```
 
 ZSH
@@ -161,6 +161,17 @@ Install [Tree Style Taps](https://addons.mozilla.org/en-US/firefox/addon/tree-st
 mkdir ~/.mozilla/firefox/<profile-name>.default/chrome
 ln -s ~/dotfiles/firefox/userChrome.css \
     ~/.mozilla/firefox/<profile-name>.default/chrome/userChrome.css
+```
+
+Offlineimap
+-----------
+
+```bash
+ln -s ~/dotfiles/offlineimaprc ~/.offlineimaprc
+mkdir ~/mail
+mkdir ~/mail/mgn
+mkdir ~/mail/sk
+mkdir ~/mail/fel
 ```
 
 Mutt

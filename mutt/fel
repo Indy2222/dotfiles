@@ -1,16 +1,15 @@
-set imap_pass=`pass show my/fel | head -n 1 | tr -d '\n'`
-set smtp_pass=$imap_pass
+set smtp_pass=`pass show my/fel | head -n 1 | tr -d '\n'`
+set smtp_url="smtps://indrama1@smtpx.feld.cvut.cz:465"
+set smtp_authenticators="plain"
 
 set from="indrama1@fel.cvut.cz"
-set folder="imaps://imap.feld.cvut.cz:993/"
+set folder="~/mail/fel"
 set spoolfile="+INBOX"
 set record="+Sent"
 set postponed="+Drafts"
-set imap_user="indrama1"
-set smtp_url="smtps://indrama1@smtpx.feld.cvut.cz:465"
-set smtp_authenticators="plain"
+
 set header_cache="~/.mutt/fel_header_cache"
 set signature="~/.mutt/mgn_signature.txt"
 
 unmailboxes *
-mailboxes =INBOX
+mailboxes =INBOX =Sent =Drafts

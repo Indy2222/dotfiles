@@ -1,0 +1,62 @@
+[general]
+pythonfile = ~/dotfiles/offlineimap.py
+socktimeout = 60
+accounts = mgn, sk, fel
+
+[Account mgn]
+localrepository = mgn-local
+remoterepository = mgn-remote
+synclabels = yes
+
+[Repository mgn-remote]
+type = Gmail
+remotepasseval = get_pwd('my/mgn-mail-pwd')
+remoteuser = martin.indra@mgn.cz
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+tls_level = tls_secure
+ssl_version = tls1_2
+folderfilter = lambda f: f in ('INBOX', '[Gmail]/Drafts', '[Gmail]/Sent Mail')
+nametrans = lambda f: GMAIL_NAME_MAPPING.get(f, f)
+
+[Repository mgn-local]
+type = GmailMaildir
+localfolders = ~/mail/mgn
+nametrans = lambda f: GMAIL_NAME_MAPPING_REVERSE.get(f, f)
+
+[Account sk]
+localrepository = sk-local
+remoterepository = sk-remote
+synclabels = yes
+
+[Repository sk-remote]
+type = Gmail
+remotepasseval = get_pwd('sk/mail-pwd')
+remoteuser = indra@spaceknow.com
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+tls_level = tls_secure
+ssl_version = tls1_2
+nametrans = lambda f: GMAIL_NAME_MAPPING.get(f, f)
+folderfilter = lambda folder: folder in ('INBOX',  'Alerts', 'Gerrit', '[Gmail]/Drafts', '[Gmail]/Sent Mail')
+
+[Repository sk-local]
+type = GmailMaildir
+localfolders = ~/mail/sk
+nametrans = lambda f: GMAIL_NAME_MAPPING_REVERSE.get(f, f)
+
+[Account fel]
+localrepository = fel-local
+remoterepository = fel-remote
+
+[Repository fel-remote]
+type = IMAP
+remotepasseval = get_pwd('my/fel')
+remoteuser = indrama1
+remotehost = imap.feld.cvut.cz
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+tls_level = tls_secure
+ssl_version = tls1_2
+folderfilter = lambda folder: folder in ('INBOX', 'Sent', 'Drafts')
+
+[Repository fel-local]
+type = Maildir
+localfolders = ~/mail/fel
