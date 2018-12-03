@@ -15,7 +15,7 @@ remoteuser = martin.indra@mgn.cz
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 tls_level = tls_secure
 ssl_version = tls1_2
-folderfilter = lambda f: f in ('INBOX', '[Gmail]/Drafts', '[Gmail]/Sent Mail')
+folderfilter = lambda f: f == 'INBOX' or f in GMAIL_NAME_MAPPING
 nametrans = lambda f: GMAIL_NAME_MAPPING.get(f, f)
 
 [Repository mgn-local]
@@ -36,7 +36,7 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 tls_level = tls_secure
 ssl_version = tls1_2
 nametrans = lambda f: GMAIL_NAME_MAPPING.get(f, f)
-folderfilter = lambda folder: folder in ('INBOX',  'Alerts', 'Gerrit', '[Gmail]/Drafts', '[Gmail]/Sent Mail')
+folderfilter = lambda f: f in ('INBOX',  'Alerts', 'Gerrit') or f in GMAIL_NAME_MAPPING
 
 [Repository sk-local]
 type = GmailMaildir
