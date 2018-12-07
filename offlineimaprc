@@ -2,11 +2,15 @@
 pythonfile = ~/dotfiles/offlineimap.py
 socktimeout = 60
 accounts = mgn, sk, fel
+# this must be >= number of accounts due to autorefresh, otherwise some
+# accounts will never sync
+maxsyncaccounts = 3
 
 [Account mgn]
 localrepository = mgn-local
 remoterepository = mgn-remote
 synclabels = yes
+autorefresh = 10
 
 [Repository mgn-remote]
 type = Gmail
@@ -27,6 +31,7 @@ nametrans = lambda f: GMAIL_NAME_MAPPING_REVERSE.get(f, f)
 localrepository = sk-local
 remoterepository = sk-remote
 synclabels = yes
+autorefresh = 0.5
 
 [Repository sk-remote]
 type = Gmail
@@ -46,6 +51,7 @@ nametrans = lambda f: GMAIL_NAME_MAPPING_REVERSE.get(f, f)
 [Account fel]
 localrepository = fel-local
 remoterepository = fel-remote
+autorefresh = 10
 
 [Repository fel-remote]
 type = IMAP

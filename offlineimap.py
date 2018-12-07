@@ -8,6 +8,15 @@ GMAIL_NAME_MAPPING = {
 GMAIL_NAME_MAPPING_REVERSE = {v: k for k, v in GMAIL_NAME_MAPPING.iteritems()}
 
 
+_pwd_cache = {}
+
+
 def get_pwd(name):
-    output = check_output(['pass', 'show', name])
-    return output.splitlines()[0]
+    global _pwd_cache
+
+    try:
+        return _pwd_cache[name]
+    except KeyError:
+        output = check_output(['pass', 'show', name])
+        _pwd_cache[name] = output.splitlines()[0]
+        return _pwd_cache[name]
