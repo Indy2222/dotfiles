@@ -194,6 +194,7 @@ ln -s ~/dotfiles/mutt/mgn ~/.mutt/mgn
 ln -s ~/dotfiles/mutt/fel ~/.mutt/fel
 ln -s ~/dotfiles/mutt/sk_signature.txt ~/.mutt/sk_signature.txt
 ln -s ~/dotfiles/mutt/mgn_signature.txt ~/.mutt/mgn_signature.txt
+ln -s ~/dotfiles/mutt/fel_signature.txt ~/.mutt/fel_signature.txt
 ln -s ~/dotfiles/mutt/theme ~/.mutt/theme
 mkdir ~/.mutt/sk_header_cache
 mkdir ~/.mutt/mgn_header_cache

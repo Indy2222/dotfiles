@@ -9,7 +9,7 @@ set record="+Sent"
 set postponed="+Drafts"
 
 set header_cache="~/.mutt/fel_header_cache"
-set signature="~/.mutt/mgn_signature.txt"
+set signature="~/.mutt/fel_signature.txt"
 
 unmailboxes *
 mailboxes =INBOX =Sent =Drafts
