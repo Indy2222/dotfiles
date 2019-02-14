@@ -1,7 +1,7 @@
 [general]
 pythonfile = ~/dotfiles/offlineimap.py
 socktimeout = 60
-accounts = mgn, sk, fel
+accounts = mgn, datamole, fel
 # this must be >= number of accounts due to autorefresh, otherwise some
 # accounts will never sync
 maxsyncaccounts = 3
@@ -27,25 +27,25 @@ type = GmailMaildir
 localfolders = ~/mail/mgn
 nametrans = lambda f: GMAIL_NAME_MAPPING_REVERSE.get(f, f)
 
-[Account sk]
-localrepository = sk-local
-remoterepository = sk-remote
+[Account datamole]
+localrepository = datamole-local
+remoterepository = datamole-remote
 synclabels = yes
 autorefresh = 0.5
 
-[Repository sk-remote]
+[Repository datamole-remote]
 type = Gmail
-remotepasseval = get_pwd('sk/mail-pwd')
-remoteuser = indra@spaceknow.com
+remotepasseval = get_pwd('dm/mail-pwd')
+remoteuser = martin.indra@datamole.cz
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 tls_level = tls_secure
 ssl_version = tls1_2
 nametrans = lambda f: GMAIL_NAME_MAPPING.get(f, f)
-folderfilter = lambda f: f in ('INBOX',  'Alerts', 'Gerrit') or f in GMAIL_NAME_MAPPING
+folderfilter = lambda f: f == 'INBOX' or f in GMAIL_NAME_MAPPING
 
-[Repository sk-local]
+[Repository datamole-local]
 type = GmailMaildir
-localfolders = ~/mail/sk
+localfolders = ~/mail/datamole
 nametrans = lambda f: GMAIL_NAME_MAPPING_REVERSE.get(f, f)
 
 [Account fel]

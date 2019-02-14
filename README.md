@@ -43,7 +43,6 @@ sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 rm ~/.zshrc
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
-ln -s ~/dotfiles/zsh/spaceknow ~/.zsh_spaceknow
 sudo chsh -s /usr/bin/zsh indy
 ```
 
@@ -189,16 +188,16 @@ cd neomutt
 ln -s ~/dotfiles/mutt/muttrc ~/.muttrc
 mkdir ~/.mutt
 ln -s ~/dotfiles/mutt/mailcap ~/.mutt/mailcap
-ln -s ~/dotfiles/mutt/sk ~/.mutt/sk
+ln -s ~/dotfiles/mutt/datamole ~/.mutt/datamole
 ln -s ~/dotfiles/mutt/mgn ~/.mutt/mgn
 ln -s ~/dotfiles/mutt/fel ~/.mutt/fel
-ln -s ~/dotfiles/mutt/sk_signature.txt ~/.mutt/sk_signature.txt
+ln -s ~/dotfiles/mutt/datamole_signature.txt ~/.mutt/datamole_signature.txt
 ln -s ~/dotfiles/mutt/mgn_signature.txt ~/.mutt/mgn_signature.txt
 ln -s ~/dotfiles/mutt/fel_signature.txt ~/.mutt/fel_signature.txt
 ln -s ~/dotfiles/mutt/theme ~/.mutt/theme
-mkdir ~/.mutt/sk_header_cache
+mkdir ~/.mutt/datamole_header_cache
 mkdir ~/.mutt/mgn_header_cache
 touch ~/.mutt/aliases
-mkdir ~/.mutt/account.sk
+mkdir ~/.mutt/account.datamole
 mkdir ~/.mutt/account.mgn
 ```

@@ -62,7 +62,7 @@ source ~/.mutt/mgn
 
 # macros for switching accounts
 macro index <f2> "<sync-mailbox><enter-command>source ~/.mutt/mgn<enter><change-folder>!<enter>"
-macro index <f3> "<sync-mailbox><enter-command>source ~/.mutt/sk<enter><change-folder>!<enter>"
+macro index <f3> "<sync-mailbox><enter-command>source ~/.mutt/datamole<enter><change-folder>!<enter>"
 macro index <f4> "<sync-mailbox><enter-command>source ~/.mutt/fel<enter><change-folder>!<enter>"
 
 macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
