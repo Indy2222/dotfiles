@@ -1,5 +1,5 @@
 set smtp_pass=`pass show my/fel | head -n 1 | tr -d '\n'`
-set smtp_url="smtps://indrama1@smtpx.feld.cvut.cz:465"
+set smtp_url="smtps://indrama1:$smtp_pass@smtpx.feld.cvut.cz:465"
 set smtp_authenticators="plain"
 
 set from="indrama1@fel.cvut.cz"
