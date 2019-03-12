@@ -1,1 +1,1 @@
-PROMPT='%{$fg[green]%}%20<..<%~%<<%{$reset_color%}%(!.#.$) '
+PROMPT='%M %{$fg[green]%}%20<..<%~%<<%{$reset_color%}%(!.#.$) '
