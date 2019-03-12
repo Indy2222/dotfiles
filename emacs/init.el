@@ -262,6 +262,7 @@
     :config
     (add-hook 'rust-mode-hook #'racer-mode)
     (add-hook 'racer-mode-hook #'eldoc-mode)
+    (add-hook 'racer-mode-hook #'company-mode)
     (define-key rust-mode-map (kbd "C-c d") #'racer-describe)))
 
 ;; awesome Emacs interface to Git porcelain
