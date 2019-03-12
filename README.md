@@ -119,8 +119,8 @@ Docker
 
 ```bash
 sudo apt-get install docker.io
-sudo sudo usermod -G docker $USER
-sudo exec sudo su -l $USER
+sudo sudo usermod -G docker indy
+sudo exec sudo su -l indy
 ```
 
 Google Cloud SDK
