@@ -98,9 +98,12 @@ Python
 ------
 
 ```bash
-sudo apt-get install python-pip
+sudo apt-get install python3-pip
 # these makes Emacs Elpy more powerful
-sudo pip install rope importmagic yapf flake8 isort
+# Install these globally, not in a conda env to keep them avaialble under all
+# environments.
+sudo pip3 install rope importmagic yapf flake8 isort
+```
 
 Miniconda
 -----------
