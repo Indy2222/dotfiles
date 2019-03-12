@@ -1,7 +1,11 @@
 Setup
 =====
 
-First install and setup Git:
+Create two ``gnome-terminal`` profiles, ``Main`` profile and ``SSH`` profile.
+``Main`` profile starts Tmux, ``SSH`` profiles starts plain Zsh (to avoid
+server-side Tmux inside client-side Tmux).
+
+Install and setup Git:
 
 ```bash
 sudo apt-get update
