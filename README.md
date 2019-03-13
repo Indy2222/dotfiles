@@ -154,6 +154,12 @@ Google Cloud SDK
 
 Follow instructions from https://cloud.google.com/sdk/docs/quickstart-linux.
 
+Microsoft Azure
+---------------
+
+Follow instruction from
+https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest
+
 The Silver Searcher
 -------------------
 
