@@ -374,5 +374,17 @@
   :ensure t
   :demand t)
 
+(use-package omnisharp
+  :ensure t
+  :demand t
+  :config
+  (eval-after-load
+      'company
+    '(add-to-list 'company-backends 'company-omnisharp))
+  ;; omnisharp uses Company Mode for code competition.
+  (add-hook 'csharp-mode-hook 'omnisharp-mode)
+  (add-hook 'csharp-mode-hook #'company-mode)
+  (define-key csharp-mode-map (kbd "M-.") #'omnisharp-go-to-definition))
+
 (when (file-exists-p custom-file)
   (load custom-file))
