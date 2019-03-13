@@ -171,6 +171,11 @@ rustup component add rust-src rustfmt
 cargo install racer
 ```
 
+.NET
+----
+
+https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install
+
 GPG
 ---
 
