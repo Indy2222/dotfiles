@@ -386,5 +386,8 @@
   (add-hook 'csharp-mode-hook #'company-mode)
   (define-key csharp-mode-map (kbd "M-.") #'omnisharp-go-to-definition))
 
+(use-package arduino-mode
+  :ensure t)
+
 (when (file-exists-p custom-file)
   (load custom-file))
