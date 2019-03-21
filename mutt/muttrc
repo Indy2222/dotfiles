@@ -37,6 +37,7 @@ set pager_context=3
 set pager_index_lines=8
 set editor="emacsclient -t"
 set help=no
+set abort_noattach=ask-yes
 
 set sidebar_width=30
 set sidebar_visible=yes
