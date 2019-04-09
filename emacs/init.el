@@ -39,8 +39,8 @@
  mode-require-final-newline "ask"
  dired-dwim-target t
  tls-checktrust t
- auto-hscroll-mode 'current-line
- elpy-rpc-python-command "python3")
+ elpy-rpc-python-command "python3"
+ flyspell-issue-message-flag nil)
 
 (setq-default
  ;; tabs are cool but non of the project I participate on use them
