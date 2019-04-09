@@ -114,13 +114,13 @@
 (require 'use-package)
 
 ;; this one is among the most popular Emacs themes for a reason
-(use-package monokai-theme
+(use-package solarized-theme
   :ensure t
   :demand t
   :load-path "themes"
   :config
   (setq sml/no-confirm-load-theme t)
-  (load-theme 'monokai t))
+  (load-theme 'solarized-dark t))
 
 (use-package smart-mode-line
   :ensure t
