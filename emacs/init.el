@@ -77,13 +77,7 @@
       display-time-format " %H:%M"
       sml/name-width 40)
 
-(defun indy/2k-scaled ()
-  (interactive)
-  (set-face-attribute 'default nil :font "Ubuntu Mono" :height 140))
-(defun indy/2k ()
-  (interactive)
-  (set-face-attribute 'default nil :font "Ubuntu Mono" :height 165))
-(indy/2k)
+(set-face-attribute 'default nil :font "UbuntuMono" :height 150)
 
 ;; answer y or n instead of long yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
