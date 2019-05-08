@@ -124,7 +124,7 @@
   :demand t
   :config
   (sml/setup)
-  (setq sml/hidden-modes ".*"))
+  (setq rm-blacklist ".*"))
 
 ;; spellcheck on the fly
 (use-package avy-flycheck
