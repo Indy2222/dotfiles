@@ -271,6 +271,9 @@
   :bind
   ("C-x g" . magit-status)
   :config
+  (use-package magit-todos
+    :ensure t
+    :demand t)
   (defun indy/magit-push-to-gerrit ()
     (interactive)
     (magit-git-command-topdir "push gerrit HEAD:refs/for/master"))
