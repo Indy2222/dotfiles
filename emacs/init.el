@@ -72,7 +72,10 @@
 (tool-bar-mode -1)
 
 (display-battery-mode 1)
-(setq sml/battery-format "%t")
+(display-time-mode 1)
+(setq sml/battery-format "%t"
+      display-time-format " %H:%M"
+      sml/name-width 40)
 
 (defun indy/2k-scaled ()
   (interactive)
