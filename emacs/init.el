@@ -188,7 +188,8 @@
   (("C-c l" . org-capture)
    ("C-c a" . org-agenda))
   :config
-  (setq org-default-notes-file "~/notes/notes.org"
+  (setq org-catch-invisible-edits 'error
+        org-default-notes-file "~/notes/notes.org"
         org-agenda-files '("~/notes/todo.org" "~/datamole/notes.org"
                            "~/school/notes.org")
         org-capture-templates
