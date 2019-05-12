@@ -107,8 +107,6 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'before-save-hook 'copyright-update)
 
-;; a SpaceKnow hack requires some rst files to end with .pub
-(add-to-list 'auto-mode-alist '("\\.pub\\'" . rst-mode))
 (add-to-list 'auto-mode-alist '("\\(\\/\\.?zshrc\\|\\.zsh\\)\\'" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.*/neomutt-.*\\'" . text-mode))
 
@@ -221,14 +219,6 @@
   :ensure t
   :mode "\\.md\\'")
 
-(defun indy/py-isort ()
-  "Sort Python imports only on desired files."
-  (interactive)
-  (when (and buffer-file-name
-             (not (string-match "backend/\\(scripts\\|devtools\\|deliveries\\)"
-                                buffer-file-name)))
-      (py-isort-before-save)))
-
 ;; python package provides python-mode
 (use-package python
   :ensure t
@@ -254,7 +244,7 @@
     :ensure t
     :demand t
     :config
-    (add-hook 'before-save-hook 'indy/py-isort)))
+    (add-hook 'before-save-hook 'py-isort-before-save)))
 
 (use-package rust-mode
   :ensure t
