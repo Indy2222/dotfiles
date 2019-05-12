@@ -401,5 +401,15 @@
   :config
   (setq company-show-numbers 1))
 
+(defun indy/kill-file-name ()
+  "Place buffer-file-name kill ring and display it."
+  (interactive)
+  (if buffer-file-name
+      (progn (kill-new buffer-file-name)
+             (message "Buffer file: %s" buffer-file-name))
+    (error "Current buffer is not visiting a file!")))
+
+(global-set-key "\C-cif" 'indy/kill-file-name)
+
 (when (file-exists-p custom-file)
   (load custom-file))
