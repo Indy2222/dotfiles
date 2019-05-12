@@ -395,5 +395,11 @@
 (use-package arduino-mode
   :ensure t)
 
+(use-package company
+  :demand t
+  :ensure t
+  :config
+  (setq company-show-numbers 1))
+
 (when (file-exists-p custom-file)
   (load custom-file))
