@@ -289,11 +289,6 @@
   :config
   (require 'google-translate-default-ui))
 
-(use-package google-this
-  :ensure t
-  :config
-  (google-this-mode 1))
-
 (use-package wttrin
   :ensure t
   :config
