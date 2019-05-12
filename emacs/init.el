@@ -7,6 +7,8 @@
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
+(require 'uniquify)
+
 (setq
  package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                     ("melpa" . "https://melpa.org/packages/")
@@ -19,6 +21,7 @@
  ;; display column number in modeline
  ;; TODO: is this implied with xx?
  column-number-mode t
+ uniquify-buffer-name-style 'forward
  ;; there may be only one space after a sentence
  ;; TODO:
  ;;  * Learn to use double spaces.
@@ -41,6 +44,21 @@
  tls-checktrust t
  elpy-rpc-python-command "python3"
  flyspell-issue-message-flag nil)
+
+(setq-default mode-line-format
+      '("%e"
+        mode-line-front-space
+        mode-line-mule-info
+        mode-line-modified
+        mode-line-remote
+        " "
+        mode-line-position
+        " "
+        mode-name
+        " "
+        mode-line-buffer-identification
+        mode-line-misc-info
+        mode-line-end-spaces))
 
 (setq-default
  ;; tabs are cool but non of the project I participate on use them
@@ -71,11 +89,6 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
-(display-battery-mode 1)
-(display-time-mode 1)
-(setq sml/battery-format "%t"
-      display-time-format " %H:%M"
-      sml/name-width 40)
 
 (set-face-attribute 'default nil :font "UbuntuMono" :height 150)
 
@@ -116,15 +129,7 @@
   :demand t
   :load-path "themes"
   :config
-  (setq sml/no-confirm-load-theme t)
   (load-theme 'solarized-dark t))
-
-(use-package smart-mode-line
-  :ensure t
-  :demand t
-  :config
-  (sml/setup)
-  (setq rm-blacklist ".*"))
 
 ;; spellcheck on the fly
 (use-package avy-flycheck
