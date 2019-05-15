@@ -43,7 +43,8 @@
  dired-dwim-target t
  tls-checktrust t
  elpy-rpc-python-command "python3"
- flyspell-issue-message-flag nil)
+ flyspell-issue-message-flag nil
+ vc-handled-backends nil)
 
 (setq-default mode-line-format
       '("%e"
