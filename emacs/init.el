@@ -171,6 +171,7 @@
   :demand t
   :bind
   (("s-j" . counsel-projectile-find-file)
+   ("s-i" . counsel-projectile-switch-project)
    ("s-k" . projectile-toggle-between-implementation-and-test)
    ("s-u" . projectile-find-implementation-or-test-other-window))
   :config
