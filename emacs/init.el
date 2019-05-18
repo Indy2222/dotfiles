@@ -387,6 +387,13 @@
   :config
   (setq company-show-numbers 1))
 
+(use-package eyebrowse
+  :demand t
+  :ensure t
+  :config
+  (eyebrowse-mode t)
+  (setq eyebrowse-new-workspace t))
+
 (defun indy/kill-file-name ()
   "Place buffer-file-name kill ring and display it."
   (interactive)
