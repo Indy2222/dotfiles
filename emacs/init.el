@@ -8,6 +8,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'uniquify)
+(require 'desktop)
 
 (setq
  package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -44,7 +45,9 @@
  tls-checktrust t
  elpy-rpc-python-command "python3"
  flyspell-issue-message-flag nil
- vc-handled-backends nil)
+ vc-handled-backends nil
+ desktop-save 'ask-if-new
+ desktop-dirname "~/.emacs.d/desktop")
 
 (setq-default mode-line-format
       '("%e"
@@ -85,6 +88,7 @@
 (put 'scroll-left 'disabled nil)
 (put 'scroll-right 'disabled nil)
 
+(desktop-save-mode t)
 (delete-selection-mode t)
 (savehist-mode)
 (menu-bar-mode -1)
