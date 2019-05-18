@@ -58,6 +58,7 @@
         mode-name
         " "
         mode-line-buffer-identification
+        " "
         mode-line-misc-info
         mode-line-end-spaces))
 
