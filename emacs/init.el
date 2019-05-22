@@ -109,7 +109,8 @@
 
 (defun indy/highlight-trailing-whitespace ()
   "Turn on trailing whitespace highlighting."
-  (setq-local show-trailing-whitespace t))
+  (setq-local show-trailing-whitespace t)
+  (setq-local indicate-empty-lines t))
 
 (add-hook 'prog-mode-hook 'indy/highlight-trailing-whitespace)
 (add-hook 'text-mode-hook 'indy/highlight-trailing-whitespace)
