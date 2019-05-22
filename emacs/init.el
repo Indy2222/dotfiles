@@ -95,6 +95,8 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
+(setq default-frame-alist '((width . 100) (height . 25)
+      (vertical-scroll-bars)))
 
 (set-face-attribute 'default nil :font "UbuntuMono" :height 150)
 
