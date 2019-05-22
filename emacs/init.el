@@ -409,6 +409,15 @@
 
 (global-set-key "\C-cif" 'indy/kill-file-name)
 
+(defun indy/date-time ()
+    "Place current date-time to kill ring and display it."
+    (interactive)
+    (let ((date-time-string (format-time-string "%Y-%m-%d %T")))
+      (kill-new date-time-string)
+      (message "Current date-time: %s" date-time-string)))
+
+(global-set-key "\C-cid" 'indy/date-time)
+
 (when (file-exists-p custom-file)
   (load custom-file))
 
