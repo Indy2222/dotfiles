@@ -107,12 +107,12 @@
 ;; highlight matching brackets
 (show-paren-mode 1)
 
-(defun indy-highlight-trailing-whitespace ()
+(defun indy/highlight-trailing-whitespace ()
   "Turn on trailing whitespace highlighting."
   (setq-local show-trailing-whitespace t))
 
-(add-hook 'prog-mode-hook 'indy-highlight-trailing-whitespace)
-(add-hook 'text-mode-hook 'indy-highlight-trailing-whitespace)
+(add-hook 'prog-mode-hook 'indy/highlight-trailing-whitespace)
+(add-hook 'text-mode-hook 'indy/highlight-trailing-whitespace)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'before-save-hook 'copyright-update)
 
