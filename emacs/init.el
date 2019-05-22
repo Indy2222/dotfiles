@@ -128,12 +128,12 @@
 (require 'use-package)
 
 ;; this one is among the most popular Emacs themes for a reason
-(use-package solarized-theme
+(use-package zenburn-theme
   :ensure t
   :demand t
   :load-path "themes"
   :config
-  (load-theme 'solarized-dark t))
+  (load-theme 'zenburn t))
 
 ;; spellcheck on the fly
 (use-package avy-flycheck
