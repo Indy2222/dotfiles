@@ -47,7 +47,8 @@
  flyspell-issue-message-flag nil
  vc-handled-backends nil
  desktop-save 'ask-if-new
- desktop-dirname "~/.emacs.d/desktop")
+ desktop-dirname "~/.emacs.d/desktop"
+ enable-local-variables nil)
 
 (setq-default mode-line-format
       '("%e"
