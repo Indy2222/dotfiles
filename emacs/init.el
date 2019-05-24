@@ -399,6 +399,23 @@
   (eyebrowse-mode t)
   (setq eyebrowse-new-workspace t))
 
+(use-package multi-term
+  :demand t
+  :ensure t
+  :config
+  (use-package eterm-256color
+    :ensure t
+    :demand t
+    :config
+    (add-hook 'term-mode-hook #'eterm-256color-mode))
+  (setq multi-term-program "/usr/bin/zsh")
+  (setq-default term-buffer-maximum-size 131072)
+  (add-to-list 'term-bind-key-alist '("C-c C-j" . term-line-mode))
+  (add-to-list 'term-bind-key-alist '("C-c C-k" . term-char-mode))
+  (add-hook 'term-mode-hook (lambda ()
+                              (setq-local column-number-mode nil)
+                              (setq-local line-number-mode nil))))
+
 (defun indy/kill-file-name ()
   "Place buffer-file-name kill ring and display it."
   (interactive)
