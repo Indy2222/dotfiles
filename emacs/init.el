@@ -204,7 +204,9 @@
   :config
   (setq org-catch-invisible-edits 'error
         org-default-notes-file "~/notes/notes.org"
-        org-agenda-files '("~/notes/todo.org" "~/datamole/notes.org"
+        org-agenda-files '("~/notes/todo.org"
+                           "~/datamole/notes.org"
+                           "~/datamole/hiring/notes.org"
                            "~/school/notes.org")
         org-capture-templates
         '(("t" "Todo" entry
