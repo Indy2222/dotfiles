@@ -424,6 +424,12 @@
   :config
   (crux-reopen-as-root-mode))
 
+(use-package goto-last-change
+  :demand t
+  :ensure t
+  :bind
+  (("M-g l" . goto-last-change-with-auto-marks)))
+
 (defun indy/kill-file-name ()
   "Place buffer-file-name kill ring and display it."
   (interactive)
