@@ -418,6 +418,12 @@
                               (setq-local column-number-mode nil)
                               (setq-local line-number-mode nil))))
 
+(use-package crux
+  :demand t
+  :ensure t
+  :config
+  (crux-reopen-as-root-mode))
+
 (defun indy/kill-file-name ()
   "Place buffer-file-name kill ring and display it."
   (interactive)
