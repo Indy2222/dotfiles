@@ -82,6 +82,7 @@ configuration:
 ```bash
 mkdir ~/.emacs.d
 mkdir ~/.emacs.d/desktop
+mkdir ~/notes
 ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
 ```
 
