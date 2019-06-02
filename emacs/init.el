@@ -49,7 +49,8 @@
  desktop-save 'ask-if-new
  desktop-dirname "~/.emacs.d/desktop"
  enable-local-variables nil
- visible-bell t)
+ visible-bell t
+ org-highlight-latex-and-related '(latex))
 
 (setq-default mode-line-format
       '("%e"
