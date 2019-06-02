@@ -429,6 +429,18 @@
   :bind
   (("M-g l" . goto-last-change-with-auto-marks)))
 
+(use-package dired-subtree
+  :demand t
+  :ensure t
+  :config
+  (bind-keys :map dired-mode-map
+             ("i" . dired-subtree-insert)
+             (";" . dired-subtree-remove)))
+
+(use-package dired-collapse
+  :demand t
+  :ensure t)
+
 (defun indy/kill-file-name ()
   "Place buffer-file-name kill ring and display it."
   (interactive)
