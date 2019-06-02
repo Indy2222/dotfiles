@@ -50,7 +50,8 @@
  desktop-dirname "~/.emacs.d/desktop"
  enable-local-variables nil
  visible-bell t
- org-highlight-latex-and-related '(latex))
+ org-highlight-latex-and-related '(latex)
+ save-interprogram-paste-before-kill t)
 
 (setq-default mode-line-format
       '("%e"
