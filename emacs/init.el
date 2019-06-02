@@ -48,7 +48,8 @@
  vc-handled-backends nil
  desktop-save 'ask-if-new
  desktop-dirname "~/.emacs.d/desktop"
- enable-local-variables nil)
+ enable-local-variables nil
+ visible-bell t)
 
 (setq-default mode-line-format
       '("%e"
