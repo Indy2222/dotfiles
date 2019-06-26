@@ -8,7 +8,6 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'uniquify)
-(require 'desktop)
 
 (setq
  package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -46,8 +45,6 @@
  elpy-rpc-python-command "python3"
  flyspell-issue-message-flag nil
  vc-handled-backends nil
- desktop-save 'ask-if-new
- desktop-dirname "~/.emacs.d/desktop"
  enable-local-variables nil
  visible-bell t
  org-highlight-latex-and-related '(latex)
@@ -92,7 +89,6 @@
 (put 'scroll-left 'disabled nil)
 (put 'scroll-right 'disabled nil)
 
-(desktop-save-mode t)
 (delete-selection-mode t)
 (savehist-mode)
 (menu-bar-mode -1)
