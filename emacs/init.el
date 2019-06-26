@@ -98,7 +98,17 @@
 (setq default-frame-alist '((width . 100) (height . 25)
       (vertical-scroll-bars)))
 
-(set-face-attribute 'default nil :font "UbuntuMono" :height 150)
+(defun indy/font-small ()
+  "Decrease font size globally."
+  (interactive)
+  (set-face-attribute 'default nil :font "UbuntuMono" :height 120))
+
+(defun indy/font-normal ()
+  "Decrease font size globally."
+  (interactive)
+  (set-face-attribute 'default nil :font "UbuntuMono" :height 150))
+
+(indy/font-normal)
 
 ;; answer y or n instead of long yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
