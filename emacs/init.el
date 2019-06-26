@@ -105,6 +105,7 @@
 
 ;; highlight matching brackets
 (show-paren-mode 1)
+(global-auto-revert-mode 1)
 
 (defun indy/highlight-trailing-whitespace ()
   "Turn on trailing whitespace highlighting."
