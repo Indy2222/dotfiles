@@ -380,6 +380,7 @@
   ;; omnisharp uses Company Mode for code competition.
   (add-hook 'csharp-mode-hook 'omnisharp-mode)
   (add-hook 'csharp-mode-hook #'company-mode)
+  (add-hook 'csharp-mode-hook #'flycheck-mode)
   (define-key csharp-mode-map (kbd "M-.") #'omnisharp-go-to-definition))
 
 (use-package arduino-mode
