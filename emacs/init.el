@@ -400,7 +400,8 @@
   :demand t
   :ensure t
   :config
-  (setq company-show-numbers 1))
+  (setq company-show-numbers 1
+        company-idle-delay 0.2))
 
 (use-package eyebrowse
   :demand t
