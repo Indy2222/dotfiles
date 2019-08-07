@@ -191,20 +191,10 @@
   :config
   (counsel-projectile-mode))
 
-(use-package switch-window
+(use-package ace-window
   :ensure t
   :bind
-  (("C-x o" . switch-window)
-   ("C-x 4 s" . switch-window-then-swap-buffer)
-   ("C-x 4 d" . switch-window-then-dired)
-   ("C-x 4 f" . switch-window-then-find-file)
-   ("C-x 4 m" . switch-window-then-compose-mail)
-   ("C-x 4 r" . switch-window-then-find-file-read-only)
-   ("C-x 4 C-f" . switch-window-then-find-file)
-   ("C-x 4 C-o" . switch-window-then-display-buffer))
-  :config
-  (setq switch-window-shortcut-style 'qwerty)
-  (setq switch-window-shortcut-appearance 'asciiart))
+  (("C-x o" . ace-window)))
 
 (use-package org
   :ensure t
