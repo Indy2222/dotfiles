@@ -434,6 +434,10 @@
   :bind
   (("M-g l" . goto-last-change-with-auto-marks)))
 
+(use-package smartparens
+  :demand t
+  :ensure t)
+
 (use-package dired-subtree
   :demand t
   :ensure t
