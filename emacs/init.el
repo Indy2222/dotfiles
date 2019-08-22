@@ -99,14 +99,19 @@
       (vertical-scroll-bars)))
 
 (defun indy/font-small ()
-  "Decrease font size globally."
+  "Setup font size for large but only FullHD monitor."
   (interactive)
   (set-face-attribute 'default nil :font "UbuntuMono" :height 120))
 
 (defun indy/font-normal ()
-  "Decrease font size globally."
+  "Setup font size for my laptop screen."
   (interactive)
   (set-face-attribute 'default nil :font "UbuntuMono" :height 150))
+
+(defun indy/font-large ()
+  "Setup font size for my 4k TV."
+  (interactive)
+  (set-face-attribute 'default nil :font "UbuntuMono" :height 220))
 
 (indy/font-normal)
 
