@@ -446,6 +446,10 @@
   :demand t
   :ensure t)
 
+(use-package powershell
+  :demand t
+  :ensure t)
+
 (defun indy/kill-file-name ()
   "Place buffer-file-name kill ring and display it."
   (interactive)
