@@ -34,5 +34,3 @@ export ZSH_DOTFILES="$DOTFILES/zsh"
 source $ZSH_DOTFILES/k8s
 source $ZSH_DOTFILES/rust
 source $ZSH_DOTFILES/school
-
-alias kubelogs="kubectl logs -f --timestamps"
