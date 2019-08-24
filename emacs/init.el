@@ -337,10 +337,6 @@
   :ensure t
   :demand t)
 
-(use-package csv-mode
-  :ensure t
-  :demand t)
-
 (use-package ess
   :ensure t
   :demand t
