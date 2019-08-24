@@ -36,4 +36,3 @@ source $ZSH_DOTFILES/rust
 source $ZSH_DOTFILES/school
 
 alias kubelogs="kubectl logs -f --timestamps"
-alias sshterm="gnome-terminal --window-with-profile=SSH"
