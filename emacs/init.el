@@ -379,9 +379,6 @@
   (add-hook 'csharp-mode-hook #'flycheck-mode)
   (define-key csharp-mode-map (kbd "M-.") #'omnisharp-go-to-definition))
 
-(use-package arduino-mode
-  :ensure t)
-
 (use-package company
   :demand t
   :ensure t
