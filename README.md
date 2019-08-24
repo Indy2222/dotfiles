@@ -107,15 +107,6 @@ sudo apt-get install python3-pip
 sudo pip3 install rope importmagic yapf flake8 isort
 ```
 
-Miniconda
------------
-
-Install Miniconda from https://conda.io/en/latest/miniconda.html
-
-```bash
-ln -s ~/dotfiles/condarc ~/.condarc
-```
-
 Tmux
 ----
 
