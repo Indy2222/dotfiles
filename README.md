@@ -118,7 +118,7 @@ Git
 ---
 
 ```bash
-sudo pacman -S git
+sudo pacman -S git git-lfs git-crypt
 ```
 
 Pass
