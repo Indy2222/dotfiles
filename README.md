@@ -62,9 +62,8 @@ NTP
 ---
 
 ```bash
-pacman -S ntp
-systemctl enable ntpd
-systemctl start ntpd
+systemctl enable systemd-timesyncd
+systemctl start systemd-timesyncd
 ```
 
 Create User
