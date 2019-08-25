@@ -313,3 +313,10 @@ pacman -S autorandr
 systemctl enable autorandr
 systemctl start autorandr
 ```
+
+TeX
+---
+
+```bash
+sudo pacman -S texlive-most
+```
