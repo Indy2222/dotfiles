@@ -320,3 +320,17 @@ TeX
 ```bash
 sudo pacman -S texlive-most
 ```
+
+Tor
+---
+
+```bash
+sudo pacman -S tor
+sudo systemctl enable tor
+sudo systemctl start tor
+```
+
+In Preferences > General > Network Settings > Settings…, select Manual proxy
+configuration and enter SOCKS host localhost with port 9050 (SOCKS v5). To
+channel all DNS requests through TOR's socks proxy, also select Proxy DNS when
+using SOCKS v5.
