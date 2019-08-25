@@ -1,60 +1,184 @@
-Setup
-=====
+Post Installation Setup
+=======================
 
-Create two ``gnome-terminal`` profiles, ``Main`` profile and ``SSH`` profile.
-``Main`` profile starts Tmux, ``SSH`` profiles starts plain Zsh (to avoid
-server-side Tmux inside client-side Tmux).
+Peform the following steps after bare
+[installation](https://wiki.archlinux.org/index.php/installation_guide)
+of Arch Linux.
 
-Install and setup Git:
+Network
+-------
 
 ```bash
-sudo apt-get update
-sudo apt-get install git
+systemctl enable systemd-networkd
+systemctl enable systemd-resolved
+systemctl start systemd-networkd
+systemctl start systemd-resolved
 ```
 
-then clone this repository:
+Modify `/etc/systemd/network/20-wired.network` to:
+
+```
+[Match]
+Name=ETHERNET_DEVICE
+
+[Network]
+DHCP=ipv4
+
+[DHCP]
+RouteMetric=10
+```
+
+To setup Wi-fi:
+
+```bash
+pacman -S iwd
+systemctl enable iwd
+systemctl start iwd
+```
+
+Modify `/etc/systemd/network/25-wireless.network` to:
+
+```
+[Match]
+Name=WIFI_DEVICE
+
+[Network]
+DHCP=ipv4
+
+[DHCP]
+RouteMetric=20
+```
+
+Modify `/etc/iwd/main.conf` to:
+
+```
+[General]
+dns_resolve_method=systemd
+```
+
+Use `iwctl` to connect to a Wi-fi network.
+
+NTP
+---
+
+```bash
+pacman -S ntp
+systemctl enable ntpd
+systemctl start ntpd
+```
+
+Create User
+-----------
+
+```bash
+useradd indy
+passwd indy
+mkdir /home/indy
+chown -R indy:indy /home/indy
+pacman -S sudo
+# And add indy to sudo users
+visudo
+```
+
+Install KDE
+-----------
+
+```bash
+pacman -S xf86-video-intel
+pacman -S sddm plasma-meta
+systemctl enable sddm
+```
+
+Setup Under My User
+===================
+
+All of the following commands work if executed under my user.
+
+Useful Software
+---------------
+
+```bash
+# Note that gcc is needed for Emacs to work properly. See
+# https://wiki.archlinux.org/index.php/Emacs#Emacs_fails_to_start_with_the_error_message_'Undefined_color:_%22WINDOW_FOREGROUND%22'
+sudo pacman -S firefox konsole xclip gcc htop jq ripgrep
+```
+
+SSH
+---
+
+```bash
+sudo pacman -S ssh
+ssh-keygen -t rsa -b 4096 -C "martin.indra@mgn.cz"
+ssh-add ~/.ssh/id_rsa
+```
+
+Add the SSH key to GitHub and GitLab.
+
+
+Git
+---
+
+```bash
+sudo pacman -S git
+```
+
+Pass
+----
+
+```bash
+sudo pacman -S pass
+git clone git@github.com:Indy2222/pass.git ~/.password-store
+```
+
+Dotfiles
+--------
+
+Clone this repository:
 
 ```bash
 git clone git@github.com:Indy2222/dotfiles ~/dotfiles
 ```
 
-directory structure I use:
+Git Config
+----------
 
 ```bash
-mkdir ~/downloads
+ln -s ~/dotfiles/git/config ~/.gitconfig
+ln -s ~/dotfiles/git/gitignore ~/.gitignore_global
 ```
 
-other "necessary" software from Ubuntu repository:
+GPG
+---
 
 ```bash
-sudo apt-get install aptitude gcc make mu4e xclip htop silversearcher-ag \
-    curl qalculate jq w3m offlineimap
+ln -s ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+killall gpg-agent
+# private.txt is placed on a secret device
+gpg --import --armor private.txt
+```
+
+KBD Conf
+--------
+
+```bash
+sudo cp ~/dotfiles/90-custom-kbd.conf /etc/X11/xorg.conf.d/90-custom-kbd.conf
+sudo chown root:root /etc/X11/xorg.conf.d/90-custom-kbd.conf
 ```
 
 ZSH
 ---
 
-On client:
-
 ```bash
-sudo apt-get install fonts-powerline
-```
-
-On server:
-
-```bash
-sudo apt-get install zsh
+sudo pacman -S zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 rm ~/.zshrc
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh ~/zsh
-sudo chsh -s /usr/bin/zsh indy
 ```
 
 Theme:
 
 ```bash
-mkdir ~/.oh-my-zsh/custom/themes
 ln -s ~/dotfiles/zsh/minimal.zsh-theme ~/.oh-my-zsh/custom/themes/
 ```
 
@@ -67,164 +191,43 @@ git clone https://github.com/zdharma/fast-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions
 ```
 
-Emacs
------
-
-Installation prerequisites(works for v25.2):
-
-```bash
-sudo apt-get install libxml2-dev libtinfo-dev libjpeg-dev libtiff-dev \
-    libgif-dev libpng-dev gnutls-bin
-```
-
-configuration:
-
-```bash
-mkdir ~/.emacs.d
-mkdir ~/.emacs.d/desktop
-mkdir ~/notes
-ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
-```
-
-start Emacs server on startup:
-
-```bash
-mkdir -p ~/.config/systemd/user/
-ln -s /home/indy/dotfiles/emacs.service ~/.config/systemd/user/emacs.service
-systemctl --user daemon-reload
-systemctl --user enable emacs.service
-systemctl --user start emacs.service
-```
-
-Python
-------
-
-```bash
-sudo apt-get install python3-pip
-# these makes Emacs Elpy more powerful
-# Install these globally, not in a conda env to keep them avaialble under all
-# environments.
-sudo pip3 install rope importmagic yapf flake8 isort
-```
-
-Miniconda
------------
-
-Install Miniconda from https://conda.io/en/latest/miniconda.html
-
-```bash
-ln -s ~/dotfiles/condarc ~/.condarc
-```
-
 Tmux
 ----
 
 ```bash
+sudo pacman -S tmux
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ```
 
-Git
----
+Set `/usr/bin/tmux new` as Konsole entrypoint.
+
+Emacs
+-----
 
 ```bash
-ln -s ~/dotfiles/git/config ~/.gitconfig
-ln -s ~/dotfiles/git/gitignore ~/.gitignore_global
-```
-
-Docker
-------
-
-```bash
-sudo apt-get install docker.io
-sudo sudo usermod -G docker indy
-sudo exec sudo su -l indy
-```
-
-Kubernetes
-----------
-
-```bash
-sudo apt-get update && sudo apt-get install -y apt-transport-https
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-sudo apt-get update
-sudo apt-get install -y kubectl
-```
-
-Google Cloud SDK
-----------------
-
-Follow instructions from https://cloud.google.com/sdk/docs/quickstart-linux.
-
-Microsoft Azure
----------------
-
-Follow instruction from
-https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest
-
-The Silver Searcher
--------------------
-
-```bash
-ln -s ~/dotfiles/agignore ~/.agignore
-```
-
-Rust
-----
-
-```bash
-curl https://sh.rustup.rs -sSf | sh
-rustup toolchain add nightly
-rustup component add rust-src rustfmt
-cargo install racer
-```
-
-.NET
-----
-
-https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install
-
-GPG
----
-
-```bash
-ln -s ~/dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
-```
-
-Firefox
---------
-
-Install [Tree Style Taps](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/).
-
-
-```bash
-mkdir ~/.mozilla/firefox/<profile-name>.default/chrome
-ln -s ~/dotfiles/firefox/userChrome.css \
-    ~/.mozilla/firefox/<profile-name>.default/chrome/userChrome.css
+sudo pacman -S emacs
+mkdir ~/.emacs.d
+mkdir ~/notes
+ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
 ```
 
 Offlineimap
 -----------
 
 ```bash
+sudo pacman -S offlineimap
 ln -s ~/dotfiles/offlineimaprc ~/.offlineimaprc
 mkdir ~/mail
 mkdir ~/mail/mgn
-mkdir ~/mail/sk
+mkdir ~/mail/dm
 mkdir ~/mail/fel
 ```
 
-Mutt
-----
-
-Create GPG encrypted file `~/.mutt/sk.gpg` and `~/.mutt/mgn.gpg` with
-`$imap_pass` and `$smtp_pass` variables.
+Neomutt
+-------
 
 ```bash
-sudo pip3 install urlscan
-git clone https://github.com/neomutt/neomutt
-cd neomutt
-./configure --disable-doc --ssl --gnutls --gpgme --lmdb --gpgme
+sudo pacman -S pacman -S neomutt w3m urlscan
 
 ln -s ~/dotfiles/mutt/muttrc ~/.muttrc
 mkdir ~/.mutt
@@ -238,7 +241,75 @@ ln -s ~/dotfiles/mutt/fel_signature.txt ~/.mutt/fel_signature.txt
 ln -s ~/dotfiles/mutt/theme ~/.mutt/theme
 mkdir ~/.mutt/datamole_header_cache
 mkdir ~/.mutt/mgn_header_cache
+mkdir ~/.mutt/fel_header_cache
 touch ~/.mutt/aliases
 mkdir ~/.mutt/account.datamole
 mkdir ~/.mutt/account.mgn
+mkdir ~/.mutt/account.fel
+```
+
+Firefox-Plasma Integration
+--------------------------
+
+Install https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
+
+```bash
+sudo pacman -S plasma-browser-integration
+```
+
+Rust
+----
+
+```bash
+sudo pacman -S rust rust-racer
+```
+
+Python
+------
+
+```bash
+# These makes Emacs Elpy more powerful
+sudo pacman -S python-isort flake8 yapf python-rope
+```
+
+.NET
+----
+
+```bash
+sudo pacman -S dotnet-sdk
+```
+
+Docker
+------
+
+```bash
+sudo pacman -S docker
+sudo usermod -G docker indy
+```
+
+Kubernetes
+----------
+
+```bash
+sudo pacman -S kubectl
+```
+
+Google Cloud SDK
+----------------
+
+Follow instructions from https://cloud.google.com/sdk/docs/quickstart-linux.
+
+Microsoft Azure
+---------------
+
+Follow instruction from
+https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest
+
+External Monitor
+----------------
+
+```bash
+pacman -S autorandr
+systemctl enable autorandr
+systemctl start autorandr
 ```

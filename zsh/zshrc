@@ -33,8 +33,3 @@ export ZSH_DOTFILES="$DOTFILES/zsh"
 # source $ZSH_DOTFILES/gcp
 source $ZSH_DOTFILES/k8s
 source $ZSH_DOTFILES/rust
-source $ZSH_DOTFILES/school
-source $ZSH_DOTFILES/conda
-
-alias kubelogs="kubectl logs -f --timestamps"
-alias sshterm="gnome-terminal --window-with-profile=SSH"

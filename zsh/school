@@ -1,5 +1,0 @@
-# I need Gurobi for Combinatorial Optimization subject.
-# See https://github.com/Indy2222/school/blob/master/ko/01_gurobi.pdf
-export GUROBI_HOME="$HOME/gurobi810/linux64"
-export LD_LIBRARY_PATH="$GUROBI_HOME/lib"
-export PATH="$GUROBI_HOME/bin:$PATH"

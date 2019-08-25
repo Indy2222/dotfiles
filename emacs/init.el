@@ -101,17 +101,12 @@
 (defun indy/font-small ()
   "Setup font size for large but only FullHD monitor."
   (interactive)
-  (set-face-attribute 'default nil :font "UbuntuMono" :height 120))
+  (set-face-attribute 'default nil :font "Hack" :height 100))
 
 (defun indy/font-normal ()
   "Setup font size for my laptop screen."
   (interactive)
-  (set-face-attribute 'default nil :font "UbuntuMono" :height 150))
-
-(defun indy/font-large ()
-  "Setup font size for my 4k TV."
-  (interactive)
-  (set-face-attribute 'default nil :font "UbuntuMono" :height 220))
+  (set-face-attribute 'default nil :font "Hack" :height 140))
 
 (indy/font-normal)
 
@@ -342,10 +337,6 @@
   :ensure t
   :demand t)
 
-(use-package csv-mode
-  :ensure t
-  :demand t)
-
 (use-package ess
   :ensure t
   :demand t
@@ -387,9 +378,6 @@
   (add-hook 'csharp-mode-hook #'company-mode)
   (add-hook 'csharp-mode-hook #'flycheck-mode)
   (define-key csharp-mode-map (kbd "M-.") #'omnisharp-go-to-definition))
-
-(use-package arduino-mode
-  :ensure t)
 
 (use-package company
   :demand t
