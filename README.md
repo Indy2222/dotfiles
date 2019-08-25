@@ -99,7 +99,8 @@ Useful Software
 ```bash
 # Note that gcc is needed for Emacs to work properly. See
 # https://wiki.archlinux.org/index.php/Emacs#Emacs_fails_to_start_with_the_error_message_'Undefined_color:_%22WINDOW_FOREGROUND%22'
-sudo pacman -S firefox konsole xclip gcc htop jq ripgrep ktorrent
+sudo pacman -S firefox konsole xclip gcc htop jq ripgrep ktorrent dolphin \
+    okular vlc
 ```
 
 SSH
