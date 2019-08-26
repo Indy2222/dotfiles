@@ -268,6 +268,7 @@ Python
 ------
 
 ```bash
+sudo pacman -S python-pip python-pipenv
 # These makes Emacs Elpy more powerful
 sudo pacman -S python-isort flake8 yapf python-rope
 ```
