@@ -58,6 +58,23 @@ dns_resolve_method=systemd
 
 Use `iwctl` to connect to a Wi-fi network.
 
+For `eduroam` create file `/var/lib/iwd/eduroam.8021x` with the following
+content (don't forget to replace the password). Set permissions to `600` to the
+file.
+
+```
+[Security]
+EAP-Method=PEAP
+EAP-Identity=indrama1@fel.cvut.cz
+EAP-PEAP-CACert=/etc/ssl/certs/DigiCert_Assured_ID_Root_CA.pem
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=indrama1@fel.cvut.cz
+EAP-PEAP-Phase2-Password=<place-password-here>
+
+[Settings]
+Autoconnect=true
+```
+
 NTP
 ---
 
