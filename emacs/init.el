@@ -31,7 +31,7 @@
  view-read-only t
  ;; two is too little, eight is too much
  tab-width 4
- ispell-dictionary "american"
+ ispell-program-name "aspell"
  ;; set which ls switches Dired uses
  ;; -l is mandatory, -h for human readable sizes, -a to see everything
  dired-listing-switches "-lha"
