@@ -305,6 +305,8 @@ Docker
 ```bash
 sudo pacman -S docker
 sudo usermod -G docker indy
+sudo systemctl enable docker
+sudo systemctl start docker
 ```
 
 Kubernetes
