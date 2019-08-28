@@ -13,6 +13,8 @@ systemctl enable systemd-networkd
 systemctl enable systemd-resolved
 systemctl start systemd-networkd
 systemctl start systemd-resolved
+# To make non GNU-libc applications (like kubectl written in Golang) work.
+ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ```
 
 Modify `/etc/systemd/network/20-wired.network` to:
