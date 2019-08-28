@@ -110,6 +110,18 @@
 
 (indy/font-normal)
 
+(defun indy/screen-small ()
+  "Setup Emacs for use on laptop screen."
+  (interactive)
+  (setq split-width-threshold 160))
+
+(defun indy/screen-huge ()
+  "Setup Emacs for use on two screens."
+  (interactive)
+  (setq split-width-threshold 460))
+
+(indy/screen-small)
+
 ;; answer y or n instead of long yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
