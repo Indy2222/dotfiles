@@ -1,0 +1,2 @@
+export AzureCLIPath="/home/indy/bin"
+export MSBuildSDKsPath="/opt/dotnet/sdk/2.2.108/Sdks"
