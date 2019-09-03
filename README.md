@@ -313,7 +313,7 @@ Kubernetes
 ----------
 
 ```bash
-sudo pacman -S kubectl
+sudo pacman -S kubectl minikube virtualbox linux-headers
 ```
 
 Google Cloud SDK
