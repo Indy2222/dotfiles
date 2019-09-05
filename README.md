@@ -218,7 +218,14 @@ sudo pacman -S tmux
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ```
 
-Set `/usr/bin/tmux new` as Konsole entrypoint.
+Terminal
+--------
+
+```bash
+sudo pacman -S alacritty
+mkdir -p ~/.config/alacritty
+ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
+```
 
 Emacs
 -----
