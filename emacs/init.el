@@ -161,6 +161,12 @@
   :config
   (load-theme 'zenburn t))
 
+(use-package xclip
+  :ensure t
+  :demand t
+  :config
+  (xclip-mode 1))
+
 ;; spellcheck on the fly
 (use-package avy-flycheck
   :ensure t
