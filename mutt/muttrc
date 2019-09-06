@@ -35,7 +35,7 @@ set index_format="%Z %D %-15.15L (%?l?%4l&%4c?) %s"
 set meta_key=yes
 set pager_context=3
 set pager_index_lines=8
-set editor="emacsclient -c"
+set editor="emacsclient -t"
 set help=no
 set abort_noattach=ask-yes
 
