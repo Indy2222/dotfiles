@@ -481,5 +481,3 @@
 
 (when (file-exists-p custom-file)
   (load custom-file))
-
-(server-start)

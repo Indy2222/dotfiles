@@ -235,6 +235,7 @@ sudo pacman -S emacs aspell aspell-en aspell-cs
 mkdir ~/.emacs.d
 mkdir ~/notes
 ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
+systemctl --user enable --now emacs
 ```
 
 Offlineimap
