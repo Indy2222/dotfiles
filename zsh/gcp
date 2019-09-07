@@ -1,2 +1,3 @@
-# Google Cloud Platform
-export PATH=$PATH:$HOME/google-cloud-sdk/bin
+export GCLOUD_PATH=$HOME/google-cloud-sdk
+export PATH=$GCLOUD_PATH/bin:$PATH
+source $GCLOUD_PATH/completion.zsh.inc
