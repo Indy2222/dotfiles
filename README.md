@@ -77,6 +77,17 @@ EAP-PEAP-Phase2-Password=<place-password-here>
 Autoconnect=true
 ```
 
+Use Avahi for zero-configuration network (service discovery, mDNS, etc.):
+
+```bash
+pacman -S avahi nss-mdns
+systemctl enable avahi-daemon
+systemctl start avahi-daemon
+```
+
+Add `mdns_minimal [NOTFOUND=return]` to `hosts` in `/etc/nsswitch.conf` before
+`resolve` and `dns`. See https://wiki.archlinux.org/index.php/Avahi
+
 NTP
 ---
 
@@ -356,3 +367,12 @@ In Preferences > General > Network Settings > Settings…, select Manual proxy
 configuration and enter SOCKS host localhost with port 9050 (SOCKS v5). To
 channel all DNS requests through TOR's socks proxy, also select Proxy DNS when
 using SOCKS v5.
+
+Printing
+--------
+
+```bash
+sudo pacman -S cups
+sudo systemctl enable org.cups.cupsd
+sudo systemctl start org.cups.cupsd
+```
