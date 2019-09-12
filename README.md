@@ -9,10 +9,8 @@ Network
 -------
 
 ```bash
-systemctl enable systemd-networkd
-systemctl enable systemd-resolved
-systemctl start systemd-networkd
-systemctl start systemd-resolved
+systemctl enable --now systemd-networkd
+systemctl enable --now systemd-resolved
 # To make non GNU-libc applications (like kubectl written in Golang) work.
 ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ```
@@ -34,8 +32,7 @@ To setup Wi-fi:
 
 ```bash
 pacman -S iwd
-systemctl enable iwd
-systemctl start iwd
+systemctl enable --now iwd
 ```
 
 Modify `/etc/systemd/network/25-wireless.network` to:
@@ -81,8 +78,7 @@ Use Avahi for zero-configuration network (service discovery, mDNS, etc.):
 
 ```bash
 pacman -S avahi nss-mdns
-systemctl enable avahi-daemon
-systemctl start avahi-daemon
+systemctl enable --now avahi-daemon
 ```
 
 Add `mdns_minimal [NOTFOUND=return]` to `hosts` in `/etc/nsswitch.conf` before
@@ -92,8 +88,7 @@ NTP
 ---
 
 ```bash
-systemctl enable systemd-timesyncd
-systemctl start systemd-timesyncd
+systemctl enable --now systemd-timesyncd
 ```
 
 Create User
@@ -325,8 +320,7 @@ Docker
 ```bash
 sudo pacman -S docker
 sudo usermod -G docker indy
-sudo systemctl enable docker
-sudo systemctl start docker
+systemctl enable --now docker
 ```
 
 Kubernetes
@@ -359,8 +353,7 @@ Tor
 
 ```bash
 sudo pacman -S tor
-sudo systemctl enable tor
-sudo systemctl start tor
+systemctl enable --now tor
 ```
 
 In Preferences > General > Network Settings > Settings…, select Manual proxy
@@ -373,8 +366,7 @@ Printing
 
 ```bash
 sudo pacman -S cups
-sudo systemctl enable org.cups.cupsd
-sudo systemctl start org.cups.cupsd
+systemctl enable --now org.cups.cupsd
 ```
 
 More Network
@@ -382,5 +374,5 @@ More Network
 
 ```bash
 sudo pacman -S vnstat
-sudo systemctl enable vnstat
+systemctl enable --now vnstat
 ```
