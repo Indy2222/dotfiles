@@ -366,7 +366,7 @@ Printing
 
 ```bash
 sudo pacman -S cups
-systemctl enable --now org.cups.cupsd
+systemctl enable org.cups.cupsd.socket
 ```
 
 More Network
