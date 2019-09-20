@@ -278,15 +278,19 @@
   :ensure t
   :mode "\\.rs\\'"
   :config
-  (use-package racer
+  (setq rust-format-on-save t))
+
+(use-package lsp-mode
+  :ensure t
+  :hook (rust-mode . lsp)
+  :bind ("C-c d" . lsp-describe-thing-at-point)
+  :config
+  (use-package yasnippet
     :ensure t
-    :demand t
-    :config
-    (setq rust-format-on-save t)
-    (add-hook 'rust-mode-hook #'racer-mode)
-    (add-hook 'racer-mode-hook #'eldoc-mode)
-    (add-hook 'racer-mode-hook #'company-mode)
-    (define-key rust-mode-map (kbd "C-c d") #'racer-describe)))
+    :demand t)
+  (use-package company-lsp
+    :ensure t
+    :demand t))
 
 ;; awesome Emacs interface to Git porcelain
 (use-package magit
