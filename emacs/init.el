@@ -292,6 +292,10 @@
     :ensure t
     :demand t))
 
+(use-package toml-mode
+  :ensure t
+  :demand t)
+
 ;; awesome Emacs interface to Git porcelain
 (use-package magit
   :ensure t
