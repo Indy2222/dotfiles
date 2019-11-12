@@ -363,10 +363,6 @@
   :ensure t
   :demand t)
 
-(use-package jdee
-  :ensure t
-  :demand t)
-
 (use-package guess-language
   :ensure t
   :demand t
