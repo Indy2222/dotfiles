@@ -30,7 +30,7 @@ export GPG_TTY=$(tty)
 export DOTFILES="$HOME/dotfiles"
 export ZSH_DOTFILES="$DOTFILES/zsh"
 
-alias ll='exa -lgumh --git --group-directories-first --color-scale'
+alias ll='exa -lgumh --group-directories-first --color-scale'
 
 source $ZSH_DOTFILES/gcp
 source $ZSH_DOTFILES/k8s
