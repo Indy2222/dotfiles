@@ -272,7 +272,10 @@
     :ensure t
     :demand t
     :config
-    (add-hook 'before-save-hook 'py-isort-before-save)))
+    (add-hook 'before-save-hook 'py-isort-before-save))
+  (use-package pyvenv
+    :ensure t
+    :demand t))
 
 (use-package rust-mode
   :ensure t
@@ -476,6 +479,18 @@
       (message "Current date-time: %s" date-time-string)))
 
 (global-set-key "\C-cid" 'indy/date-time)
+
+(defun indy/poetry ()
+  (interactive)
+  (let ((venv-path
+         (string-trim
+          (shell-command-to-string
+           (concat
+            "bash -c \"cd "
+            (file-name-directory (buffer-file-name))
+            " && poetry env info -p\"")))))
+    (message "Working on %s" venv-path)
+    (pyvenv-activate venv-path)))
 
 (when (file-exists-p custom-file)
   (load custom-file))
