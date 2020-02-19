@@ -1,10 +1,10 @@
 [general]
 pythonfile = ~/dotfiles/offlineimap.py
 socktimeout = 60
-accounts = mgn, datamole, fel
+accounts = mgn, datamole, fel, toptal
 # this must be >= number of accounts due to autorefresh, otherwise some
 # accounts will never sync
-maxsyncaccounts = 3
+maxsyncaccounts = 4
 
 [Account mgn]
 localrepository = mgn-local
@@ -66,3 +66,24 @@ folderfilter = lambda folder: folder in ('INBOX', 'Sent', 'Drafts')
 [Repository fel-local]
 type = Maildir
 localfolders = ~/mail/fel
+
+[Account toptal]
+localrepository = toptal-local
+remoterepository = toptal-remote
+synclabels = yes
+autorefresh = 10
+
+[Repository toptal-remote]
+type = Gmail
+remotepasseval = get_pwd('my/toptal-mail-pwd')
+remoteuser = martin.indra@toptal.com
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+tls_level = tls_secure
+ssl_version = tls1_2
+folderfilter = lambda f: f == 'INBOX' or f in GMAIL_NAME_MAPPING
+nametrans = lambda f: GMAIL_NAME_MAPPING.get(f, f)
+
+[Repository toptal-local]
+type = GmailMaildir
+localfolders = ~/mail/toptal
+nametrans = lambda f: GMAIL_NAME_MAPPING_REVERSE.get(f, f)

@@ -1,0 +1,14 @@
+set smtp_pass=`pass show my/toptal-mail-pwd | head -n 1 | tr -d '\n'`
+set smtp_url="smtps://martin.indra@toptal.com@smtp.gmail.com:465"
+set smtp_authenticators="plain"
+
+set from="martin.indra@toptal.com"
+set folder="~/mail/toptal"
+set spoolfile="+INBOX"
+set record="+Sent
+set postponed="+Drafts"
+set header_cache="~/.mutt/toptal_header_cache"
+set signature="~/.mutt/toptal_signature.txt"
+
+unmailboxes *
+mailboxes =INBOX =Sent =Drafts
