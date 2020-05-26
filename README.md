@@ -306,7 +306,7 @@ Python
 ------
 
 ```bash
-sudo pacman -S python-pip python-pipenv
+sudo pacman -S python-pip python-poetry
 # These makes Emacs Elpy more powerful
 sudo pacman -S python-isort flake8 yapf python-rope python-jedi
 ```
