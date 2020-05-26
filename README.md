@@ -261,7 +261,7 @@ Neomutt
 -------
 
 ```bash
-sudo pacman -S pacman -S neomutt w3m urlscan
+sudo pacman -S neomutt w3m urlscan
 
 ln -s ~/dotfiles/mutt/muttrc ~/.muttrc
 mkdir ~/.mutt
