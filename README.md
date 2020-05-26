@@ -238,7 +238,7 @@ Emacs
 -----
 
 ```bash
-sudo pacman -S emacs aspell aspell-en aspell-cs
+sudo pacman -S emacs aspell aspell-en aspell-cs spell-it
 mkdir ~/.emacs.d
 mkdir ~/notes
 ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
