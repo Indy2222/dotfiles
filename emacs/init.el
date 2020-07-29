@@ -370,7 +370,7 @@
   :ensure t
   :demand t
   :config
-  (setq guess-language-languages '(en cs))
+  (setq guess-language-languages '(en cs it))
   (add-hook 'text-mode-hook (lambda () (guess-language-mode 1))))
 
 (use-package dockerfile-mode
