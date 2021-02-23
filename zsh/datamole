@@ -1,1 +1,2 @@
 export PATH="${PATH}:/home/indy/.joe/bin"
+export PATH="${PATH}:/home/indy/.dapr/bin"
