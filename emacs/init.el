@@ -283,9 +283,15 @@
   :config
   (setq rust-format-on-save t))
 
+(use-package typescript-mode
+  :ensure t
+  :config
+  (setq typescript-indent-level 2))
+
 (use-package lsp-mode
   :ensure t
-  :hook (rust-mode . lsp)
+  :hook ((rust-mode . lsp)
+         (typescript-mode . lsp ))
   :bind ("C-c d" . lsp-describe-thing-at-point)
   :config
   (use-package yasnippet
@@ -293,7 +299,18 @@
     :demand t)
   (use-package company-lsp
     :ensure t
-    :demand t))
+    :demand t)
+  (setq lsp-clients-angular-language-server-command
+        '("node"
+          "/usr/lib/node_modules/@angular/language-server"
+          "--ngProbeLocations"
+          "/usr/lib/node_modules"
+          "--tsProbeLocations"
+          "/usr/lib/node_modules"
+          "--stdio")))
+
+(use-package sass-mode
+  :ensure t)
 
 (use-package toml-mode
   :ensure t
