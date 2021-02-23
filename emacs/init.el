@@ -122,6 +122,18 @@
 
 (indy/screen-small)
 
+(defun indy/czech ()
+  "Switch input method to Czech & use Czech Ispell dictionary."
+  (interactive)
+  (set-input-method "czech-qwerty")
+  (ispell-change-dictionary "czech"))
+
+(defun indy/english ()
+  "Switch input method to Czech & use Czech Ispell dictionary."
+  (interactive)
+  (deactivate-input-method)
+  (ispell-change-dictionary "english"))
+
 ;; answer y or n instead of long yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -382,13 +394,6 @@
 (use-package mediawiki
   :ensure t
   :demand t)
-
-(use-package guess-language
-  :ensure t
-  :demand t
-  :config
-  (setq guess-language-languages '(en cs it))
-  (add-hook 'text-mode-hook (lambda () (guess-language-mode 1))))
 
 (use-package dockerfile-mode
   :ensure t
