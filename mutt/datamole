@@ -2,7 +2,7 @@ set smtp_pass=`pass show dm/mail-pwd | head -n 1 | tr -d '\n'`
 set smtp_url="smtps://martin.indra@datamole.cz@smtp.gmail.com:465"
 set smtp_authenticators="plain"
 
-set from="martin.indra@datamole.cz"
+set from="martin.indra@datamole.ai"
 set folder="~/mail/datamole"
 set spoolfile="+INBOX"
 set record="+Sent"
