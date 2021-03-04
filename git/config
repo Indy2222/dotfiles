@@ -18,3 +18,5 @@
 	gpgsign = true
 [credential]
 	helper = cache
+[init]
+	defaultBranch = main
