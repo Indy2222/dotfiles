@@ -247,6 +247,54 @@
            (file+datetree (concat "~/diary/" (format-time-string "%Y") ".org.gpg"))
            "* %?" :empty-lines 1))))
 
+(use-package ebib
+  :ensure t
+  :config
+  (setq ebib-preload-bib-files '("~/Documents/bibliography/bibliography.bib")
+        ebib-notes-directory "~/Documents/bibliography/notes/"
+        ebib-file-search-dirs '("~/Documents/bibliography/pdfs/")
+        ebib-file-associations '(("pdf" . "firefox"))))
+
+(defun indy/ebib-import-from-clipboard ()
+  "Attempt to import the contents in the kill ring/clipboard into `ebib'."
+  (interactive)
+  (with-temp-buffer
+    (yank)
+    (ebib-import)
+    (call-interactively #'ebib)))
+
+(defun indy/ebib-add-newest-pdf-from-downloads ()
+  "Add the most recently-downloaded PDF in the ~/Downloads directory to the current entry in ebib."
+  (interactive)
+  ;; pull out the most recent file from ~/Downloads with the .pdf extension.
+  (let ((newest-pdf (caar (sort (mapcan (lambda (x) (when (string-equal (file-name-extension (nth 0 x)) "pdf") (cons x nil)))
+                                        (directory-files-and-attributes "~/Downloads"))
+                                (lambda (x y) (not (time-less-p (nth 6 x) (nth 6 y))))))))
+    (if newest-pdf
+        ;; https://nullprogram.com/blog/2017/10/27/
+        ;; need to override `read-file-name' because ebib normally prompts us for the file to import
+        (let ((fpath (concat (file-name-as-directory "~/Downloads") newest-pdf))
+              (bibkey (ebib--get-key-at-point)))
+          (cl-letf (((symbol-function 'read-file-name) (lambda (&rest _) fpath)))
+            (call-interactively #'ebib-import-file))
+          (message "[Ebib] Imported %s for %s" fpath bibkey))
+      (message "[Ebib] No PDF files found in %s." "~/Downloads"))))
+
+(require 'biblio)
+
+(defun indy/ebib-doi-insert (doi)
+  "Insert BibTeX entry matching DOI."
+  (interactive "MDOI: ")
+  (biblio-doi-forward-bibtex
+   (biblio-cleanup-doi doi)
+   (lambda (result)
+     (with-temp-buffer
+       (biblio-doi--insert
+        (biblio-format-bibtex result biblio-bibtex-use-autokey)
+        (current-buffer))
+       (ebib-import))))
+  (call-interactively #'ebib))
+
 (use-package json-mode
   :ensure t
   ;; so even .geojson works out
