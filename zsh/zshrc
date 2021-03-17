@@ -19,6 +19,8 @@ plugins=(
     zsh-autosuggestions
 )
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#586e75"
+
 source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
