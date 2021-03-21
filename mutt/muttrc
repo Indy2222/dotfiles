@@ -71,3 +71,5 @@ macro index <f5> "<sync-mailbox><enter-command>source ~/.mutt/toptal<enter><chan
 
 macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
 macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
+set query_command = "con search --name %s mutt"
