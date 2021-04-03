@@ -6,6 +6,7 @@
 (set-keyboard-coding-system 'utf-8)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
 
 (require 'uniquify)
 
@@ -572,6 +573,8 @@
             " && poetry env info -p\"")))))
     (message "Working on %s" venv-path)
     (pyvenv-activate venv-path)))
+
+(load-file "~/dotfiles/emacs/mu4e.el")
 
 (when (file-exists-p custom-file)
   (load custom-file))

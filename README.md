@@ -253,37 +253,21 @@ sudo pacman -S offlineimap
 ln -s ~/dotfiles/offlineimaprc ~/.offlineimaprc
 mkdir ~/mail
 mkdir ~/mail/mgn
-mkdir ~/mail/dm
+mkdir ~/mail/datamole
 mkdir ~/mail/fel
 ```
 
-Neomutt
--------
+mu4e
+----
+
+Install from https://github.com/djcb/mu
 
 ```bash
-sudo pacman -S neomutt w3m urlscan
-
-ln -s ~/dotfiles/mutt/muttrc ~/.muttrc
-mkdir ~/.mutt
-ln -s ~/dotfiles/mutt/mailcap ~/.mutt/mailcap
-ln -s ~/dotfiles/mutt/datamole ~/.mutt/datamole
-ln -s ~/dotfiles/mutt/mgn ~/.mutt/mgn
-ln -s ~/dotfiles/mutt/fel ~/.mutt/fel
-ln -s ~/dotfiles/mutt/toptal ~/.mutt/toptal
-ln -s ~/dotfiles/mutt/datamole_signature.txt ~/.mutt/datamole_signature.txt
-ln -s ~/dotfiles/mutt/mgn_signature.txt ~/.mutt/mgn_signature.txt
-ln -s ~/dotfiles/mutt/fel_signature.txt ~/.mutt/fel_signature.txt
-ln -s ~/dotfiles/mutt/toptal_signature.txt ~/.mutt/toptal_signature.txt
-ln -s ~/dotfiles/mutt/theme ~/.mutt/theme
-mkdir ~/.mutt/datamole_header_cache
-mkdir ~/.mutt/mgn_header_cache
-mkdir ~/.mutt/fel_header_cache
-mkdir ~/.mutt/toptal_header_cache
-touch ~/.mutt/aliases
-mkdir ~/.mutt/account.datamole
-mkdir ~/.mutt/account.mgn
-mkdir ~/.mutt/account.fel
-mkdir ~/.mutt/account.toptal
+mu init --muhome ~/mail \
+  --my-address "martin.indra@mgn.cz" \
+  --my-address "martin.indra@datamole.cz" \
+  --my-address "martin.indra@datamole.ai" \
+  --my-address "indrama1@fel.cvut.cz"
 ```
 
 Firefox-Plasma Integration
