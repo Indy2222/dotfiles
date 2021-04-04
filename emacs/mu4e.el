@@ -24,7 +24,8 @@
  ;; TODO get a proper font which can render these
  mu4e-use-fancy-chars nil
  auth-sources '(password-store)
- mu4e-get-mail-command "true")
+ mu4e-get-mail-command "true"
+ mu4e-update-interval 1200)
 
 (defun indy/offlineimap-args (repository username)
   (concat
