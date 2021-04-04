@@ -26,7 +26,8 @@
  auth-sources '(password-store)
  mu4e-get-mail-command "true"
  mu4e-update-interval 1200
- mail-user-agent 'mu4e-user-agent)
+ mail-user-agent 'mu4e-user-agent
+ mu4e-compose-dont-reply-to-self t)
 
 (defun indy/offlineimap-args (repository username)
   (concat
