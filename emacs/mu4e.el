@@ -29,6 +29,8 @@
  mail-user-agent 'mu4e-user-agent
  mu4e-compose-dont-reply-to-self t)
 
+(add-to-list 'mu4e-view-actions '("bview in browser" . mu4e-action-view-in-browser))
+
 (defun indy/offlineimap-args (repository username)
   (concat
    "-k Repository_"
