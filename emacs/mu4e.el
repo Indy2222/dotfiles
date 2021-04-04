@@ -2,7 +2,6 @@
 (require 'auth-source-pass)
 
 (setq
- mu4e-get-mail-command "offlineimap -o"
  ;; GMail takes care of this
  mu4e-sent-messages-behavior 'delete
  mu4e-headers-fields '((:human-date . 12)
@@ -24,7 +23,31 @@
  message-kill-buffer-on-exit t
  ;; TODO get a proper font which can render these
  mu4e-use-fancy-chars nil
- auth-sources '(password-store))
+ auth-sources '(password-store)
+ mu4e-get-mail-command "true")
+
+(defun indy/offlineimap-args (repository username)
+  (concat
+   "-k Repository_"
+   repository
+   "-remote:remotepass="
+   (funcall
+    (plist-get
+     (nth 0 (auth-source-search :host "gmail.com" :user username))
+     :secret))))
+
+(defun indy/offlineimap-cmd ()
+  (concat
+   "offlineimap -o "
+   (indy/offlineimap-args "mgn" "martin.indra@mgn.cz")
+   " "
+   (indy/offlineimap-args "datamole" "martin.indra@datamole.cz")))
+
+(setq
+ mu4e-main-mode-hook
+ (lambda ()
+   (when (string= mu4e-get-mail-command "true")
+     (setq mu4e-get-mail-command  (indy/offlineimap-cmd)))))
 
 (defun enter-mu4e-context-mgn ()
   (setq

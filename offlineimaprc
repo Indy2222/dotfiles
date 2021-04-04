@@ -14,7 +14,6 @@ autorefresh = 10
 
 [Repository mgn-remote]
 type = Gmail
-remotepasseval = get_pwd('my/mgn-mail-pwd')
 remoteuser = martin.indra@mgn.cz
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 tls_level = tls_secure
@@ -35,7 +34,6 @@ autorefresh = 0.5
 
 [Repository datamole-remote]
 type = Gmail
-remotepasseval = get_pwd('dm/mail-pwd')
 remoteuser = martin.indra@datamole.cz
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 tls_level = tls_secure
