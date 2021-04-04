@@ -426,9 +426,9 @@
   :config
   (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
         dashboard-banner-logo-title "Let the hacking begin!"
-        dashboard-items '((recents . 10)
-                          (agenda . 10)
-                          (projects . 3)))
+        dashboard-filter-agenda-entry 'dashboard-no-filter-agenda
+        dashboard-items '((agenda   . 20)
+                          (projects . 10)))
   (dashboard-setup-startup-hook))
 
 (use-package which-key
