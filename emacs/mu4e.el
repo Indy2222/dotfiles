@@ -27,7 +27,10 @@
  mu4e-get-mail-command "true"
  mu4e-update-interval 1200
  mail-user-agent 'mu4e-user-agent
- mu4e-compose-dont-reply-to-self t)
+ mu4e-compose-dont-reply-to-self t
+ browse-url-browser-function 'browse-url-generic
+ browse-url-generic-program  "firefox"
+ browse-url-generic-args '("-P" "Files"))
 
 (add-to-list 'mu4e-view-actions '("bview in browser" . mu4e-action-view-in-browser))
 
