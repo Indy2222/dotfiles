@@ -63,7 +63,8 @@
    user-mail-address      "martin.indra@mgn.cz"
    mu4e-compose-signature "Martin Indra\n"
    mu4e-bookmarks
-   `((:name "Unread" :query "maildir:/mgn* AND flag:unread AND NOT flag:trashed" :key ?i)
+   `((:name "Unread INBOX" :query "maildir:/mgn/INBOX AND flag:unread AND NOT flag:trashed" :key ?i)
+     (:name "Unread other" :query "maildir:/mgn* AND NOT maildir:/mgn/INBOX AND flag:unread AND NOT flag:trashed" :key ?o)
      (:name "Last 7 days" :query "maildir:/mgn* AND date:7d..now" :hide-unread t :key ?w)))
 
   (require 'smtpmail)
