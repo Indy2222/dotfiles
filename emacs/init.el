@@ -356,19 +356,6 @@
             (lambda () (setq-local fill-column 72)))
   (global-magit-file-mode t))
 
-(use-package google-translate
-  :ensure t
-  :init
-  (setq google-translate-default-source-language "cs"
-        google-translate-default-target-language "en")
-  :bind
-  ;; C-c t -- from text
-  ;; C-c T -- from mind
-  (("C-c t" . google-translate-at-point-reverse)
-   ("C-c T". google-translate-query-translate))
-  :config
-  (require 'google-translate-default-ui))
-
 (use-package wttrin
   :ensure t
   :config
