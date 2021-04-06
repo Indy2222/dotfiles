@@ -202,11 +202,13 @@
   :ensure t
   :demand t
   :bind
-  (("s-j" . counsel-projectile-find-file)
-   ("s-i" . counsel-projectile-switch-project)
-   ("s-k" . projectile-toggle-between-implementation-and-test)
-   ("s-u" . projectile-find-implementation-or-test-other-window))
+  (("C-c p" . projectile-command-map)
+   ("s-j"   . counsel-projectile-find-file)
+   ("s-i"   . counsel-projectile-switch-project)
+   ("s-k"   . projectile-toggle-between-implementation-and-test)
+   ("s-u"   . projectile-find-implementation-or-test-other-window))
   :config
+  (setq projectile-completion-system 'ivy)
   (counsel-projectile-mode))
 
 (use-package ace-window
