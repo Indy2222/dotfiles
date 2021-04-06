@@ -48,7 +48,6 @@
  vc-handled-backends nil
  enable-local-variables nil
  visible-bell t
- org-highlight-latex-and-related '(latex)
  save-interprogram-paste-before-kill t)
 
 (setq-default mode-line-format
@@ -227,26 +226,6 @@
   :ensure t
   :bind
   (("C-x o" . ace-window)))
-
-(use-package org
-  :ensure t
-  :bind
-  (("C-c l" . org-capture)
-   ("C-c a" . org-agenda))
-  :config
-  (setq org-catch-invisible-edits 'error
-        org-default-notes-file "~/notes/notes.org"
-        org-agenda-files '("~/notes/")
-        org-capture-templates
-        '(("t" "Todo" entry
-           (file "~/notes/todo.org")
-           "* TODO %?\n\n%a\n%i\n")
-          ("n" "Notes" entry
-           (file "~/notes/notes.org")
-           "* %? %U\n\n%a\n%i\n")
-          ("j" "Journal" entry
-           (file+datetree (concat "~/diary/" (format-time-string "%Y") ".org.gpg"))
-           "* %?" :empty-lines 1))))
 
 (use-package ebib
   :ensure t
@@ -574,6 +553,7 @@
     (message "Working on %s" venv-path)
     (pyvenv-activate venv-path)))
 
+(load-file "~/dotfiles/emacs/org.el")
 (load-file "~/dotfiles/emacs/mu4e.el")
 
 (when (file-exists-p custom-file)
