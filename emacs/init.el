@@ -19,6 +19,7 @@
  ;; full screen terminal on my laptop has 50 lines (including tmux,
  ;; mode lines, etc.)
  split-height-threshold 100
+ split-width-threshold 160
  ;; display column number in modeline
  ;; TODO: is this implied with xx?
  column-number-mode t
@@ -96,7 +97,6 @@
       (vertical-scroll-bars)))
 
 (set-face-attribute 'default nil :font "Hack" :height 140)
-(setq split-width-threshold 160)
 
 (defun indy/czech ()
   "Switch input method to Czech & use Czech Ispell dictionary."
