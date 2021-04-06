@@ -98,29 +98,8 @@
 (setq default-frame-alist '((width . 100) (height . 25)
       (vertical-scroll-bars)))
 
-(defun indy/font-small ()
-  "Setup font size for large but only FullHD monitor."
-  (interactive)
-  (set-face-attribute 'default nil :font "Hack" :height 100))
-
-(defun indy/font-normal ()
-  "Setup font size for my laptop screen."
-  (interactive)
-  (set-face-attribute 'default nil :font "Hack" :height 140))
-
-(indy/font-normal)
-
-(defun indy/screen-small ()
-  "Setup Emacs for use on laptop screen."
-  (interactive)
-  (setq split-width-threshold 160))
-
-(defun indy/screen-huge ()
-  "Setup Emacs for use on two screens."
-  (interactive)
-  (setq split-width-threshold 460))
-
-(indy/screen-small)
+(set-face-attribute 'default nil :font "Hack" :height 140)
+(setq split-width-threshold 160)
 
 (defun indy/czech ()
   "Switch input method to Czech & use Czech Ispell dictionary."
