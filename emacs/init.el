@@ -24,9 +24,6 @@
  column-number-mode t
  uniquify-buffer-name-style 'forward
  ;; there may be only one space after a sentence
- ;; TODO:
- ;;  * Learn to use double spaces.
- ;;  * Change this based on buffer.
  sentence-end-double-space nil
  ;; display read only buffers in view-mode for better scrolling
  view-read-only t
