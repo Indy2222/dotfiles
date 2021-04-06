@@ -452,12 +452,6 @@
   :demand t
   :ensure t)
 
-(use-package csv-mode
-  :demand t
-  :ensure t
-  :config
-  (setq csv-align-max-width 80))
-
 (defun indy/kill-file-name ()
   "Place buffer-file-name kill ring and display it."
   (interactive)
