@@ -21,7 +21,6 @@
                              (when (string= " *mu4e-main*" (buffer-name (current-buffer)))
                                  (revert-buffer)))
  message-kill-buffer-on-exit t
- ;; TODO get a proper font which can render these
  mu4e-use-fancy-chars nil
  auth-sources '(password-store)
  mu4e-get-mail-command "true"
