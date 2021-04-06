@@ -128,7 +128,6 @@
 (add-hook 'before-save-hook 'copyright-update)
 
 (add-to-list 'auto-mode-alist '("\\(\\/\\.?zshrc\\|\\.zsh\\)\\'" . sh-mode))
-(add-to-list 'auto-mode-alist '("\\.*/neomutt-.*\\'" . text-mode))
 
 ;; Install use-package if not already installed.
 (require 'package)
