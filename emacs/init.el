@@ -151,7 +151,15 @@
   :load-path "themes"
   :config
   (load-theme 'solarized-dark t)
-  (setq x-underline-at-descent-line t))
+  (setq
+   x-underline-at-descent-line t
+   solarized-use-variable-pitch nil
+   solarized-height-minus-1 1.0
+   solarized-height-plus-1 1.0
+   solarized-height-plus-2 1.0
+   solarized-height-plus-3 1.0
+   solarized-height-plus-4 1.0
+   solarized-high-contrast-mode-line t))
 
 (use-package xclip
   :ensure t
