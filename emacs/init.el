@@ -356,12 +356,6 @@
             (lambda () (setq-local fill-column 72)))
   (global-magit-file-mode t))
 
-(use-package wttrin
-  :ensure t
-  :config
-  (setq wttrin-default-cities '("Prague")
-        wttrin-default-accept-language '("Accept-Language" . "en-US")))
-
 (use-package dashboard
   :ensure t
   :demand t
