@@ -146,7 +146,6 @@
   :demand t
   :load-path "themes"
   :config
-  (load-theme 'solarized-dark t)
   (setq
    x-underline-at-descent-line t
    solarized-use-variable-pitch nil
@@ -155,7 +154,8 @@
    solarized-height-plus-2 1.0
    solarized-height-plus-3 1.0
    solarized-height-plus-4 1.0
-   solarized-high-contrast-mode-line t))
+   solarized-high-contrast-mode-line t)
+  (load-theme 'solarized-dark t))
 
 (use-package xclip
   :ensure t
