@@ -307,16 +307,9 @@
   :config
   (setq rust-format-on-save t))
 
-(use-package typescript-mode
-  :ensure t
-  :config
-  (setq typescript-indent-level 2))
-
 (use-package lsp-mode
   :ensure t
-  :hook ((rust-mode . lsp)
-         (typescript-mode . lsp ))
-  :bind ("C-c d" . lsp-describe-thing-at-point)
+  :bind ("C-c d" . lsp-describe-thing-at-point))
   :config
   (use-package yasnippet
     :ensure t
