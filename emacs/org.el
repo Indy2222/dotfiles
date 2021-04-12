@@ -11,6 +11,7 @@
  org-highlight-latex-and-related '(latex)
  org-default-notes-file "~/notes/notes.org"
  org-agenda-files '("~/notes/")
+ org-clock-mode-line-total 'current
  org-capture-templates '(("t" "TODO" entry
                           (file "~/notes/todo.org")
                           "* TODO %?\n\n%a\n%i\n")
