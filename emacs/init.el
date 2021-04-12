@@ -301,30 +301,22 @@
     :ensure t
     :demand t))
 
-(use-package rust-mode
-  :ensure t
-  :mode "\\.rs\\'"
-  :config
-  (setq rust-format-on-save t))
-
 (use-package lsp-mode
   :ensure t
   :bind ("C-c d" . lsp-describe-thing-at-point))
+
+(use-package company-lsp
+  :ensure t
+  :demand t
+  :after (lsp-mode)
   :config
-  (use-package yasnippet
-    :ensure t
-    :demand t)
-  (use-package company-lsp
-    :ensure t
-    :demand t)
-  (setq lsp-clients-angular-language-server-command
-        '("node"
-          "/usr/lib/node_modules/@angular/language-server"
-          "--ngProbeLocations"
-          "/usr/lib/node_modules"
-          "--tsProbeLocations"
-          "/usr/lib/node_modules"
-          "--stdio")))
+  (push 'company-lsp company-backends))
+
+(use-package rustic
+  :ensure t
+  :config
+  (setq
+   rustic-format-trigger 'on-save))
 
 (use-package sass-mode
   :ensure t)

@@ -283,7 +283,7 @@ Rust
 ----
 
 ```bash
-sudo pacman -S rust rust-racer
+sudo pacman -S rust rust-analyzer pandoc
 ```
 
 Python
