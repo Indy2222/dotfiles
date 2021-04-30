@@ -338,8 +338,7 @@
   (setq git-commit-summary-max-length 50
         magit-completing-read-function 'ivy-completing-read)
   (add-hook 'git-commit-mode-hook
-            (lambda () (setq-local fill-column 72)))
-  (global-magit-file-mode t))
+            (lambda () (setq-local fill-column 72))))
 
 (use-package dashboard
   :ensure t
