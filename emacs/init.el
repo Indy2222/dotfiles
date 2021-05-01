@@ -140,7 +140,18 @@
 ;; of all packages.
 (require 'use-package)
 
-;; this one is among the most popular Emacs themes for a reason
+(defun indy/dark ()
+  "Enable a dark theme and disable all other themes."
+  (interactive)
+  (mapcar #'disable-theme custom-enabled-themes)
+  (enable-theme 'solarized-dark))
+
+(defun indy/light ()
+  "Enable a light theme and disable all other themes."
+  (interactive)
+  (mapcar #'disable-theme custom-enabled-themes)
+  (enable-theme 'solarized-light))
+
 (use-package solarized-theme
   :ensure t
   :demand t
@@ -154,8 +165,11 @@
    solarized-height-plus-2 1.0
    solarized-height-plus-3 1.0
    solarized-height-plus-4 1.0
+   solarized-distinct-fringe-background t
    solarized-high-contrast-mode-line t)
-  (load-theme 'solarized-dark t))
+  (load-theme 'solarized-light t nil)
+  (load-theme 'solarized-dark t nil)
+  (indy/dark))
 
 (use-package xclip
   :ensure t
