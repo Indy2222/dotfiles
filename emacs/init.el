@@ -94,7 +94,7 @@
 (setq default-frame-alist '((width . 100) (height . 25)
       (vertical-scroll-bars)))
 
-(set-face-attribute 'default nil :font "Hack" :height 140)
+(set-face-attribute 'default nil :font "JetBrains Mono" :height 140)
 
 (defun indy/czech ()
   "Switch input method to Czech & use Czech Ispell dictionary."

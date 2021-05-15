@@ -191,6 +191,13 @@ sudo cp ~/dotfiles/90-custom-kbd.conf /etc/X11/xorg.conf.d/90-custom-kbd.conf
 sudo chown root:root /etc/X11/xorg.conf.d/90-custom-kbd.conf
 ```
 
+Fonts
+-----
+
+```bash
+sudo pacman -S ttf-jetbrains-mono
+```
+
 ZSH
 ---
 
