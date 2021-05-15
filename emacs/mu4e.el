@@ -29,7 +29,8 @@
  mu4e-compose-dont-reply-to-self t
  browse-url-browser-function 'browse-url-generic
  browse-url-generic-program  "firefox"
- browse-url-generic-args '("-P" "Files"))
+ browse-url-generic-args '("-P" "Files")
+ mu4e-decryption-policy 'ask)
 
 (add-to-list 'mu4e-view-actions '("bview in browser" . mu4e-action-view-in-browser))
 
