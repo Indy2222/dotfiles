@@ -12,8 +12,7 @@
 
 (setq
  package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                    ("melpa" . "https://melpa.org/packages/")
-                    ("elpy" . "https://jorgenschaefer.github.io/packages/"))
+                    ("melpa" . "https://melpa.org/packages/"))
  ;; not useful once you learn Emacs
  inhibit-startup-message t
  ;; full screen terminal on my laptop has 50 lines (including tmux,
@@ -41,7 +40,6 @@
  mode-require-final-newline "ask"
  dired-dwim-target t
  tls-checktrust t
- elpy-rpc-python-command "python3"
  flyspell-issue-message-flag nil
  vc-handled-backends nil
  enable-local-variables nil
@@ -287,37 +285,29 @@
   :ensure t
   :mode "\\.md\\'")
 
-;; python package provides python-mode
-(use-package python
+
+(use-package py-isort
   :ensure t
-  :mode
-  ("\\.py\\'" . python-mode)
-  :interpreter
-  ("python" . python-mode)
-  :config
-  ;; Python environment
-  (use-package elpy
-    :ensure t
-    :demand t
-    :after python
-    :config
-    (elpy-enable)
-    (define-key python-mode-map (kbd "M-.") #'elpy-goto-definition))
-  (use-package sphinx-doc
-    :ensure t
-    :demand t
-    :config
-    (add-hook 'python-mode-hook (lambda () (sphinx-doc-mode t))))
-  (use-package py-isort
-    :ensure t
-    :demand t)
-  (use-package pyvenv
-    :ensure t
-    :demand t))
+  :demand t)
 
 (use-package lsp-mode
   :ensure t
-  :bind ("C-c d" . lsp-describe-thing-at-point))
+  :bind ("C-c d" . lsp-describe-thing-at-point)
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  :hook ((lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp
+  :config
+  (with-eval-after-load 'lsp-mode
+    (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)))
+
+(use-package lsp-pyright
+  :ensure t
+  :demand t
+  :after (lsp-mode)
+  :hook (python-mode . (lambda ()
+                         (require 'lsp-pyright)
+                         (lsp))))
 
 (use-package company-lsp
   :ensure t
