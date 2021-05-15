@@ -164,7 +164,7 @@
    solarized-height-plus-3 1.0
    solarized-height-plus-4 1.0
    solarized-distinct-fringe-background t
-   solarized-high-contrast-mode-line t)
+   solarized-high-contrast-mode-line nil)
   (load-theme 'solarized-light t nil)
   (load-theme 'solarized-dark t nil)
   (indy/dark))
