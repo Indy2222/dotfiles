@@ -102,6 +102,12 @@
   (set-input-method "czech-qwerty")
   (ispell-change-dictionary "czech"))
 
+(defun indy/portuguese ()
+  "Switch input method to Portuguese & use Portuguese Ispell dictionary."
+  (interactive)
+  (set-input-method "portuguese-prefix")
+  (ispell-change-dictionary "portugues"))
+
 (defun indy/english ()
   "Switch input method to Czech & use Czech Ispell dictionary."
   (interactive)
