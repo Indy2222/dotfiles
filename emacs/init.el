@@ -315,13 +315,6 @@
                          (require 'lsp-pyright)
                          (lsp))))
 
-(use-package company-lsp
-  :ensure t
-  :demand t
-  :after (lsp-mode)
-  :config
-  (push 'company-lsp company-backends))
-
 (use-package rustic
   :ensure t
   :config
