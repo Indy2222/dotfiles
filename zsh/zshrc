@@ -34,6 +34,7 @@ export ZSH_DOTFILES="$DOTFILES/zsh"
 
 alias ll='exa -lgumh --group-directories-first --color-scale'
 
+source $ZSH_DOTFILES/python
 source $ZSH_DOTFILES/gcp
 source $ZSH_DOTFILES/k8s
 source $ZSH_DOTFILES/rust
