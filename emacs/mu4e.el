@@ -120,3 +120,7 @@
 			(when msg
 			  (string-match-p "^/datamole" (mu4e-message-field msg :maildir)))))
        ))
+
+(with-eval-after-load "mm-decode"
+  (add-to-list 'mm-discouraged-alternatives "text/html")
+  (add-to-list 'mm-discouraged-alternatives "text/richtext"))
