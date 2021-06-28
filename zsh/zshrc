@@ -24,7 +24,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#586e75"
 source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
-export EDITOR='emacsclient -t'
+export EDITOR='emacsclient -c'
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 # https://www.gnupg.org/documentation/manuals/gnupg/Common-Problems.html
 export GPG_TTY=$(tty)
