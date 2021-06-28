@@ -94,7 +94,11 @@
 (setq default-frame-alist '((width . 100) (height . 25)
       (vertical-scroll-bars)))
 
-(set-face-attribute 'default nil :font "JetBrains Mono" :height 140)
+(add-hook
+ 'after-make-frame-functions
+ (lambda (frame)
+   (set-face-attribute 'default nil :font "JetBrains Mono" :height 150)
+   (set-fontset-font t nil (font-spec :height 140 :name "Noto Color Emoji"))))
 
 (defun indy/czech ()
   "Switch input method to Czech & use Czech Ispell dictionary."

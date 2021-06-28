@@ -195,7 +195,7 @@ Fonts
 -----
 
 ```bash
-sudo pacman -S ttf-jetbrains-mono
+sudo pacman -S ttf-jetbrains-mono extra/noto-fonts-emoji
 ```
 
 ZSH
