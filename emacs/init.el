@@ -468,8 +468,9 @@
 
 (global-set-key "\C-cid" 'indy/date-time)
 
-(defun indy/poetry ()
-  (interactive)
+(defun indy/poetry (workspace)
+  "Activate Poetry env and restart lsp WORKSPACE."
+  (interactive (list (lsp--read-workspace)))
   (let ((venv-path
          (string-trim
           (shell-command-to-string
@@ -478,7 +479,8 @@
             (file-name-directory (buffer-file-name))
             " && poetry env info -p\"")))))
     (message "Working on %s" venv-path)
-    (pyvenv-activate venv-path)))
+    (pyvenv-activate venv-path)
+    (lsp-workspace-restart workspace)))
 
 (load-file "~/dotfiles/emacs/org.el")
 (load-file "~/dotfiles/emacs/mu4e.el")
