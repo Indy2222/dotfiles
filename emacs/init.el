@@ -488,3 +488,5 @@
 
 (when (file-exists-p custom-file)
   (load custom-file))
+
+(put 'magit-diff-edit-hunk-commit 'disabled nil)
