@@ -1,2 +1,4 @@
 export PATH="${PATH}:/home/indy/.joe/bin"
 export PATH="${PATH}:/home/indy/.dapr/bin"
+export POETRY_HTTP_BASIC_DTML_USERNAME=martin.indra
+export JFROG_SERVICE_USERNAME=$POETRY_HTTP_BASIC_DTML_USERNAME
