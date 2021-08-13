@@ -69,7 +69,8 @@
  ;; 79 columns still leave some space on my laptop even with a large font
  fill-column 79
  ;; Truncate lines instead of wrapping them.
- truncate-lines t)
+ truncate-lines t
+ python-indent-def-block-scale 1)
 
 (global-set-key "\M- " 'hippie-expand)
 
