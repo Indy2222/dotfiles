@@ -34,6 +34,13 @@
 
 (add-to-list 'mu4e-view-actions '("bview in browser" . mu4e-action-view-in-browser))
 
+(defun indy/mu4e-compose-prep ()
+  "Turn off auto-fill-mode."
+  (auto-fill-mode -1)
+  (visual-line-mode 1))
+
+(add-hook 'mu4e-compose-mode-hook #'indy/mu4e-compose-prep)
+
 (defun indy/offlineimap-args (repository username)
   (concat
    "-k Repository_"
