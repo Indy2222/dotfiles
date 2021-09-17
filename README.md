@@ -274,7 +274,8 @@ mu init --muhome ~/mail \
   --my-address "martin.indra@mgn.cz" \
   --my-address "martin.indra@datamole.cz" \
   --my-address "martin.indra@datamole.ai" \
-  --my-address "indrama1@fel.cvut.cz"
+  --my-address "indrama1@fel.cvut.cz" \
+  --my-address "indrama1@fjfi.cvut.cz"
 ```
 
 Firefox-Plasma Integration

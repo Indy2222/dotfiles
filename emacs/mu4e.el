@@ -56,7 +56,9 @@
    "offlineimap -o "
    (indy/offlineimap-args "mgn" "gmail.com"  "martin.indra@mgn.cz")
    " "
-   (indy/offlineimap-args "datamole" "gmail.com" "martin.indra@datamole.cz")))
+   (indy/offlineimap-args "datamole" "gmail.com" "martin.indra@datamole.cz")
+   " "
+   (indy/offlineimap-args "fjfi" "fjfi.cvut.cz" "indrama1")))
 
 (setq
  mu4e-main-mode-hook
@@ -106,6 +108,35 @@
         smtpmail-stream-type 'ssl
         smtpmail-smtp-user "martin.indra@datamole.cz"))
 
+(defun enter-mu4e-context-fjfi ()
+  (setq
+   mu4e-sent-folder       "/fjfi/Sent"
+   mu4e-drafts-folder     "/fjfi/Drafts"
+   mu4e-trash-folder      "/fjfi/Trash"
+   mu4e-refile-folder     "/fjfi/Archive"
+   user-mail-address      "indrama1@fjfi.cvut.cz"
+   mu4e-compose-signature (concat
+                           "Ing. Martin Indra\n"
+                           "BS Student in Mathematical Modelling, P_MIB\n"
+                           "Faculty of Nuclear Sciences and Physical Engineering,\n"
+                           "Czech Technical University in Prague\n"
+                           "(e): indrama1@fjfi.cvut.cz\n"
+                           "(m): +420 603 331 063\n"
+                           "(w): https://mgn.cz/\n")
+   mu4e-bookmarks
+   `((:name "Unread INBOX" :query "maildir:/fjfi/INBOX AND flag:unread AND NOT flag:trashed" :key ?i)
+     (:name "All INBOX" :query "maildir:/fjfi/INBOX AND NOT flag:trashed" :key ?a)
+     (:name "Drafts" :query "maildir:/fjfi/Drafts" :key ?d)
+     (:name "Sent" :query "maildir:/fjfi/Sent" :key ?s)))
+
+  (require 'smtpmail)
+  (setq message-send-mail-function 'smtpmail-send-it
+        starttls-use-gnutls t
+        smtpmail-smtp-server "smtp.fjfi.cvut.cz"
+        smtpmail-smtp-service 587
+        smtpmail-stream-type 'starttls
+        smtpmail-smtp-user "indrama1"))
+
 (setq mu4e-contexts
       `(
         ,(make-mu4e-context
@@ -126,6 +157,15 @@
 	  :match-func (lambda (msg)
 			(when msg
 			  (string-match-p "^/datamole" (mu4e-message-field msg :maildir)))))
+       ,(make-mu4e-context
+	  :name "FJFI"
+	  :enter-func (lambda ()
+                        (progn
+                          (mu4e-message "Entering FJFI context")
+                          (enter-mu4e-context-fjfi)))
+	  :match-func (lambda (msg)
+			(when msg
+			  (string-match-p "^/fjfi" (mu4e-message-field msg :maildir)))))
        ))
 
 (with-eval-after-load "mm-decode"
