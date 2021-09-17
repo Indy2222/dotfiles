@@ -41,22 +41,22 @@
 
 (add-hook 'mu4e-compose-mode-hook #'indy/mu4e-compose-prep)
 
-(defun indy/offlineimap-args (repository username)
+(defun indy/offlineimap-args (repository host username)
   (concat
    "-k Repository_"
    repository
    "-remote:remotepass="
    (funcall
     (plist-get
-     (nth 0 (auth-source-search :host "gmail.com" :user username))
+     (nth 0 (auth-source-search :host host :user username))
      :secret))))
 
 (defun indy/offlineimap-cmd ()
   (concat
    "offlineimap -o "
-   (indy/offlineimap-args "mgn" "martin.indra@mgn.cz")
+   (indy/offlineimap-args "mgn" "gmail.com"  "martin.indra@mgn.cz")
    " "
-   (indy/offlineimap-args "datamole" "martin.indra@datamole.cz")))
+   (indy/offlineimap-args "datamole" "gmail.com" "martin.indra@datamole.cz")))
 
 (setq
  mu4e-main-mode-hook
