@@ -1,4 +1,4 @@
-#! /usr/bin/env python2
+#! /usr/bin/env python3
 from subprocess import check_output
 
 GMAIL_EXCLUDE = {
@@ -16,7 +16,7 @@ GMAIL_NAME_MAPPING = {
     '[Gmail]/Trash': 'Trash',
     '[Gmail]/Subscriptions': 'Subscriptions',
 }
-GMAIL_NAME_MAPPING_REVERSE = {v: k for k, v in GMAIL_NAME_MAPPING.iteritems()}
+GMAIL_NAME_MAPPING_REVERSE = {v: k for k, v in GMAIL_NAME_MAPPING.items()}
 
 
 _pwd_cache = {}
