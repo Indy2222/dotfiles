@@ -1,7 +1,7 @@
 [general]
 pythonfile = ~/dotfiles/offlineimap.py
 socktimeout = 60
-accounts = mgn, datamole, fjfi
+accounts = mgn, datamole
 # this must be >= number of accounts due to autorefresh, otherwise some
 # accounts will never sync
 maxsyncaccounts = 4
@@ -13,18 +13,19 @@ synclabels = yes
 autorefresh = 10
 
 [Repository mgn-remote]
-type = Gmail
+type = IMAP
 remoteuser = martin.indra@mgn.cz
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remotehost = 127.0.0.1
+remoteport = 1143
+sslcacertfile = ~/.config/protonmail/bridge/cert.pem
+starttls = yes
+ssl = no
 tls_level = tls_secure
 ssl_version = tls1_2
-folderfilter = lambda f: f not in GMAIL_EXCLUDE
-nametrans = lambda f: GMAIL_NAME_MAPPING.get(f, f)
 
 [Repository mgn-local]
-type = GmailMaildir
+type = Maildir
 localfolders = ~/mail/mgn
-nametrans = lambda f: GMAIL_NAME_MAPPING_REVERSE.get(f, f)
 
 [Account datamole]
 localrepository = datamole-local
