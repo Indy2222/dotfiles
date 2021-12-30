@@ -19,6 +19,7 @@
  ;; mode lines, etc.)
  split-height-threshold 100
  split-width-threshold 160
+ frame-resize-pixelwise t
  ;; display column number in modeline
  ;; TODO: is this implied with xx?
  column-number-mode t
