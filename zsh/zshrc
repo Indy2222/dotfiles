@@ -17,6 +17,7 @@ plugins=(
     fast-syntax-highlighting
     pass
     zsh-autosuggestions
+    fzf-zsh-plugin
 )
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#586e75"

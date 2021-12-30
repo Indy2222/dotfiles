@@ -222,6 +222,7 @@ cd ~/.oh-my-zsh/custom/plugins
 # syntax highlighting
 git clone https://github.com/zdharma/fast-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions
+git clone https://github.com/unixorn/fzf-zsh-plugin.git
 ```
 
 Tmux
