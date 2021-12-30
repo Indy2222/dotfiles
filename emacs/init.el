@@ -411,7 +411,11 @@
   :ensure t
   :config
   (eyebrowse-mode t)
-  (setq eyebrowse-new-workspace t))
+  (setq
+   eyebrowse-new-workspace t
+   eyebrowse-mode-line-left-delimiter "C"
+   eyebrowse-mode-line-right-delimiter ""
+   eyebrowse-mode-line-style 'current))
 
 (use-package crux
   :demand t
