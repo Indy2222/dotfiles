@@ -16,7 +16,6 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
     fast-syntax-highlighting
     pass
-    zsh-autosuggestions
     fzf-zsh-plugin
 )
 
