@@ -215,9 +215,12 @@
   (ivy-mode 1)
   (use-package counsel
     :ensure t
+    :config
+    (defun indy/git-grep (dir)
+      (interactive "D")
+        (counsel-git-grep nil dir))
     :bind
-    (("M-g g" . counsel-git-grep)
-     ("M-g a" . counsel-ag))))
+    (("M-g g" . indy/git-grep))))
 
 (use-package counsel-projectile
   :ensure t
