@@ -56,8 +56,6 @@
         " "
         mode-line-position
         " "
-        mode-name
-        " "
         mode-line-buffer-identification
         " "
         mode-line-misc-info
