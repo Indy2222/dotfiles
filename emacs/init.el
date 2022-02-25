@@ -490,6 +490,7 @@
 
 (load-file "~/dotfiles/emacs/org.el")
 (load-file "~/dotfiles/emacs/mu4e.el")
+(load-file "~/dotfiles/emacs/term.el")
 
 (when (file-exists-p custom-file)
   (load custom-file))
