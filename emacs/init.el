@@ -91,8 +91,11 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
-(setq default-frame-alist '((width . 100) (height . 25)
-      (vertical-scroll-bars)))
+(setq
+ default-frame-alist '((width . 100)
+                       (height . 25)
+                       (vertical-scroll-bars)
+                       (alpha . (90 . 85))))
 
 (add-hook
  'after-make-frame-functions
