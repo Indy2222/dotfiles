@@ -35,7 +35,7 @@ export ZSH_DOTFILES="$DOTFILES/zsh"
 
 alias ll='exa -lgumh --group-directories-first --color-scale'
 
-source $HOME/.autojump/share/autojump/autojump.zsh
+source /usr/share/autojump/autojump.zsh
 
 source $ZSH_DOTFILES/python
 source $ZSH_DOTFILES/gcp
