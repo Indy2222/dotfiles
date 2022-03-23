@@ -262,16 +262,7 @@ Terminal
 sudo pacman -S konsole
 ```
 
-Emacs
------
 
-```bash
-sudo pacman -S emacs aspell aspell-en aspell-cs spell-it
-mkdir ~/.emacs.d
-mkdir ~/notes
-ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
-systemctl --user enable --now emacs
-```
 
 Offlineimap
 -----------
@@ -294,6 +285,17 @@ mu init --maildir ~/mail \
   --my-address "martin.indra@mgn.cz" \
   --my-address "martin.indra@datamole.cz" \
   --my-address "martin.indra@datamole.ai"
+```
+
+Emacs
+-----
+
+```bash
+sudo pacman -S emacs aspell aspell-en aspell-cs aspell-it
+mkdir ~/.emacs.d
+mkdir ~/notes
+ln -s ~/dotfiles/emacs/init.el ~/.emacs.d/init.el
+systemctl --user enable --now emacs
 ```
 
 Firefox
