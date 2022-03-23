@@ -1,4 +1,3 @@
-export AzureCLIPath=$HOME/bin
 export MSBuildSDKsPath=$( echo /usr/share/dotnet/sdk/6.*/Sdks )
 export PATH=$HOME/.dotnet/tools:$PATH
 source $HOME/lib/azure-cli/az.completion
