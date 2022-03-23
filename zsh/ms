@@ -1,1 +1,1 @@
-source $HOME/lib/azure-cli/az.completion
+source /opt/azure-cli/az.completion
