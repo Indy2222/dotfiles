@@ -1,3 +1,5 @@
+(require 'term)
+
 (defun indy/term-exec-hook ()
   (let* ((buff (current-buffer))
          (proc (get-buffer-process buff)))
