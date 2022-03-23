@@ -290,7 +290,7 @@ mu4e
 Install from https://github.com/djcb/mu
 
 ```bash
-mu init --muhome ~/mail \
+mu init --maildir ~/mail \
   --my-address "martin.indra@mgn.cz" \
   --my-address "martin.indra@datamole.cz" \
   --my-address "martin.indra@datamole.ai"
