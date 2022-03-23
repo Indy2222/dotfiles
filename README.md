@@ -384,6 +384,14 @@ systemctl enable --now cups.socket
 sudo usermod -a -G sys indy
 ```
 
+Bluetooth
+---------
+
+```bash
+sudo pacman -S bluez bluez-utils pipewire-pulse
+systemctl enable --now bluetooth.service
+```
+
 More Network
 ------------
 
