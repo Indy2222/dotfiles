@@ -381,7 +381,8 @@ Printing
 
 ```bash
 sudo pacman -S cups
-systemctl enable org.cups.cupsd.socket
+systemctl enable --now cups.socket
+sudo usermod -a -G sys indy
 ```
 
 More Network
