@@ -259,9 +259,7 @@ Terminal
 --------
 
 ```bash
-sudo pacman -S alacritty
-mkdir -p ~/.config/alacritty
-ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
+sudo pacman -S konsole
 ```
 
 Emacs
