@@ -95,7 +95,7 @@
  default-frame-alist '((width . 100)
                        (height . 25)
                        (vertical-scroll-bars)
-                       (alpha . (90 . 85))))
+                       (alpha . (100 . 100))))
 
 (add-hook
  'after-make-frame-functions
