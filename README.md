@@ -309,7 +309,7 @@ Rust
 ----
 
 ```bash
-sudo pacman -S rust rust-analyzer pandoc
+sudo pacman -S rust rust-analyzer pandoc fd
 ```
 
 Python
