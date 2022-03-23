@@ -296,8 +296,12 @@ mu init --maildir ~/mail \
   --my-address "martin.indra@datamole.ai"
 ```
 
-Firefox-Plasma Integration
+Firefox
 --------------------------
+
+```bash
+sudo pacman -S firefox
+```
 
 Install https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
 
