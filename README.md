@@ -99,10 +99,18 @@ useradd indy
 passwd indy
 mkdir /home/indy
 chown -R indy:indy /home/indy
-pacman -S sudo
-# And add indy to sudo users
-visudo
 ```
+
+Setup sudo
+----------
+
+```bash
+pacman -S sudo
+groupadd sudo
+usermod -aG sudo indy
+```
+
+Add or uncomment this line `%sudo   ALL=(ALL:ALL) ALL` in `/etc/sudoers`.
 
 Install KDE
 -----------
