@@ -282,7 +282,6 @@ ln -s ~/dotfiles/offlineimaprc ~/.offlineimaprc
 mkdir ~/mail
 mkdir ~/mail/mgn
 mkdir ~/mail/datamole
-mkdir ~/mail/fel
 ```
 
 mu4e
