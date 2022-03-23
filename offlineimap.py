@@ -17,3 +17,9 @@ GMAIL_NAME_MAPPING = {
     '[Gmail]/Subscriptions': 'Subscriptions',
 }
 GMAIL_NAME_MAPPING_REVERSE = {v: k for k, v in GMAIL_NAME_MAPPING.items()}
+
+MGN_INCLUDE = {
+    'Drafts',
+    'INBOX',
+    'Sent',
+}

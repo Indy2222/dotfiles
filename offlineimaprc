@@ -22,6 +22,7 @@ starttls = yes
 ssl = no
 tls_level = tls_secure
 ssl_version = tls1_2
+folderfilter = lambda f: f in MGN_INCLUDE
 
 [Repository mgn-local]
 type = Maildir
