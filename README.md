@@ -241,6 +241,12 @@ git clone https://github.com/unixorn/fzf-zsh-plugin.git
 
 Install Autojump from AUR https://aur.archlinux.org/packages/autojump
 
+Change shell for `indy`:
+
+```bash
+chsh indy
+```
+
 Tmux
 ----
 
