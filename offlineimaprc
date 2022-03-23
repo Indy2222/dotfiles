@@ -46,22 +46,3 @@ folderfilter = lambda f: f not in GMAIL_EXCLUDE
 type = GmailMaildir
 localfolders = ~/mail/datamole
 nametrans = lambda f: GMAIL_NAME_MAPPING_REVERSE.get(f, f)
-
-[Account fjfi]
-localrepository = fjfi-local
-remoterepository = fjfi-remote
-synclabels = yes
-autorefresh = 10
-
-[Repository fjfi-remote]
-type = IMAP
-remoteuser = indrama1
-remotehost = imap.fjfi.cvut.cz
-remoteport = 993
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-tls_level = tls_secure
-ssl_version = tls1_2
-
-[Repository fjfi-local]
-type = Maildir
-localfolders = ~/mail/fjfi
