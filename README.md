@@ -101,6 +101,13 @@ mkdir /home/indy
 chown -R indy:indy /home/indy
 ```
 
+Configure access to network administration:
+
+```
+sudo groupadd netdev
+sudo usermod -aG netdev indy
+```
+
 Setup sudo
 ----------
 
