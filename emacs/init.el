@@ -363,16 +363,14 @@
   (setq company-show-numbers 1
         company-idle-delay 0.2))
 
-(use-package eyebrowse
+(use-package perspective
   :demand t
   :ensure t
+  :bind (("C-x b" . persp-switch-to-buffer*)
+         ("C-x k" . persp-kill-buffer*))
   :config
-  (eyebrowse-mode t)
-  (setq
-   eyebrowse-new-workspace t
-   eyebrowse-mode-line-left-delimiter "C"
-   eyebrowse-mode-line-right-delimiter ""
-   eyebrowse-mode-line-style 'current))
+  (persp-mode)
+  (add-hook 'kill-emacs-hook #'persp-state-save))
 
 (use-package crux
   :demand t
