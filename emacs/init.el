@@ -369,8 +369,7 @@
   :bind (("C-x b" . persp-switch-to-buffer*)
          ("C-x k" . persp-kill-buffer*))
   :config
-  (persp-mode)
-  (add-hook 'kill-emacs-hook #'persp-state-save))
+  (persp-mode))
 
 (use-package crux
   :demand t
