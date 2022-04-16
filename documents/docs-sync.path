@@ -1,0 +1,5 @@
+[Path]
+PathChanged=/home/indy/Documents
+
+[Install]
+WantedBy=default.target

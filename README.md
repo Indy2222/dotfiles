@@ -403,3 +403,17 @@ More Network
 sudo pacman -S vnstat
 systemctl enable --now vnstat
 ```
+
+Documents
+---------
+
+Install https://rclone.org/
+
+```bash
+rclone bisync --resync /home/indy/Documents drive:Documents
+ln -s ~/dotfiles/documents/docs-sync.service ~/.config/systemd/user/docs-sync.service
+ln -s ~/dotfiles/documents/docs-sync.path ~/.config/systemd/user/docs-sync.path
+ln -s ~/dotfiles/documents/docs-sync.timer ~/.config/systemd/user/docs-sync.timer
+systemctl --user enable --now docs-sync.path
+systemctl --user enable --now docs-sync.timer
+```
