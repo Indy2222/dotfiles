@@ -136,6 +136,14 @@ All of the following commands work if executed under my user.
 Useful Software
 ---------------
 
+Development:
+
+```bash
+sudo pacman -S man-db
+```
+
+Other:
+
 ```bash
 # Note that gcc is needed for Emacs to work properly. See
 # https://wiki.archlinux.org/index.php/Emacs#Emacs_fails_to_start_with_the_error_message_'Undefined_color:_%22WINDOW_FOREGROUND%22'
