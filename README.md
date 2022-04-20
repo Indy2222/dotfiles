@@ -415,9 +415,8 @@ systemctl enable --now vnstat
 Documents
 ---------
 
-Install https://rclone.org/
-
 ```bash
+sudo pacman -S rclone
 rclone bisync --resync /home/indy/Documents drive:Documents
 ln -s ~/dotfiles/documents/docs-sync.service ~/.config/systemd/user/docs-sync.service
 ln -s ~/dotfiles/documents/docs-sync.path ~/.config/systemd/user/docs-sync.path
