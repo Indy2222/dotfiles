@@ -23,14 +23,5 @@
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 
-(use-package org-ref
-  :ensure t
-  :config
-  (setq reftex-default-bibliography '("~/Documents/bibliography/bibliography.bib")
-        org-ref-default-bibliography "~/Documents/bibliography/bibliography.bib"
-        org-ref-pdf-directory "~/Documents/bibliography/pdfs/"
-        org-ref-bibliography-notes nil
-        org-ref-completion-library 'org-ref-ivy-cite))
-
 (use-package org-clock-csv
   :ensure t)
