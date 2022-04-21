@@ -9,18 +9,16 @@
 (setq
  org-catch-invisible-edits 'error
  org-highlight-latex-and-related '(latex)
- org-default-notes-file "~/notes/notes.org"
- org-agenda-files '("~/notes/")
+ org-default-notes-file "~/Documents/Notes/Dispatch.org"
+ org-agenda-files '("~/Documents/Notes/")
  org-clock-mode-line-total 'current
- org-capture-templates '(("t" "TODO" entry
-                          (file "~/notes/todo.org")
-                          "* TODO %?\n\n%a\n%i\n")
-                         ("d" "TODO datamole" entry
-                          (file "~/notes/todo-dm.org")
-                          "* TODO %?\n\n%a\n%i\n")
-                         ("n" "Notes" entry
-                          (file "~/notes/notes.org")
-                          "* %? %U\n\n%a\n%i\n")))
+ org-capture-templates
+ '(
+   ("a" "Anything" entry
+    (file "~/Documents/Notes/Dispatch.org")
+    "* TODO %^{Title} (%t)\n\n%i%?"
+    :empty-lines 1
+    :kill-buffer t)))
 
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
