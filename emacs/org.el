@@ -59,29 +59,25 @@
     (file+olp indy--dtml-clock-file "Datamole")
     "* %? %^g\n"
     :clock-in t
-    :clock-keep t
-    :kill-buffer t)
+    :clock-keep t)
 
    ("dcm" "ML Platform" entry
     (file+olp indy--dtml-clock-file "Datamole" "ML Platform")
     "* %? %^g\n"
     :clock-in t
-    :clock-keep t
-    :kill-buffer t)
+    :clock-keep t)
 
    ("dcp" "PTO" entry
     (file+olp indy--dtml-clock-file "Lely" "Milking Setting Optimization")
     "* %? %^g\n"
     :clock-in t
-    :clock-keep t
-    :kill-buffer t)
+    :clock-keep t)
 
    ("dcf" "MFPC" entry
     (file+olp indy--dtml-clock-file "Lely" "MilkFlowProfile")
     "* %? %^g\n"
     :clock-in t
-    :clock-keep t
-    :kill-buffer t)
+    :clock-keep t)
 
    ))
 
