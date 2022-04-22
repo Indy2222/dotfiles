@@ -2,16 +2,32 @@
   :ensure t
   :demand t)
 
+(defun indy/org-clock-out (&optional switch-to-state)
+  "Call org-clock-out and save."
+  (interactive "P")
+  (let ((buf (org-clocking-buffer)))
+    (org-clock-out switch-to-state)
+    (org-clock-save)
+    (with-current-buffer buf (save-buffer))))
+
+(defun indy/org-clock-in-last (&optional arg)
+  "Call org-clock-in-last and save."
+  (interactive "P")
+  (org-clock-in-last arg)
+  (org-clock-save)
+  (with-current-buffer (org-clocking-buffer) (save-buffer)))
+
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c C-x C-o") 'org-clock-out)
-(global-set-key (kbd "C-c C-x C-x") 'org-clock-in-last)
+(global-set-key (kbd "C-c C-x C-o") 'indy/org-clock-out)
+(global-set-key (kbd "C-c C-x C-x") 'indy/org-clock-in-last)
 
 (setq
  org-catch-invisible-edits 'error
  org-highlight-latex-and-related '(latex)
  org-clock-mode-line-total 'current
+ org-clock-persist t
 
  org-directory "~/Documents/Notes/"
 
