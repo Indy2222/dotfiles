@@ -36,6 +36,9 @@
  indy--dtml-notes-file (concat (file-name-as-directory indy--dtml-notes-directory) "Notes.org")
  indy--personal-notes-directory (concat (file-name-as-directory org-directory) "Personal")
  indy--personal-notes-file (concat (file-name-as-directory indy--personal-notes-directory) "Notes.org")
+ indy--de-notes-directory (concat (file-name-as-directory org-directory) "DE")
+ indy--de-notes-file (concat (file-name-as-directory indy--de-notes-directory) "Notes.org")
+ indy--de-clock-file (concat (file-name-as-directory indy--de-notes-directory) "Clock.org")
 
  org-capture-templates
  '(
@@ -44,6 +47,20 @@
     "* TODO %^{Title}\n\n%i%?"
     :empty-lines 1
     :kill-buffer t)
+
+   ("e" "Digital Extinction")
+
+   ("en" "Notes" entry
+    (file+olp+datetree indy--de-notes-file)
+    "* TODO %^{Title}\n\n%i%?"
+    :empty-lines 1
+    :kill-buffer t)
+
+   ("ec" "Clock" entry
+    (file indy--de-clock-file)
+    "* %? %^g\n"
+    :clock-in t
+    :clock-keep t)
 
    ("d" "Datamole")
 
