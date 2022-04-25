@@ -45,7 +45,8 @@
  vc-handled-backends nil
  enable-local-variables nil
  visible-bell t
- save-interprogram-paste-before-kill t)
+ save-interprogram-paste-before-kill t
+ bookmark-save-flag 1)
 
 (setq-default mode-line-format
       '("%e"
