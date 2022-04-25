@@ -99,11 +99,8 @@
                        (vertical-scroll-bars)
                        (alpha . (100 . 100))))
 
-(add-hook
- 'after-make-frame-functions
- (lambda (frame)
-   (set-face-attribute 'default nil :font "JetBrains Mono" :height 140)
-   (set-fontset-font t nil (font-spec :height 140 :name "Noto Color Emoji"))))
+(set-face-attribute 'default nil :font "JetBrains Mono" :height 160)
+(set-fontset-font t nil (font-spec :height 160 :name "Noto Color Emoji"))
 
 (defun indy/czech ()
   "Switch input method to Czech & use Czech Ispell dictionary."
@@ -451,3 +448,7 @@
   (load custom-file))
 
 (put 'magit-diff-edit-hunk-commit 'disabled nil)
+
+(require 'server)
+(unless (server-running-p)
+    (server-start))
