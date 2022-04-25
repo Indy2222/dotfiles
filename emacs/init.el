@@ -261,7 +261,7 @@
   :ensure t
   :bind ("C-c d" . lsp-describe-thing-at-point)
   :init
-  (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-keymap-prefix "s-l")
   :hook ((lsp-mode . lsp-enable-which-key-integration))
   :commands lsp
   :config
