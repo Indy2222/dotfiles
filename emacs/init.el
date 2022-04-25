@@ -294,7 +294,8 @@
   :ensure t
   :config
   (setq
-   rustic-format-trigger 'on-save))
+   rustic-format-trigger 'on-save
+   rustic-ansi-faces ["#002b36" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#93a1a1"]))
 
 (use-package sass-mode
   :ensure t)
