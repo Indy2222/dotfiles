@@ -268,6 +268,20 @@
   (with-eval-after-load 'lsp-mode
     (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)))
 
+(use-package lsp-ui
+    :ensure t
+    :config
+    (setq
+     lsp-ui-sideline-update-mode 'point
+     lsp-ui-sideline-show-hover nil
+     lsp-ui-sideline-delay 0.1
+     lsp-ui-sideline-show-code-actions nil
+     lsp-ui-doc-show-with-mouse nil
+     lsp-ui-doc-show-with-cursor t
+     lsp-ui-doc-position 'bottom)
+    (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+    (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
+
 (use-package lsp-pyright
   :ensure t
   :demand t
