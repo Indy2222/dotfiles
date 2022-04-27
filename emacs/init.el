@@ -179,7 +179,7 @@
    solarized-high-contrast-mode-line nil)
   (load-theme 'solarized-light t nil)
   (load-theme 'solarized-dark t nil)
-  (indy/light))
+  (indy/dark))
 
 (use-package xclip
   :ensure t
