@@ -34,6 +34,7 @@
  indy--dtml-notes-directory (concat (file-name-as-directory org-directory) "Datamole")
  indy--dtml-clock-file (concat (file-name-as-directory indy--dtml-notes-directory) "Clock.org")
  indy--dtml-notes-file (concat (file-name-as-directory indy--dtml-notes-directory) "Notes.org")
+ indy--dtml-report-file (concat (file-name-as-directory indy--dtml-notes-directory) "MonthlyReport.org")
  indy--personal-notes-directory (concat (file-name-as-directory org-directory) "Personal")
  indy--personal-notes-file (concat (file-name-as-directory indy--personal-notes-directory) "Notes.org")
  indy--de-notes-directory (concat (file-name-as-directory org-directory) "DE")
@@ -68,6 +69,13 @@
     (file+olp+datetree indy--dtml-notes-file)
     "* TODO %^{Title}\n\n%i%?"
     :empty-lines 1
+    :kill-buffer t)
+
+   ("dr" "Monthly Report" item
+    (file+olp+datetree indy--dtml-report-file)
+    nil
+    :time-prompt t
+    :tree-type 'month
     :kill-buffer t)
 
    ("dc" "Clocking")
