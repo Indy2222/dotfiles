@@ -417,5 +417,3 @@ MEGA
 
 Install [MEGA Desktop App](https://mega.io/desktop) and configure syncing of
 appropriate directories.
-
-
