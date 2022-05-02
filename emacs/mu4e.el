@@ -94,7 +94,7 @@
    mu4e-compose-signature "Martin Indra\nLead Engineer\n"
    mu4e-bookmarks
    `((:name "Unread INBOX" :query "maildir:/datamole/INBOX AND flag:unread AND NOT flag:trashed" :key ?i)
-     (:name "Unread other" :query "maildir:/datamole* AND NOT maildir:/datamole/INBOX AND flag:unread AND NOT flag:trashed" :key ?o)
+     (:name "Unread other" :query "maildir:/datamole* AND NOT maildir:/datamole/INBOX AND flag:unread AND NOT flag:trashed" :hide-unread t :key ?o)
      (:name "Last 7 days" :query "maildir:/datamole* AND date:7d..now" :hide-unread t :key ?w)))
 
   (require 'smtpmail)
