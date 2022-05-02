@@ -30,7 +30,8 @@
  browse-url-browser-function 'browse-url-generic
  browse-url-generic-program  "firefox"
  browse-url-generic-args '("-P" "Files")
- mu4e-decryption-policy 'ask)
+ mu4e-decryption-policy 'ask
+ mu4e-headers-sort-direction 'ascending)
 
 (add-to-list 'mu4e-view-actions '("bview in browser" . mu4e-action-view-in-browser))
 
