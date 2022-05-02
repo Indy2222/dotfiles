@@ -1,6 +1,6 @@
 [core]
 	excludesfile = ~/.gitignore_global
-        editor = emacsclient -t
+        editor = emacsclient -c
 [diff]
 	algorithm = histogram
 	compactionHeuristic = true
