@@ -150,17 +150,28 @@
 ;; of all packages.
 (require 'use-package)
 
+(defun indy/mode-line-faces ()
+  "Configure mode line faces."
+  (let ((faces '(mode-line
+                 mode-line-buffer-id
+                 mode-line-emphasis
+                 mode-line-highlight
+                 mode-line-inactive)))
+    (mapc (lambda (face) (set-face-attribute face nil :height 140)) faces)))
+
 (defun indy/dark ()
   "Enable a dark theme and disable all other themes."
   (interactive)
   (mapcar #'disable-theme custom-enabled-themes)
-  (enable-theme 'solarized-dark))
+  (enable-theme 'solarized-dark)
+  (indy/mode-line-faces))
 
 (defun indy/light ()
   "Enable a light theme and disable all other themes."
   (interactive)
   (mapcar #'disable-theme custom-enabled-themes)
-  (enable-theme 'solarized-light))
+  (enable-theme 'solarized-light)
+  (indy/mode-line-faces))
 
 (use-package solarized-theme
   :ensure t
