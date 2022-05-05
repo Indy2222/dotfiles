@@ -20,3 +20,5 @@
 	helper = cache
 [init]
 	defaultBranch = main
+[github]
+	user = Indy2222

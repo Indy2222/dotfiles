@@ -331,6 +331,11 @@
   (add-hook 'git-commit-mode-hook
             (lambda () (setq-local fill-column 72))))
 
+(use-package forge
+  :demand t
+  :ensure t
+  :after magit)
+
 (use-package dashboard
   :ensure t
   :demand t
