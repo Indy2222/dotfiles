@@ -305,8 +305,13 @@
   :ensure t
   :config
   (setq
+   lsp-rust-analyzer-import-enforce-granularity t
+   lsp-rust-analyzer-display-chaining-hints t
+   lsp-rust-analyzer-cargo-watch-command "clippy"
+   lsp-rust-analyzer-rustfmt-extra-args ["+nightly"]
    rustic-analyzer-command '("rustup" "run" "nightly" "rust-analyzer")
    rustic-format-trigger 'on-save
+   rustic-rustfmt-args "+nightly"
    rustic-ansi-faces ["#002b36" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#93a1a1"]))
 
 (use-package sass-mode
