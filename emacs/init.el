@@ -393,6 +393,8 @@
   :ensure t
   :bind (("C-x b" . persp-switch-to-buffer*)
          ("C-x k" . persp-kill-buffer*))
+  :custom
+  (persp-mode-prefix-key (kbd "C-x x"))
   :config
   (persp-mode))
 
