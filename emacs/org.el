@@ -67,7 +67,7 @@
 
    ("dn" "Notes" entry
     (file+olp+datetree indy--dtml-notes-file)
-    "* TODO %^{Title}\n\n%i%?"
+    "* TODO %? %^g\n\n%i"
     :empty-lines 1
     :kill-buffer t)
 
