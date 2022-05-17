@@ -23,8 +23,8 @@
  message-kill-buffer-on-exit t
  mu4e-use-fancy-chars nil
  auth-sources '(password-store)
- mu4e-get-mail-command "true"
- mu4e-update-interval 1200
+ mu4e-get-mail-command "mbsync --all"
+ mu4e-update-interval nil
  mail-user-agent 'mu4e-user-agent
  mu4e-compose-dont-reply-to-self t
  browse-url-browser-function 'browse-url-generic
@@ -41,29 +41,6 @@
   (visual-line-mode 1))
 
 (add-hook 'mu4e-compose-mode-hook #'indy/mu4e-compose-prep)
-
-(defun indy/offlineimap-args (repository host username)
-  (concat
-   "-k Repository_"
-   repository
-   "-remote:remotepass="
-   (funcall
-    (plist-get
-     (nth 0 (auth-source-search :host host :user username))
-     :secret))))
-
-(defun indy/offlineimap-cmd ()
-  (concat
-   "offlineimap -o "
-   (indy/offlineimap-args "mgn" "127.0.0.1"  "martin.indra@mgn.cz")
-   " "
-   (indy/offlineimap-args "datamole" "gmail.com" "martin.indra@datamole.cz")))
-
-(setq
- mu4e-main-mode-hook
- (lambda ()
-   (when (string= mu4e-get-mail-command "true")
-     (setq mu4e-get-mail-command  (indy/offlineimap-cmd)))))
 
 (defun enter-mu4e-context-mgn ()
   (setq
@@ -87,16 +64,16 @@
 
 (defun enter-mu4e-context-datamole ()
   (setq
-   mu4e-sent-folder       "/datamole/Sent"
-   mu4e-drafts-folder     "/datamole/Drafts"
-   mu4e-trash-folder      "/datamole/Trash"
-   mu4e-refile-folder     "/datamole/Archive"
+   mu4e-sent-folder       "/dtml/Sent"
+   mu4e-drafts-folder     "/dtml/Drafts"
+   mu4e-trash-folder      "/dtml/Trash"
+   mu4e-refile-folder     "/dtml/Archive"
    user-mail-address      "martin.indra@datamole.ai"
    mu4e-compose-signature "Martin Indra\nLead Engineer\n"
    mu4e-bookmarks
-   `((:name "Unread INBOX" :query "maildir:/datamole/INBOX AND flag:unread AND NOT flag:trashed" :key ?i)
-     (:name "Unread other" :query "maildir:/datamole* AND NOT maildir:/datamole/INBOX AND flag:unread AND NOT flag:trashed" :hide-unread t :key ?o)
-     (:name "Last 7 days" :query "maildir:/datamole* AND date:7d..now" :hide-unread t :key ?w)))
+   `((:name "Unread INBOX" :query "maildir:/dtml/INBOX AND flag:unread AND NOT flag:trashed" :key ?i)
+     (:name "Unread other" :query "maildir:/dtml* AND NOT maildir:/dtml/INBOX AND flag:unread AND NOT flag:trashed" :hide-unread t :key ?o)
+     (:name "Last 7 days" :query "maildir:/dtml* AND date:7d..now" :hide-unread t :key ?w)))
 
   (require 'smtpmail)
   (setq message-send-mail-function 'smtpmail-send-it
@@ -125,7 +102,7 @@
                           (enter-mu4e-context-datamole)))
 	  :match-func (lambda (msg)
 			(when msg
-			  (string-match-p "^/datamole" (mu4e-message-field msg :maildir)))))))
+			  (string-match-p "^/dtml" (mu4e-message-field msg :maildir)))))))
 
 (with-eval-after-load "mm-decode"
   (add-to-list 'mm-discouraged-alternatives "text/html")

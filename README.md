@@ -270,17 +270,15 @@ Terminal
 sudo pacman -S konsole
 ```
 
-
-
-Offlineimap
------------
+Isync
+-----
 
 ```bash
-sudo pacman -S offlineimap
-ln -s ~/dotfiles/offlineimaprc ~/.offlineimaprc
-mkdir ~/mail
-mkdir ~/mail/mgn
-mkdir ~/mail/datamole
+sudo pacman -S isync
+ln -s ~/dotfiles/mbsyncrc ~/.mbsyncrc
+mkdir ~/.mail
+mkdir ~/.mail/mgn
+mkdir ~/.mail/dtml
 ```
 
 mu4e
