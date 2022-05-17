@@ -92,6 +92,12 @@
     :clock-in t
     :clock-keep t)
 
+   ("dcr" "Possibler" entry
+    (file+olp indy--dtml-clock-file "Datamole" "Possibler")
+    "* %? %^g\n"
+    :clock-in t
+    :clock-keep t)
+
    ("dcp" "PTO" entry
     (file+olp indy--dtml-clock-file "Lely" "Milking Setting Optimization")
     "* %? %^g\n"
