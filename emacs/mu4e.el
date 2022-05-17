@@ -23,7 +23,7 @@
  message-kill-buffer-on-exit t
  mu4e-use-fancy-chars nil
  auth-sources '(password-store)
- mu4e-get-mail-command "mbsync --all"
+ mu4e-get-mail-command "mbsync --all --quiet"
  mu4e-update-interval nil
  mail-user-agent 'mu4e-user-agent
  mu4e-compose-dont-reply-to-self t
