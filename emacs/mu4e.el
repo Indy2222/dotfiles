@@ -29,7 +29,6 @@
  mu4e-compose-dont-reply-to-self t
  browse-url-browser-function 'browse-url-generic
  browse-url-generic-program  "firefox"
- browse-url-generic-args '("-P" "Files")
  mu4e-decryption-policy 'ask
  mu4e-headers-sort-direction 'ascending)
 
