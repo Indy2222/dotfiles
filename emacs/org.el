@@ -28,6 +28,7 @@
  org-highlight-latex-and-related '(latex)
  org-clock-mode-line-total 'current
  org-clock-persist t
+ org-todo-keywords '((sequence "TODO" "|" "WONT-DO" "DONE"))
 
  org-directory "~/Documents/Notes/"
 
