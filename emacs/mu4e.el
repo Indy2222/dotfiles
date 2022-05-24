@@ -24,7 +24,7 @@
  mu4e-use-fancy-chars nil
  auth-sources '(password-store)
  mu4e-get-mail-command "mbsync --all --quiet"
- mu4e-update-interval nil
+ mu4e-update-interval 300
  mail-user-agent 'mu4e-user-agent
  mu4e-compose-dont-reply-to-self t
  browse-url-browser-function 'browse-url-generic
