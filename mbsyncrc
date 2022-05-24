@@ -4,7 +4,7 @@ IMAPAccount mgn-account
 Host 127.0.0.1
 Port 1143
 User martin.indra@mgn.cz
-PassCmd "pass show myo/127.0.0.1/martin.indra@mgn.cz"
+PassCmd "pass show local/mgn-mail"
 SSLType STARTTLS
 SSLVersions TLSv1.2
 SystemCertificates no
@@ -27,7 +27,7 @@ Create Near
 IMAPAccount dtml-account
 Host imap.gmail.com
 User martin.indra@datamole.cz
-PassCmd "pass show dm/gmail.com/martin.indra@datamole.cz"
+PassCmd "pass show local/dtml-mail"
 SSLType IMAPS
 SSLVersions TLSv1.2
 CertificateFile /etc/ssl/certs/ca-certificates.crt
