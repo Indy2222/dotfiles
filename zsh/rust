@@ -1,5 +1,2 @@
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
-# Needed for Rust Racer, see
-# https://github.com/racer-rust/racer/blob/master/README.md#configuration
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
