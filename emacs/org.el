@@ -41,6 +41,9 @@
  indy--de-notes-directory (concat (file-name-as-directory org-directory) "DE")
  indy--de-notes-file (concat (file-name-as-directory indy--de-notes-directory) "Notes.org")
  indy--de-clock-file (concat (file-name-as-directory indy--de-notes-directory) "Clock.org")
+ indy--ddm-notes-directory (concat (file-name-as-directory org-directory) "DDM")
+ indy--ddm-notes-file (concat (file-name-as-directory indy--ddm-notes-directory) "Notes.org")
+ indy--ddm-clock-file (concat (file-name-as-directory indy--ddm-notes-directory) "Clock.org")
 
  org-capture-templates
  '(
@@ -60,6 +63,20 @@
 
    ("ec" "Clock" entry
     (file indy--de-clock-file)
+    "* %? %^g\n"
+    :clock-in t
+    :clock-keep t)
+
+   ("t" "DDM")
+
+   ("tn" "Notes" entry
+    (file+olp+datetree indy--ddm-notes-file)
+    "* TODO %?\n\n%i"
+    :empty-lines 1
+    :kill-buffer t)
+
+   ("tc" "Clock" entry
+    (file indy--ddm-clock-file)
     "* %? %^g\n"
     :clock-in t
     :clock-keep t)
