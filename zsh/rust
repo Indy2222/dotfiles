@@ -1,2 +1,3 @@
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
+export RUSTFLAGS='-C target-cpu=native'
