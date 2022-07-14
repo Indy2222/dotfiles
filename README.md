@@ -267,7 +267,9 @@ Terminal
 --------
 
 ```bash
-sudo pacman -S konsole
+sudo pacman -S alacritty
+mkdir ~/.config/alacritty
+ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 ```
 
 Isync
