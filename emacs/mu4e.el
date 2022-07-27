@@ -11,7 +11,7 @@
                        (:thread-subject))
  mu4e-view-show-addresses t
  mu4e-view-scroll-to-next nil
- mu4e-attachment-dir "~/"
+ mu4e-attachment-dir "~/Documents"
  shr-color-visible-luminance-min 80
  mu4e-decryption-policy 'ask
  user-full-name "Martin Indra"
