@@ -54,7 +54,7 @@
      (:name "Last 7 days" :query "maildir:/mgn* AND date:7d..now" :hide-unread t :key ?w)))
 
   (require 'smtpmail)
-  (setq message-send-mail-function 'smtpmail-send-it
+  (setq send-mail-function 'smtpmail-send-it
         starttls-use-gnutls t
         smtpmail-smtp-server "127.0.0.1"
         smtpmail-smtp-service 1025
@@ -75,7 +75,7 @@
      (:name "Last 7 days" :query "maildir:/dtml* AND date:7d..now" :hide-unread t :key ?w)))
 
   (require 'smtpmail)
-  (setq message-send-mail-function 'smtpmail-send-it
+  (setq send-mail-function 'smtpmail-send-it
         starttls-use-gnutls t
         smtpmail-smtp-server "smtp.gmail.com"
         smtpmail-smtp-service 465
