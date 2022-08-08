@@ -225,7 +225,7 @@ ZSH
 ---
 
 ```bash
-sudo pacman -S zsh exa
+sudo pacman -S zsh exa atuin
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 rm ~/.zshrc
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
@@ -244,7 +244,6 @@ Plugins:
 cd ~/.oh-my-zsh/custom/plugins
 # syntax highlighting
 git clone https://github.com/zdharma/fast-syntax-highlighting.git
-git clone https://github.com/unixorn/fzf-zsh-plugin.git
 ```
 
 Install Autojump from AUR https://aur.archlinux.org/packages/autojump

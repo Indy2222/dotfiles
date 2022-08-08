@@ -16,13 +16,17 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
     fast-syntax-highlighting
     pass
-    fzf-zsh-plugin
     kubectl
 )
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#586e75"
 
 source $ZSH/oh-my-zsh.sh
+
+export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"
+bindkey '^r' _atuin_search_widget
+bindkey '^p' _atuin_search_widget
 
 export LANG=en_US.UTF-8
 export EDITOR='emacsclient -c'
