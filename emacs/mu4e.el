@@ -41,6 +41,16 @@
 
 (add-hook 'mu4e-compose-mode-hook #'indy/mu4e-compose-prep)
 
+(defun indy/inbox-filter (name key filters)
+  "Create a filter for INBOX"
+  `(:name ,name
+          :query ,(concat "maildir:/dtml/INBOX AND flag:unread AND NOT flag:trashed " filters)
+          :key ,key))
+
+(defun indy/inbox-filter-from (name key from)
+  "Create a filter for INBOX and a from"
+  (indy/inbox-filter name key (concat "AND from:" from)))
+
 (defun enter-mu4e-context-mgn ()
   (setq
    mu4e-sent-folder       "/mgn/Sent"
@@ -70,7 +80,8 @@
    user-mail-address      "martin.indra@datamole.ai"
    mu4e-compose-signature "Martin Indra\nLead Engineer\n"
    mu4e-bookmarks
-   `((:name "Unread INBOX" :query "maildir:/dtml/INBOX AND flag:unread AND NOT flag:trashed" :key ?i)
+   `(,(indy/inbox-filter "INBOX" ?i "AND NOT from:jira@datamole.atlassian.net")
+     ,(indy/inbox-filter-from "Jira" ?j "jira@datamole.atlassian.net")
      (:name "Unread other" :query "maildir:/dtml* AND NOT maildir:/dtml/INBOX AND flag:unread AND NOT flag:trashed" :hide-unread t :key ?o)
      (:name "Last 7 days" :query "maildir:/dtml* AND date:7d..now" :hide-unread t :key ?w)))
 
