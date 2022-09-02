@@ -80,9 +80,10 @@
    user-mail-address      "martin.indra@datamole.ai"
    mu4e-compose-signature "Martin Indra\nLead Engineer\n"
    mu4e-bookmarks
-   `(,(indy/inbox-filter "INBOX" ?i "AND NOT from:/.*@datamole.atlassian.net/")
+   `(,(indy/inbox-filter "INBOX" ?i "AND NOT from:/.*@datamole.atlassian.net/ AND NOT flag:calendar")
      ,(indy/inbox-filter-from "Jira" ?j "jira@datamole.atlassian.net")
      ,(indy/inbox-filter-from "Confluence" ?c "confluence@datamole.atlassian.net")
+     ,(indy/inbox-filter "Calendar" ?k "AND flag:calendar")
      (:name "Unread other" :query "maildir:/dtml* AND NOT maildir:/dtml/INBOX AND flag:unread AND NOT flag:trashed" :hide-unread t :key ?o)
      (:name "Last 7 days" :query "maildir:/dtml* AND date:7d..now" :hide-unread t :key ?w)))
 
