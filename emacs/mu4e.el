@@ -80,7 +80,12 @@
    user-mail-address      "martin.indra@datamole.ai"
    mu4e-compose-signature "Martin Indra\nLead Engineer\n"
    mu4e-bookmarks
-   `(,(indy/inbox-filter "INBOX" ?i "AND NOT from:/.*@datamole.atlassian.net/ AND NOT flag:calendar")
+   `(,(
+       indy/inbox-filter
+       "INBOX" ?i
+       (concat
+        " AND NOT from:/.*@datamole.atlassian.net/"
+        " AND NOT flag:calendar"))
      ,(indy/inbox-filter-from "Jira" ?j "jira@datamole.atlassian.net")
      ,(indy/inbox-filter-from "Confluence" ?c "confluence@datamole.atlassian.net")
      ,(indy/inbox-filter "Calendar" ?k "AND flag:calendar")
