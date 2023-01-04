@@ -314,6 +314,7 @@
    rustic-analyzer-command '("rustup" "run" "nightly" "rust-analyzer")
    rustic-format-trigger 'on-save
    rustic-rustfmt-args "+nightly"
+   rustic-clippy-arguments "--workspace --benches --tests --all-features"
    rustic-test-arguments "--workspace"
    rustic-ansi-faces ["#002b36" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#93a1a1"]))
 
