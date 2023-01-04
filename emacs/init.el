@@ -248,7 +248,9 @@
 (use-package ace-window
   :ensure t
   :bind
-  (("C-x o" . ace-window)))
+  (("C-x o" . ace-window))
+  :config
+  (setq aw-scope 'frame))
 
 (use-package json-mode
   :ensure t
