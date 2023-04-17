@@ -288,9 +288,6 @@
    rustic-test-arguments "--workspace"
    rustic-ansi-faces ["#002b36" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#93a1a1"]))
 
-(use-package sass-mode
-  :ensure t)
-
 (use-package toml-mode
   :demand t)
 
@@ -338,23 +335,6 @@
 (use-package poly-markdown
   :demand t)
 
-(use-package adoc-mode
-  :ensure t
-  :demand t)
-
-(use-package omnisharp
-  :ensure t
-  :demand t
-  :config
-  (eval-after-load
-      'company
-    '(add-to-list 'company-backends 'company-omnisharp))
-  ;; omnisharp uses Company Mode for code competition.
-  (add-hook 'csharp-mode-hook 'omnisharp-mode)
-  (add-hook 'csharp-mode-hook #'company-mode)
-  (add-hook 'csharp-mode-hook #'flycheck-mode)
-  (define-key csharp-mode-map (kbd "M-.") #'omnisharp-go-to-definition))
-
 (use-package company
   :demand t
   :config
@@ -390,9 +370,6 @@
 (use-package dired-collapse
   :demand t)
 
-(use-package powershell
-  :demand t
-  :ensure t)
 
 (use-package restclient
   :demand t)
