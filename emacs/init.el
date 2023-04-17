@@ -273,21 +273,6 @@
                          (require 'lsp-pyright)
                          (lsp))))
 
-(use-package rustic
-  :ensure t
-  :config
-  (setq
-   lsp-rust-analyzer-import-enforce-granularity t
-   lsp-rust-analyzer-display-chaining-hints t
-   lsp-rust-analyzer-cargo-watch-command "clippy"
-   lsp-rust-analyzer-rustfmt-extra-args ["+nightly"]
-   rustic-analyzer-command '("rustup" "run" "nightly" "rust-analyzer")
-   rustic-format-trigger 'on-save
-   rustic-rustfmt-args "+nightly"
-   rustic-clippy-arguments "--workspace --benches --tests --all-features"
-   rustic-test-arguments "--workspace"
-   rustic-ansi-faces ["#002b36" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#93a1a1"]))
-
 (use-package toml-mode
   :demand t)
 
@@ -421,6 +406,7 @@
 (load-file "~/dotfiles/emacs/org.el")
 (load-file "~/dotfiles/emacs/mu4e.el")
 (load-file "~/dotfiles/emacs/term.el")
+(load-file "~/dotfiles/emacs/rust.el")
 
 (when (file-exists-p custom-file)
   (load custom-file))
