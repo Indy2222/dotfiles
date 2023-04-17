@@ -5,14 +5,11 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
+(load-file "~/dotfiles/emacs/packages.el")
 
 (require 'uniquify)
 
 (setq
- package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                    ("melpa" . "https://melpa.org/packages/"))
  ;; not useful once you learn Emacs
  inhibit-startup-message t
  ;; full screen terminal on my laptop has 50 lines (including tmux,
@@ -139,17 +136,6 @@
 
 (add-to-list 'auto-mode-alist '("\\(\\/\\.?zshrc\\|\\.zsh\\)\\'" . sh-mode))
 
-;; Install use-package if not already installed.
-(require 'package)
-(package-initialize)
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-;; Use use-package in the rest of the file for installation and configuration
-;; of all packages.
-(require 'use-package)
-
 (defun indy/mode-line-faces ()
   "Configure mode line faces."
   (let ((faces '(mode-line
@@ -174,7 +160,6 @@
   (indy/mode-line-faces))
 
 (use-package solarized-theme
-  :ensure t
   :demand t
   :load-path "themes"
   :config
@@ -193,28 +178,24 @@
   (indy/dark))
 
 (use-package xclip
-  :ensure t
   :demand t
   :config
   (xclip-mode 1))
 
 ;; spellcheck on the fly
 (use-package avy-flycheck
-  :ensure t
   :hook
   ((text-mode . flyspell-mode)
    (prog-mode . flyspell-prog-mode)))
 
 ;; jumping over visible parts of displayed buffers
 (use-package avy
-  :ensure t
   :bind
   (("M-g e" . avy-goto-word-0)
    ("M-g f" . avy-goto-line)))
 
 ;; better selection narrowing
 (use-package ivy
-  :ensure t
   ;; make :after in magit load properly
   :demand t
   :bind
@@ -224,7 +205,6 @@
   (setq ivy-count-format "(%d/%d) ")
   (ivy-mode 1)
   (use-package counsel
-    :ensure t
     :config
     (defun indy/git-grep (dir)
       (interactive "D")
@@ -233,7 +213,6 @@
     (("M-g g" . indy/git-grep))))
 
 (use-package counsel-projectile
-  :ensure t
   :demand t
   :bind
   (("C-c p" . projectile-command-map)
@@ -246,32 +225,25 @@
   (counsel-projectile-mode))
 
 (use-package ace-window
-  :ensure t
   :bind
   (("C-x o" . ace-window))
   :config
   (setq aw-scope 'frame))
 
 (use-package json-mode
-  :ensure t
   ;; so even .geojson works out
   :mode "\\.[a-z]*json\\'")
 
 (use-package yaml-mode
-  :ensure t
   :mode "\\.ya?ml\\'")
 
 (use-package markdown-mode
-  :ensure t
   :mode "\\.md\\'")
 
-
 (use-package py-isort
-  :ensure t
   :demand t)
 
 (use-package lsp-mode
-  :ensure t
   :bind ("C-c d" . lsp-describe-thing-at-point)
   :init
   (setq lsp-keymap-prefix "s-l")
@@ -282,7 +254,6 @@
     (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)))
 
 (use-package lsp-ui
-    :ensure t
     :config
     (setq
      lsp-ui-sideline-update-mode 'point
@@ -296,7 +267,6 @@
     (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
 
 (use-package lsp-pyright
-  :ensure t
   :demand t
   :after (lsp-mode)
   :hook (python-mode . (lambda ()
@@ -322,18 +292,18 @@
   :ensure t)
 
 (use-package toml-mode
-  :ensure t
   :demand t)
 
 ;; awesome Emacs interface to Git porcelain
 (use-package magit
-  :ensure t
   :after ivy
   :bind
   ("C-x g" . magit-status)
+  :init
+  (use-package sqlite3
+    :demand t)
   :config
   (use-package magit-todos
-    :ensure t
     :demand t)
   (setq git-commit-summary-max-length 50
         magit-completing-read-function 'ivy-completing-read)
@@ -342,11 +312,9 @@
 
 (use-package forge
   :demand t
-  :ensure t
   :after magit)
 
 (use-package dashboard
-  :ensure t
   :demand t
   :config
   (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
@@ -357,25 +325,17 @@
   (dashboard-setup-startup-hook))
 
 (use-package which-key
-  :ensure t
   :demand t
   :config
   (which-key-mode))
 
 (use-package wgrep
-  :ensure t
-  :demand t)
-
-(use-package mediawiki
-  :ensure t
   :demand t)
 
 (use-package dockerfile-mode
-  :ensure t
   :demand t)
 
 (use-package poly-markdown
-  :ensure t
   :demand t)
 
 (use-package adoc-mode
@@ -397,14 +357,12 @@
 
 (use-package company
   :demand t
-  :ensure t
   :config
   (setq company-show-numbers 1
         company-idle-delay 0.2))
 
 (use-package perspective
   :demand t
-  :ensure t
   :bind (("C-x b" . persp-switch-to-buffer*)
          ("C-x k" . persp-kill-buffer*))
   :custom
@@ -414,44 +372,37 @@
 
 (use-package crux
   :demand t
-  :ensure t
   :config
   (crux-reopen-as-root-mode))
 
 (use-package goto-last-change
   :demand t
-  :ensure t
   :bind
   (("M-g l" . goto-last-change-with-auto-marks)))
 
 (use-package dired-subtree
   :demand t
-  :ensure t
   :config
   (bind-keys :map dired-mode-map
              ("i" . dired-subtree-insert)
              (";" . dired-subtree-remove)))
 
 (use-package dired-collapse
-  :demand t
-  :ensure t)
+  :demand t)
 
 (use-package powershell
   :demand t
   :ensure t)
 
 (use-package restclient
-  :demand t
-  :ensure t)
+  :demand t)
 
 (use-package csv-mode
   :demand t
-  :ensure t
   :config
   (setq csv-align-max-width 100))
 
 (use-package kubernetes
-  :ensure t
   :commands (kubernetes-overview)
   :config
   (setq kubernetes-poll-frequency 3600
