@@ -370,6 +370,17 @@
   (setq kubernetes-poll-frequency 3600
         kubernetes-redraw-frequency 3600))
 
+(use-package copilot
+  :straight (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
+  :config
+  (add-hook 'prog-mode-hook 'copilot-mode)
+  (with-eval-after-load 'company
+    ;; disable inline previews
+    (delq 'company-preview-if-just-one-frontend company-frontends))
+  (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+  (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion))
+
+
 (defun indy/kill-file-name ()
   "Place buffer-file-name kill ring and display it."
   (interactive)
