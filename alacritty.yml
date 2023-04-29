@@ -1,5 +1,5 @@
 window:
-  startup_mode: Fullscreen
+  startup_mode: Maximized
 
 font:
   size: 16.0
