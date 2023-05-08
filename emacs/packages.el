@@ -1,9 +1,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
 
-(setq
- straight-use-package-by-default t
- package-enable-at-startup nil)
+(setq straight-use-package-by-default t)
 
 (defvar bootstrap-version)
 (let ((bootstrap-file
