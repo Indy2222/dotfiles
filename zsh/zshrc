@@ -41,6 +41,8 @@ alias ll='exa -lgumh --group-directories-first --color-scale'
 
 source /usr/share/autojump/autojump.zsh
 
+eval "$(mdbook completions zsh)"
+
 source $ZSH_DOTFILES/python
 #source $ZSH_DOTFILES/gcp
 source $ZSH_DOTFILES/k8s
