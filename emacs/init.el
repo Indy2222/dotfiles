@@ -373,6 +373,8 @@
   (setq kubernetes-poll-frequency 3600
         kubernetes-redraw-frequency 3600))
 
+(use-package company-box
+  :hook (company-mode . company-box-mode))
 
 (defun indy/kill-file-name ()
   "Place buffer-file-name kill ring and display it."
