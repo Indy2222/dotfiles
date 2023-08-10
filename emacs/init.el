@@ -90,6 +90,9 @@
 (tool-bar-mode -1)
 (blink-cursor-mode 0)
 
+(load-file "~/dotfiles/emacs/org.el")
+(load-file "~/dotfiles/emacs/rust.el")
+
 (setq
  default-frame-alist '((width . 100)
                        (height . 25)
@@ -414,10 +417,8 @@
     (pyvenv-activate venv-path)
     (lsp-workspace-restart workspace)))
 
-(load-file "~/dotfiles/emacs/org.el")
 (load-file "~/dotfiles/emacs/mu4e.el")
 (load-file "~/dotfiles/emacs/term.el")
-(load-file "~/dotfiles/emacs/rust.el")
 
 (when (file-exists-p custom-file)
   (load custom-file))
