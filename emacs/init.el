@@ -99,8 +99,8 @@
                        (vertical-scroll-bars)
                        (alpha . (100 . 100))))
 
-(set-face-attribute 'default nil :font "JetBrains Mono" :height 150)
-(set-fontset-font t nil (font-spec :height 150 :name "Noto Color Emoji"))
+(set-face-attribute 'default nil :font "JetBrains Mono" :height 140)
+(set-fontset-font t nil (font-spec :height 140 :name "Noto Color Emoji"))
 
 (defun indy/czech ()
   "Switch input method to Czech & use Czech Ispell dictionary."
