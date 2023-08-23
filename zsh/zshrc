@@ -14,7 +14,7 @@ HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
-    fast-syntax-highlighting
+    F-Sy-H
     pass
     kubectl
 )
