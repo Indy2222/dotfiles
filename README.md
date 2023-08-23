@@ -133,6 +133,11 @@ Setup Under My User
 
 All of the following commands work if executed under my user.
 
+AUR Wrapper
+-----------
+
+Install [Paru](https://github.com/Morganamilo/paru).
+
 Useful Software
 ---------------
 
