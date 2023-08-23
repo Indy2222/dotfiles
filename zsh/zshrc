@@ -39,7 +39,8 @@ export ZSH_DOTFILES="$DOTFILES/zsh"
 
 alias ll='exa -lgumh --group-directories-first --color-scale'
 
-source /usr/share/autojump/autojump.zsh
+export _ZO_ECHO=1
+eval "$(zoxide init zsh)"
 
 eval "$(mdbook completions zsh)"
 
