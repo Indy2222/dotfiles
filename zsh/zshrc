@@ -37,7 +37,7 @@ export GPG_TTY=$(tty)
 export DOTFILES="$HOME/dotfiles"
 export ZSH_DOTFILES="$DOTFILES/zsh"
 
-alias ll='exa -lgumh --group-directories-first --color-scale'
+alias ll='exa -lgumh --group-directories-first --color-scale all'
 
 export _ZO_ECHO=1
 eval "$(zoxide init zsh)"
