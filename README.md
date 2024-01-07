@@ -274,7 +274,7 @@ Terminal
 ```bash
 sudo pacman -S alacritty
 mkdir ~/.config/alacritty
-ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -s ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 ```
 
 Isync
