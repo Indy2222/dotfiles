@@ -277,29 +277,6 @@ mkdir ~/.config/alacritty
 ln -s ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 ```
 
-Isync
------
-
-```bash
-sudo pacman -S isync
-ln -s ~/dotfiles/mbsyncrc ~/.mbsyncrc
-mkdir ~/.mail
-mkdir ~/.mail/mgn
-mkdir ~/.mail/dtml
-```
-
-mu4e
-----
-
-Install from https://github.com/djcb/mu
-
-```bash
-mu init --maildir ~/.mail \
-  --my-address "martin.indra@mgn.cz" \
-  --my-address "martin.indra@datamole.cz" \
-  --my-address "martin.indra@datamole.ai"
-```
-
 Emacs
 -----
 
