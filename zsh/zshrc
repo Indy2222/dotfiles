@@ -38,6 +38,7 @@ export DOTFILES="$HOME/dotfiles"
 export ZSH_DOTFILES="$DOTFILES/zsh"
 
 alias ll='exa -lgumh --group-directories-first --color-scale all'
+alias ns='systemd-nspawn'
 
 export _ZO_ECHO=1
 eval "$(zoxide init zsh)"
