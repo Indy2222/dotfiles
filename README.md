@@ -244,6 +244,12 @@ cd ~/.oh-my-zsh/custom/plugins
 git clone https://github.com/zdharma/fast-syntax-highlighting.git
 ```
 
+Atuin:
+
+```bash
+ln -sf ~/dotfiles/zsh/atuin.toml ~/.config/atuin/config.toml
+```
+
 Change shell for `indy`:
 
 ```bash

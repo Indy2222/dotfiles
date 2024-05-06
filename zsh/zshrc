@@ -23,10 +23,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#586e75"
 
 source $ZSH/oh-my-zsh.sh
 
-export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
-bindkey '^r' _atuin_search_widget
-bindkey '^p' _atuin_search_widget
+bindkey '^p' atuin-up-search
 
 export LANG=en_US.UTF-8
 export EDITOR='emacsclient -c'

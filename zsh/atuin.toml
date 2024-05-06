@@ -1,0 +1,10 @@
+enter_accept=false
+common_subcommands=[
+    "cargo",
+    "git",
+    "pacman",
+    "paru",
+    "systemctl"
+]
+
+filter_mode_shell_up_key_binding = "directory"
