@@ -211,14 +211,6 @@ killall gpg-agent
 gpg --import --armor private.txt
 ```
 
-KBD Conf
---------
-
-```bash
-sudo cp ~/dotfiles/90-custom-kbd.conf /etc/X11/xorg.conf.d/90-custom-kbd.conf
-sudo chown root:root /etc/X11/xorg.conf.d/90-custom-kbd.conf
-```
-
 Fonts
 -----
 
