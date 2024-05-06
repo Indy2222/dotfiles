@@ -244,8 +244,6 @@ cd ~/.oh-my-zsh/custom/plugins
 git clone https://github.com/zdharma/fast-syntax-highlighting.git
 ```
 
-Install Autojump from AUR https://aur.archlinux.org/packages/autojump
-
 Change shell for `indy`:
 
 ```bash
