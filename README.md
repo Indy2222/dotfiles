@@ -161,7 +161,7 @@ SSH
 ---
 
 ```bash
-sudo pacman -S ssh
+sudo pacman -S openssh
 ssh-keygen -t rsa -b 4096 -C "martin.indra@mgn.cz"
 ssh-add ~/.ssh/id_rsa
 ```
