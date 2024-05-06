@@ -299,7 +299,7 @@ Rust
 sudo pacman -S rustup pandoc fd
 rustup toolchain install stable-x86_64-unknown-linux-gnu
 rustup toolchain install nightly-x86_64-unknown-linux-gnu
-rustup +nightly component add rust-analyzer-preview
+rustup component add rust-analyzer
 ```
 
 Python
