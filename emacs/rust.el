@@ -1,5 +1,5 @@
 (use-package rustic
-  :ensure t
+  :straight t
   :custom
   (rustic-ansi-faces ["#002b36" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#93a1a1"])
   (rustic-analyzer-command '("rustup" "run" "stable" "rust-analyzer"))
