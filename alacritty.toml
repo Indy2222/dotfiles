@@ -42,3 +42,10 @@ startup_mode = "Maximized"
 
 [scrolling]
 history = 0
+
+[cursor]
+blink_interval = 500
+
+[cursor.style]
+shape = "Block"
+blinking = "Always"
