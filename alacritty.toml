@@ -39,3 +39,6 @@ program = "/usr/bin/tmux"
 
 [window]
 startup_mode = "Maximized"
+
+[scrolling]
+history = 0
