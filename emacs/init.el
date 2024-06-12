@@ -103,6 +103,14 @@
   :config
   (setq aw-scope 'frame))
 
+(use-package projectile
+  :straight t
+  :bind
+  (("C-c p" . projectile-command-map))
+  :config
+  (setq projectile-completion-system 'ivy)
+  (projectile-mode +1))
+
 (load-file "~/dotfiles/emacs/magit.el")
 
 (load-file "~/dotfiles/emacs/lsp.el")
