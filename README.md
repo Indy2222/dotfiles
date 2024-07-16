@@ -153,7 +153,7 @@ Other:
 # Note that gcc is needed for Emacs to work properly. See
 # https://wiki.archlinux.org/index.php/Emacs#Emacs_fails_to_start_with_the_error_message_'Undefined_color:_%22WINDOW_FOREGROUND%22'
 sudo pacman -S firefox konsole xclip gcc htop jq ripgrep ktorrent dolphin \
-    okular vlc spectacle rsync make python-sphinx ark korganizer bat wget exa \
+    okular vlc spectacle rsync make python-sphinx ark korganizer wget exa \
     unzip gzip kuickshow mdbook
 ```
 
@@ -271,6 +271,15 @@ Terminal
 sudo pacman -S alacritty
 mkdir ~/.config/alacritty
 ln -s ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
+```
+
+Bat
+---
+
+```bash
+sudo pacman -S bat
+mkdir ~/.config/bat
+ln -s ~/dotfiles/bat.conf ~/.config/bat/config
 ```
 
 Emacs
