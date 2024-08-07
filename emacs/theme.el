@@ -50,7 +50,7 @@
    solarized-high-contrast-mode-line nil)
   (load-theme 'solarized-light t nil)
   (load-theme 'solarized-dark t nil)
-  (indy/light))
+  (indy/dark))
 
 (set-face-attribute 'default nil :font "JetBrains Mono" :height 120)
 (set-fontset-font t nil (font-spec :height 120 :name "Noto Color Emoji"))
