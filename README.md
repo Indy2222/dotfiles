@@ -23,6 +23,7 @@ Name=ETHERNET_DEVICE
 
 [Network]
 DHCP=ipv4
+IPv6PrivacyExtensions=yes
 
 [DHCP]
 RouteMetric=10
@@ -43,6 +44,7 @@ Name=WIFI_DEVICE
 
 [Network]
 DHCP=ipv4
+IPv6PrivacyExtensions=yes
 
 [DHCP]
 RouteMetric=20
