@@ -36,6 +36,7 @@
 (tool-bar-mode -1)
 (show-paren-mode 1)
 (global-auto-revert-mode 1)
+(add-to-list 'default-frame-alist '(undecorated . t))
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
