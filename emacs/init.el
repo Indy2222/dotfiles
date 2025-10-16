@@ -112,6 +112,9 @@
   (setq projectile-completion-system 'ivy)
   (projectile-mode +1))
 
+(use-package yaml-mode
+  :straight t)
+
 (load-file "~/dotfiles/emacs/magit.el")
 
 (load-file "~/dotfiles/emacs/lsp.el")
