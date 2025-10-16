@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 ;; Try UTF-8 first when detecting encoding.
 (prefer-coding-system 'utf-8)
 ;; Use UTF-8 for storing, input and output.
