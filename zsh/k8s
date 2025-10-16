@@ -1,2 +1,0 @@
-source <(kubectl completion zsh)
-alias kubelogs="kubectl logs -f --timestamps"

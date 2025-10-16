@@ -43,9 +43,4 @@ eval "$(zoxide init zsh)"
 
 eval "$(mdbook completions zsh)"
 
-source $ZSH_DOTFILES/python
-#source $ZSH_DOTFILES/gcp
-source $ZSH_DOTFILES/k8s
 source $ZSH_DOTFILES/rust
-source $ZSH_DOTFILES/ms
-source $ZSH_DOTFILES/datamole
