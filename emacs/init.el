@@ -115,6 +115,9 @@
 (use-package yaml-mode
   :straight t)
 
+(use-package just-mode
+  :straight t)
+
 (load-file "~/dotfiles/emacs/magit.el")
 
 (load-file "~/dotfiles/emacs/lsp.el")
