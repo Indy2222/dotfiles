@@ -120,6 +120,9 @@
 (use-package just-mode
   :straight t)
 
+(use-package restclient
+  :straight t)
+
 (load-file "~/dotfiles/emacs/magit.el")
 
 (load-file "~/dotfiles/emacs/lsp.el")
