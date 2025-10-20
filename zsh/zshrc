@@ -37,6 +37,7 @@ export ZSH_DOTFILES="$DOTFILES/zsh"
 
 alias ll='eza -lgumh --group-directories-first --total-size'
 alias ns='systemd-nspawn'
+alias j=just
 
 export _ZO_ECHO=1
 eval "$(zoxide init zsh)"
