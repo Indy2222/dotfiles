@@ -1,2 +1,3 @@
 (use-package magit
-  :straight t)
+  :straight t
+  :ensure t)
