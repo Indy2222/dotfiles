@@ -123,6 +123,16 @@
 (use-package restclient
   :straight t)
 
+(require 'treesit)
+
+(add-to-list
+ 'treesit-language-source-alist
+ '(typespec "https://github.com/happenslol/tree-sitter-typespec"))
+
+(use-package typespec-ts-mode
+  :straight t
+  :ensure t)
+
 (load-file "~/dotfiles/emacs/magit.el")
 
 (load-file "~/dotfiles/emacs/lsp.el")

@@ -333,6 +333,18 @@ sudo pacman -S pyenv python-poetry
 sudo pacman -S dotnet-sdk
 ```
 
+TypeScript
+----------
+
+```bash
+sudo pacman -S nodejs npm
+
+mkdir -p ~/.npm-global
+npm config set prefix '~/.npm-global'
+
+npm install -g @typespec/compiler
+```
+
 Docker
 ------
 
