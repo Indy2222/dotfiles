@@ -120,7 +120,10 @@
   :bind
   (("C-c p" . projectile-command-map))
   :config
-  (setq projectile-completion-system 'ivy)
+  (setq projectile-completion-system 'ivy
+        projectile-indexing-method 'alien
+        projectile-async-indexing t
+        projectile-enable-caching t)
   (projectile-mode +1))
 
 (use-package yaml-mode
