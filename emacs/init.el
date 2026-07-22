@@ -51,6 +51,15 @@
 (add-hook 'text-mode-hook 'indy/highlight-trailing-whitespace)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
+(defun indy/split-window-horizontally (window)
+  (when (and (= (length (window-list (window-frame window) 'nomini)) 1)
+             (>= (window-body-width window) 160))
+    (split-window window nil 'right)))
+
+(setq split-height-threshold nil
+      split-window-preferred-function
+      #'indy/split-window-horizontally)
+
 (load-file "~/dotfiles/emacs/theme.el")
 
 (use-package xclip
