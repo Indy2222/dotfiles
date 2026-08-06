@@ -67,6 +67,7 @@ args = [
   "-u", "new-session", "-n", "main-sh", ";",    "split-window", "-h", ";",
   "new-window",        "-n", "da-sh", ";",      "split-window", "-h", ";",
   "new-window",        "-n", "da-agents", ";",  "split-window", "-h", ";",
+  "new-window",        "-n", "da-notes", ";",
   "select-window",     "-t", "main-sh"
 ]
 program = "/usr/bin/tmux"
