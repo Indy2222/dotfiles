@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (defun indy/czech ()
   "Switch input method to Czech & use Czech Ispell dictionary."
   (interactive)

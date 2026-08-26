@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (use-package lsp-pyright
   :straight t
   :hook (python-mode . (lambda ()
