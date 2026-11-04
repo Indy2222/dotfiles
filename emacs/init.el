@@ -150,6 +150,7 @@
 (load-file "~/dotfiles/emacs/lsp.el")
 (load-file "~/dotfiles/emacs/rust.el")
 (load-file "~/dotfiles/emacs/python.el")
+(load-file "~/dotfiles/emacs/ts.el")
 
 (load-file "~/dotfiles/emacs/utils.el")
 
